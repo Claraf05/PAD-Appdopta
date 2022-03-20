@@ -3,6 +3,7 @@ package es.ucm.fdi.appdopta.features.login;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import es.ucm.fdi.appdopta.R;
 
 public class LoginActivity extends AppCompatActivity {
 
