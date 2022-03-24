@@ -5,7 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import es.ucm.fdi.appdopta.R;
 
-public class LoginActivity extends AppCompatActivity {
+public class LoginActivity extends AppCompatActivity { //h
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
