@@ -36,13 +36,13 @@
 
         <TextView
             android:id="@+id/textView"
-            android:layout_width="wrap_content"
+            android:layout_width="301dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
             android:layout_weight="1"
             android:gravity="center_horizontal|center_vertical"
             android:text="APPDOPTA ORIGINALS"
-            android:textSize="24sp"
+            android:textSize="27dp"
             android:textStyle="bold" />
 
     </LinearLayout>
@@ -95,23 +95,40 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/constraintLayout">
+        <!--<ImageView
+            android:id="@+id/menu"
+            android:layout_width="wrap_content"
+            android:layout_height="150dp"
+            android:layout_weight="0.5"
+            android:layout_margin="15dp"
+            app:srcCompat="@drawable/menu" />
+-->
 
         <SearchView
             android:id="@+id/searchView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
+            android:layout_marginStart="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginRight="20dp"
             android:baselineAligned="false"
             android:iconifiedByDefault="false"
             android:queryHint="Buscar">
-
         </SearchView>
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/listaMascotas"
-            android:layout_width="wrap_content"
-            android:layout_height="516dp"
-            android:layout_gravity="center" />
     </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/listaMascotas"
+        android:layout_width="325dp"
+        android:layout_height="525dp"
+        android:layout_gravity="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+    </androidx.recyclerview.widget.RecyclerView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

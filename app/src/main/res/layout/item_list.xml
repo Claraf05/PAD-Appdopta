@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:background="@drawable/border_item"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="15dp"
@@ -15,7 +17,6 @@
         android:layout_weight="0.5"
         android:gravity="center"
         android:orientation="vertical">
-
 
         <TextView
             android:id="@+id/nombreMascota"
@@ -40,6 +41,7 @@
         android:layout_width="wrap_content"
         android:layout_height="150dp"
         android:layout_weight="0.5"
+        android:layout_margin="15dp"
         app:srcCompat="@drawable/icono_mascota" />
 
 
