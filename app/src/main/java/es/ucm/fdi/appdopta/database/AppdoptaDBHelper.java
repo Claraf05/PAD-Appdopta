@@ -18,10 +18,12 @@ public class AppdoptaDBHelper extends SQLiteOpenHelper {
             "CREATE TABLE " + UserTable.TABLE_NAME + " (" +
                     UserTable.USERNAME_C + " TEXT UNIQUE NOT NULL PRIMARY KEY," +
                     UserTable.PASSWORD_C + " TEXT NOT NULL);";
+
     private static final String CREATE_PET_TABLE =
             "CREATE TABLE " + PetTable.TABLE_NAME + " (" +
                     PetTable.ID_OWNER_C + " TEXT NOT NULL PRIMARY KEY," +
                     PetTable.PETNAME_C + " TEXT NOT NULL," +
+                    PetTable.GENDER_C + " TEXT NOT NULL," +
                     PetTable.RACE_C + " TEXT NOT NULL," +
                     PetTable.VACCINATIONS_C + " TEXT NOT NULL," +
                     PetTable.WEIGHT_C + "TEXT NOT NULL,);";

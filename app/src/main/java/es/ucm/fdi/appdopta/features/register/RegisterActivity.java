@@ -12,7 +12,7 @@ import es.ucm.fdi.appdopta.R;
 public class RegisterActivity extends AppCompatActivity {
 
     EditText username, password, repassword;
-    Button signin, signup;
+    Button signin, signup; //botones
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

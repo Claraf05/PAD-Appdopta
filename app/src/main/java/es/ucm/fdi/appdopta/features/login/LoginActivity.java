@@ -11,7 +11,7 @@ import es.ucm.fdi.appdopta.R;
 public class LoginActivity extends AppCompatActivity { //h
 
     EditText username, password, repassword;
-    Button signin, signup;
+    Button signin, signup; //b
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
