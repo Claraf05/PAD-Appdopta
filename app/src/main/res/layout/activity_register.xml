@@ -4,6 +4,104 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_gravity="bottom"
+    android:background="#78CD64"
     tools:context=".features.register.RegisterActivity">
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="172dp"
+        android:layout_height="193dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginRight="32dp"
+        android:layout_marginBottom="32dp"
+        android:background="#00FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.16"
+        app:srcCompat="@drawable/logo" />
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="362dp"
+        android:layout_height="274dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginRight="32dp"
+        android:layout_marginBottom="32dp"
+        android:background="#57FFFFFF"
+        app:cardBackgroundColor="#B7FFFFFF"
+        app:cardCornerRadius="25dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView2"
+        app:layout_constraintVertical_bias="0.0">
+
+        <LinearLayout
+            android:layout_width="300dp"
+            android:layout_height="169dp"
+            android:layout_gravity="center|center_horizontal|top"
+            android:layout_marginTop="30"
+            android:fadingEdge="horizontal|vertical|none"
+            android:orientation="vertical">
+
+            <EditText
+                android:id="@+id/usernameRegister"
+                android:layout_width="300dp"
+                android:layout_height="2dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_weight="1"
+                android:drawableLeft="@android:drawable/ic_dialog_dialer"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:text="Username" />
+
+            <EditText
+                android:id="@+id/passwordRegister"
+                android:layout_width="300dp"
+                android:layout_height="4dp"
+                android:layout_gravity="center|center_horizontal"
+                android:layout_weight="1"
+                android:drawableLeft="@android:drawable/ic_lock_idle_lock"
+                android:ems="10"
+                android:hint="Password"
+                android:inputType="textPassword"
+                android:textColor="#000000" />
+
+            <EditText
+                android:id="@+id/repeatpassRegister"
+                android:layout_width="300dp"
+                android:layout_height="1dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_weight="1"
+                android:drawableLeft="@android:drawable/ic_lock_idle_lock"
+                android:ems="10"
+                android:fadingEdge="horizontal|vertical|none"
+                android:hint="Repeat password"
+                android:inputType="textPassword"
+                android:requiresFadingEdge="horizontal|vertical|none" />
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/registerButton"
+            android:layout_width="143dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|center"
+            android:baselineAligned="false"
+            android:text="Register"
+            app:backgroundTint="#354A22"
+            app:iconPadding="5dp"
+            app:iconTint="#FFFFFF" />
+
+    </androidx.cardview.widget.CardView>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
