@@ -2,6 +2,7 @@ package es.ucm.fdi.appdopta.database;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import es.ucm.fdi.appdopta.database.AppdoptaDatabase.UserTable;
@@ -26,7 +27,7 @@ public class AppdoptaDBHelper extends SQLiteOpenHelper {
                     PetTable.GENDER_C + " TEXT NOT NULL," +
                     PetTable.RACE_C + " TEXT NOT NULL," +
                     PetTable.VACCINATIONS_C + " TEXT NOT NULL," +
-                    PetTable.WEIGHT_C + "TEXT NOT NULL,);";
+                    PetTable.WEIGHT_C + "TEXT NOT NULL);";
 
     private static final String DELETE_USER_TABLE = "DROP TABLE IF EXISTS " +
             UserTable.TABLE_NAME;
@@ -49,5 +50,62 @@ public class AppdoptaDBHelper extends SQLiteOpenHelper {
         db.execSQL(DELETE_USER_TABLE);
         db.execSQL(DELETE_PET_TABLE);
         onCreate(db);
+    }
+
+    public boolean insertUserData(String username, String passw){
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put(UserTable.USERNAME_C, username);
+        contentValues.put(UserTable.PASSWORD_C, passw);
+
+        long result = db.insert("UserTable", null, contentValues);
+        if(result == -1) {
+            return false;
+        }
+        else {
+            return true;
+        }
+    }
+
+    public boolean insertPetData(String id, String name, String gend, String race, String vacc, String weight) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put(PetTable.ID_OWNER_C, id);
+        contentValues.put(PetTable.PETNAME_C, name);
+        contentValues.put(PetTable.GENDER_C, gend);
+        contentValues.put(PetTable.RACE_C, race);
+        contentValues.put(PetTable.VACCINATIONS_C, vacc);
+        contentValues.put(PetTable.WEIGHT_C, weight);
+
+        long result = db.insert("PetTable", null, contentValues);
+        if(result == -1) {
+            return false;
+        }
+        else {
+            return true;
+        }
+    }
+
+    public boolean checkUserName(String user){
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor cursor = db.rawQuery("Select * from UserTable where USERNAME_C = ?", new String[] {user});
+        if(cursor.getCount() > 0){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+
+    public boolean checkUserPassword(String user, String passw){
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor cursor = db.rawQuery("Select * from UserTable where USERNAME_C = ? and PASSWORD_C = ?", new String[] {user,passw});
+
+        if(cursor.getCount() > 0){
+            return true;
+        }
+        else{
+            return false;
+        }
     }
 }
