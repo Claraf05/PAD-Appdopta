@@ -28,8 +28,10 @@ public class AppdoptaDBHelper extends SQLiteOpenHelper {
                     PetTable.VACCINATIONS_C + " TEXT NOT NULL," +
                     PetTable.WEIGHT_C + "TEXT NOT NULL,);";
 
-    private static final String DELETE_USER_TABLE = "DROP TABLE IF EXISTS " + UserTable.TABLE_NAME;
-    private static final String DELETE_PET_TABLE = "DROP TABLE IF EXISTS " + PetTable.TABLE_NAME;
+    private static final String DELETE_USER_TABLE = "DROP TABLE IF EXISTS " +
+            UserTable.TABLE_NAME;
+    private static final String DELETE_PET_TABLE = "DROP TABLE IF EXISTS " +
+            PetTable.TABLE_NAME;
 
     // creating a constructor for our database handler.
     public AppdoptaDBHelper(Context context) {

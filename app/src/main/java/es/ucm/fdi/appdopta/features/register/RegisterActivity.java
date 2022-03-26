@@ -12,7 +12,7 @@ import es.ucm.fdi.appdopta.R;
 public class RegisterActivity extends AppCompatActivity {
 
     EditText username, password, repassword;
-    Button signin, signup; //botones
+    Button signin, signup; //
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,6 +23,7 @@ public class RegisterActivity extends AppCompatActivity {
         password = (EditText) findViewById(R.id.passwordRegister);
         repassword = (EditText) findViewById(R.id.repeatpassRegister);
         signup = (Button) findViewById(R.id.registerButton);
+        signin = (Button) findViewById(R.id.goToLoginButton);
 
         signup.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -31,6 +32,12 @@ public class RegisterActivity extends AppCompatActivity {
             }
         });
 
+        signin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
 
     }
 }
