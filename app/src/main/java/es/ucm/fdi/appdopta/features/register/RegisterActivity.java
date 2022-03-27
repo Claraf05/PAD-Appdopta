@@ -9,6 +9,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import es.ucm.fdi.appdopta.MainActivity;
 import es.ucm.fdi.appdopta.R;
 import es.ucm.fdi.appdopta.database.AppdoptaDBHelper;
 import es.ucm.fdi.appdopta.features.login.LoginActivity;
@@ -65,6 +66,7 @@ public class RegisterActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
+                //Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                 startActivity(intent);
             }
         });
