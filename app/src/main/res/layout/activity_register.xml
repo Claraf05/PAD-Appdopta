@@ -61,8 +61,8 @@
                 android:layout_weight="1"
                 android:drawableLeft="@android:drawable/ic_dialog_dialer"
                 android:ems="10"
-                android:inputType="textPersonName"
-                android:text="Username" />
+                android:hint=" Username"
+                android:inputType="textPersonName" />
 
             <EditText
                 android:id="@+id/passwordRegister"
@@ -73,8 +73,7 @@
                 android:drawableLeft="@android:drawable/ic_lock_idle_lock"
                 android:ems="10"
                 android:hint="Password"
-                android:inputType="textPassword"
-                android:textColor="#000000" />
+                android:inputType="textPassword" />
 
             <EditText
                 android:id="@+id/repeatpassRegister"
@@ -97,6 +96,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="bottom|center"
             android:baselineAligned="false"
+            android:onClick="register"
             android:text="Register"
             app:backgroundTint="#354A22"
             app:iconPadding="5dp"
@@ -122,6 +122,7 @@
         android:layout_width="86dp"
         android:layout_height="45dp"
         android:layout_marginTop="29dp"
+        android:onClick="login"
         android:text="LOGIN"
         android:textColor="#105BEC"
         android:textSize="16sp"

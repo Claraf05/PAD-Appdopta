@@ -9,7 +9,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import es.ucm.fdi.appdopta.MainActivity;
 import es.ucm.fdi.appdopta.R;
 import es.ucm.fdi.appdopta.database.AppdoptaDBHelper;
 import es.ucm.fdi.appdopta.features.login.LoginActivity;
@@ -28,48 +27,38 @@ public class RegisterActivity extends AppCompatActivity {
         username = (EditText) findViewById(R.id.usernameRegister);
         password = (EditText) findViewById(R.id.passwordRegister);
         repassword = (EditText) findViewById(R.id.repeatpassRegister);
-        registerButt = (Button) findViewById(R.id.registerButton);
-        loginButt = (Button) findViewById(R.id.goToLoginButton);
         dbHelper = new AppdoptaDBHelper(this);
 
-        registerButt.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                String user = username.getText().toString();
-                String pass = password.getText().toString();
-                String repassw = repassword.getText().toString();
+    }
+    public void register(View view){
+        String user = username.getText().toString();
+        String pass = password.getText().toString();
+        String repassw = repassword.getText().toString();
 
-                if(user.equals("") || pass.equals("") || repassw.equals("")) {
-                    Toast.makeText(RegisterActivity.this, "Por favor rellene todos los campos", Toast.LENGTH_SHORT).show();
+        if(user.equals("") || pass.equals("") || repassw.equals("")) {
+            Toast.makeText(RegisterActivity.this, "Por favor rellene todos los campos", Toast.LENGTH_SHORT).show();
+        }
+        else{
+            if(pass.equals(repassw)){
+                Boolean checkuser = dbHelper.checkUserName(user);
+                if(checkuser == false){
+                    Boolean reg = dbHelper.insertUserData(user, pass);
+                    if(reg == true){
+                        Toast.makeText(RegisterActivity.this, "Usuario registrado con éxito", Toast.LENGTH_SHORT).show();
+                    }
                 }
                 else{
-                    if(pass.equals(repassw)){
-                        Boolean checkuser = dbHelper.checkUserName(user);
-                        if(checkuser == false){
-                            Boolean reg = dbHelper.insertUserData(user, pass);
-                            if(reg == true){
-                                Toast.makeText(RegisterActivity.this, "Usuario registrado con éxito", Toast.LENGTH_SHORT).show();
-                            }
-                        }
-                        else{
-                            Toast.makeText(RegisterActivity.this, "El usuario ya existe", Toast.LENGTH_SHORT).show();
-                        }
-                    }
-                    else{
-                        Toast.makeText(RegisterActivity.this, "Las contraseñas no coinciden", Toast.LENGTH_SHORT).show();
-                    }
+                    Toast.makeText(RegisterActivity.this, "El usuario ya existe", Toast.LENGTH_SHORT).show();
                 }
             }
-        });
-
-        loginButt.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
-                //Intent intent = new Intent(getApplicationContext(), MainActivity.class);
-                startActivity(intent);
+            else{
+                Toast.makeText(RegisterActivity.this, "Las contraseñas no coinciden", Toast.LENGTH_SHORT).show();
             }
-        });
-
+        }
+    }
+    public void login(View view){
+        Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
+        //Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+        startActivity(intent);
     }
 }

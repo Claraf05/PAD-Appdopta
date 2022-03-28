@@ -58,7 +58,7 @@ public class AppdoptaDBHelper extends SQLiteOpenHelper {
         contentValues.put(UserTable.USERNAME_C, username);
         contentValues.put(UserTable.PASSWORD_C, passw);
 
-        long result = db.insert("UserTable", null, contentValues);
+        long result = db.insert(UserTable.TABLE_NAME, null, contentValues);
         if(result == -1) {
             return false;
         }
@@ -77,7 +77,7 @@ public class AppdoptaDBHelper extends SQLiteOpenHelper {
         contentValues.put(PetTable.VACCINATIONS_C, vacc);
         contentValues.put(PetTable.WEIGHT_C, weight);
 
-        long result = db.insert("PetTable", null, contentValues);
+        long result = db.insert(PetTable.TABLE_NAME, null, contentValues);
         if(result == -1) {
             return false;
         }
@@ -88,7 +88,7 @@ public class AppdoptaDBHelper extends SQLiteOpenHelper {
 
     public boolean checkUserName(String user){
         SQLiteDatabase db = this.getWritableDatabase();
-        Cursor cursor = db.rawQuery("Select * from UserTable where USERNAME_C = ?", new String[] {user});
+        Cursor cursor = db.rawQuery("Select * from "+UserTable.TABLE_NAME+" where "+UserTable.USERNAME_C+" = ?", new String[] {user});
         if(cursor.getCount() > 0){
             return true;
         }
@@ -99,7 +99,7 @@ public class AppdoptaDBHelper extends SQLiteOpenHelper {
 
     public boolean checkUserPassword(String user, String passw){
         SQLiteDatabase db = this.getWritableDatabase();
-        Cursor cursor = db.rawQuery("Select * from UserTable where USERNAME_C = ? and PASSWORD_C = ?", new String[] {user,passw});
+        Cursor cursor = db.rawQuery("Select * from "+UserTable.TABLE_NAME+" where "+UserTable.USERNAME_C+" = ? and "+UserTable.PASSWORD_C+" = ?", new String[] {user,passw});
 
         if(cursor.getCount() > 0){
             return true;

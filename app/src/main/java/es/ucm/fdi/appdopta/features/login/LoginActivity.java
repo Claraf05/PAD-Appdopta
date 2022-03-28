@@ -9,12 +9,11 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import es.ucm.fdi.appdopta.MainActivity;
 import es.ucm.fdi.appdopta.R;
 import es.ucm.fdi.appdopta.database.AppdoptaDBHelper;
 import es.ucm.fdi.appdopta.features.register.RegisterActivity;
 
-public class LoginActivity extends AppCompatActivity { //h
+public class LoginActivity extends AppCompatActivity {
 
     EditText username, password;
     Button loginButt, registerButt;
@@ -24,46 +23,35 @@ public class LoginActivity extends AppCompatActivity { //h
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-
         username = (EditText) findViewById(R.id.userLogin);
         password = (EditText) findViewById(R.id.passwordLogin);
-        loginButt = (Button) findViewById(R.id.loginButton);
-        registerButt = (Button) findViewById(R.id.registerButton);
         dbHelper = new AppdoptaDBHelper(this);
+    }
 
-        loginButt.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                String user = username.getText().toString();
-                String pass = password.getText().toString();
+    public void login(View view){
+        String user = username.getText().toString();
+        String pass = password.getText().toString();
 
-                if(user.equals("") || pass.equals("")) {
-                    Toast.makeText(LoginActivity.this, "Por favor rellene todos los campos", Toast.LENGTH_SHORT).show();
-                }
-                else{
+        if(user.equals("") || pass.equals("")) {
+            Toast.makeText(LoginActivity.this, "Por favor rellene todos los campos", Toast.LENGTH_SHORT).show();
+        }
+        else{
 
-                    Boolean checkuser = dbHelper.checkUserName(user);
-                    if(checkuser == true){
-                        CharSequence txt = "Bienvenido: " + user;
-                        Toast.makeText(LoginActivity.this, txt, Toast.LENGTH_SHORT).show();
-                        Intent intent = new Intent(getApplicationContext(), MainActivity.class);
-                        startActivity(intent);
-                    }
-                    else{
-                        Toast.makeText(LoginActivity.this, "El usuario no existe o se introdujo algun valor incorrecto", Toast.LENGTH_SHORT).show();
-                    }
-                }
+            Boolean checkuser = dbHelper.checkUserPassword(user,pass);
+            if(checkuser == true){
+                CharSequence txt = "Bienvenido: " + user;
+                Toast.makeText(LoginActivity.this, txt, Toast.LENGTH_SHORT).show();
+                //Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                //startActivity(intent);
             }
-        });
-
-        registerButt.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), RegisterActivity.class);
-                startActivity(intent);
+            else{
+                Toast.makeText(LoginActivity.this, "El usuario no existe o se introdujo algun valor incorrecto", Toast.LENGTH_SHORT).show();
             }
-        });
+        }
+    }
 
-
+    public void register(View view){
+        Intent intent = new Intent(getApplicationContext(), RegisterActivity.class);
+        startActivity(intent);
     }
 }
