@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_gravity="bottom"
-    android:background="#78CD64"
+    android:background="#93DC82"
     tools:context=".features.register.RegisterActivity">
 
     <ImageView
@@ -59,9 +59,9 @@
                 android:layout_height="2dp"
                 android:layout_gravity="center_horizontal"
                 android:layout_weight="1"
-                android:drawableLeft="@android:drawable/ic_dialog_dialer"
+                android:drawableLeft="@drawable/ic_user"
                 android:ems="10"
-                android:hint=" Username"
+                android:hint=" Usuario"
                 android:inputType="textPersonName" />
 
             <EditText
@@ -70,9 +70,9 @@
                 android:layout_height="4dp"
                 android:layout_gravity="center|center_horizontal"
                 android:layout_weight="1"
-                android:drawableLeft="@android:drawable/ic_lock_idle_lock"
+                android:drawableLeft="@drawable/ic_lock"
                 android:ems="10"
-                android:hint="Password"
+                android:hint="Contraseña"
                 android:inputType="textPassword" />
 
             <EditText
@@ -81,10 +81,10 @@
                 android:layout_height="1dp"
                 android:layout_gravity="center_horizontal"
                 android:layout_weight="1"
-                android:drawableLeft="@android:drawable/ic_lock_idle_lock"
+                android:drawableLeft="@drawable/ic_repw"
                 android:ems="10"
                 android:fadingEdge="horizontal|vertical|none"
-                android:hint="Repeat password"
+                android:hint="Repetir contraseña"
                 android:inputType="textPassword"
                 android:requiresFadingEdge="horizontal|vertical|none" />
 
