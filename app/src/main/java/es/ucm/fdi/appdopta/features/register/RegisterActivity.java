@@ -23,6 +23,7 @@ public class RegisterActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
+        this.setTitle("Registro");
 
         username = (EditText) findViewById(R.id.usernameRegister);
         password = (EditText) findViewById(R.id.passwordRegister);
