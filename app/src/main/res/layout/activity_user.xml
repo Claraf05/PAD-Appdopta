@@ -8,7 +8,7 @@
     tools:context=".features.user.UserActivity">
 
     <LinearLayout
-        android:id="@+id/linearL"
+        android:id="@+id/linearEdit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
@@ -18,15 +18,15 @@
         android:orientation="vertical"
         app:layout_constraintBottom_toTopOf="@+id/scrollView2"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/linearL"
+        app:layout_constraintStart_toEndOf="@+id/linear"
         app:layout_constraintTop_toBottomOf="@+id/toolbar2">
 
         <TextView
-            android:id="@+id/userUser_U"
+            android:id="@+id/Username_U"
             android:layout_width="104dp"
             android:layout_height="34dp"
             android:layout_marginTop="8dp"
-            android:text="Usuario:"
+            android:text="Usuario"
             android:textColor="#000000"
             android:textSize="24sp"
             app:layout_constraintBottom_toTopOf="@+id/toolbar2"
@@ -41,7 +41,7 @@
             android:layout_width="104dp"
             android:layout_height="34dp"
             android:layout_marginTop="8dp"
-            android:text="Nombre:"
+            android:text="Nombre"
             android:textColor="#000000"
             android:textSize="24sp"
             app:layout_constraintBottom_toTopOf="@+id/toolbar2"
@@ -56,7 +56,7 @@
             android:layout_width="wrap_content"
             android:layout_height="34dp"
             android:layout_marginTop="8dp"
-            android:text="Telefono:"
+            android:text="Telefono"
             android:textColor="#000000"
             android:textSize="24sp"
             app:layout_constraintBottom_toTopOf="@+id/toolbar2"
@@ -71,7 +71,7 @@
             android:layout_width="79dp"
             android:layout_height="34dp"
             android:layout_marginTop="8dp"
-            android:text="Email:"
+            android:text="Email"
             android:textColor="#000000"
             android:textSize="24sp"
             app:layout_constraintBottom_toTopOf="@+id/toolbar2"
@@ -226,7 +226,7 @@
         android:background="#345025"
         android:minHeight="?attr/actionBarSize"
         android:theme="?attr/actionBarTheme"
-        app:layout_constraintBottom_toTopOf="@+id/linearL"
+        app:layout_constraintBottom_toTopOf="@+id/linear"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -249,7 +249,7 @@
         app:layout_constraintVertical_bias="0.0" />
 
     <LinearLayout
-        android:id="@+id/linearL"
+        android:id="@+id/linear"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
@@ -264,7 +264,7 @@
         app:layout_constraintTop_toBottomOf="@+id/toolbar2">
 
         <TextView
-            android:id="@+id/userUser_U"
+            android:id="@+id/Username_"
             android:layout_width="104dp"
             android:layout_height="34dp"
             android:layout_marginTop="8dp"
@@ -279,7 +279,7 @@
             app:layout_constraintVertical_bias="0.0" />
 
         <TextView
-            android:id="@+id/userName_U"
+            android:id="@+id/userName_"
             android:layout_width="104dp"
             android:layout_height="34dp"
             android:layout_marginTop="8dp"
@@ -294,7 +294,7 @@
             app:layout_constraintVertical_bias="0.0" />
 
         <TextView
-            android:id="@+id/userPhone_U"
+            android:id="@+id/userPhone_"
             android:layout_width="wrap_content"
             android:layout_height="34dp"
             android:layout_marginTop="8dp"
@@ -309,7 +309,7 @@
             app:layout_constraintVertical_bias="0.0" />
 
         <TextView
-            android:id="@+id/userEmail_U"
+            android:id="@+id/userEmail_"
             android:layout_width="79dp"
             android:layout_height="34dp"
             android:layout_marginTop="8dp"
@@ -374,7 +374,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.538"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearL"
+        app:layout_constraintTop_toBottomOf="@+id/linear"
         app:layout_constraintVertical_bias="0.0">
 
         <androidx.recyclerview.widget.RecyclerView
@@ -395,7 +395,7 @@
         app:layout_constraintBottom_toTopOf="@+id/scrollView2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.939"
-        app:layout_constraintStart_toEndOf="@+id/linearL"
+        app:layout_constraintStart_toEndOf="@+id/linear"
         app:layout_constraintTop_toBottomOf="@+id/toolbar2">
 
         <ImageButton
