@@ -12,6 +12,7 @@ import android.widget.Toast;
 import es.ucm.fdi.appdopta.R;
 import es.ucm.fdi.appdopta.database.AppdoptaDBHelper;
 import es.ucm.fdi.appdopta.features.register.RegisterActivity;
+import es.ucm.fdi.appdopta.features.settings.SettingsActivity;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -41,8 +42,8 @@ public class LoginActivity extends AppCompatActivity {
             if(checkuser == true){
                 CharSequence txt = "Bienvenido: " + user;
                 Toast.makeText(LoginActivity.this, txt, Toast.LENGTH_SHORT).show();
-                //Intent intent = new Intent(getApplicationContext(), MainActivity.class);
-                //startActivity(intent);
+                Intent intent = new Intent(getApplicationContext(), SettingsActivity.class);
+                startActivity(intent);
             }
             else{
                 Toast.makeText(LoginActivity.this, "El usuario no existe o se introdujo algun valor incorrecto", Toast.LENGTH_SHORT).show();
