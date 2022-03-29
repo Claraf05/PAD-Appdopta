@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#C7F0BE"
+    android:background="#C9E3AF"
     tools:context=".ficha">
 
     <ImageView
@@ -35,19 +35,33 @@
             android:id="@+id/nombreAnimal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="nombre" />
+            android:hint="Nombre" />
 
         <TextView
             android:id="@+id/razaAnimal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="raza" />
+            android:hint="Especie" />
 
         <TextView
             android:id="@+id/edadAnimal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="edad" />
+            android:hint="Raza" />
+
+        <TextView
+            android:id="@+id/sexoAnimal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Sexo" />
+
+        <EditText
+            android:id="@+id/fechaAnimal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Fecha Nacimiento"
+            android:inputType="date" />
 
     </LinearLayout>
 
@@ -65,34 +79,117 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imagen">
 
-        <LinearLayout
-            android:id="@+id/linearLayout"
-            android:layout_width="180dp"
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardView"
+            android:layout_width="wrap_content"
             android:layout_height="0dp"
-            android:layout_marginBottom="20dp"
-            android:orientation="vertical"
-            app:layout_constraintBottom_toTopOf="@+id/scrollView"
-            app:layout_constraintStart_toStartOf="parent">
+            android:layout_marginStart="32dp"
+            android:layout_marginLeft="32dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="32dp"
+            android:layout_marginRight="32dp"
+            android:layout_marginBottom="200dp"
+            app:cardBackgroundColor="#B7FFFFFF"
+            app:cardCornerRadius="25dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.509"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/layoutDue"
+            app:layout_constraintVertical_bias="0.0">
 
-            <TextView
-                android:id="@+id/tipoAnimal"
+            <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="tipo" />
+                android:layout_height="match_parent">
 
-            <TextView
-                android:id="@+id/sexoAnimal"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="sexo" />
+                <LinearLayout
+                    android:id="@+id/dataChip"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:visibility="invisible"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
 
-            <TextView
-                android:id="@+id/vacunaAnimal"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="vacuna" />
+                    <EditText
+                        android:id="@+id/fechaChip"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:hint="Fecha Implantación"
+                        android:inputType="date" />
 
-        </LinearLayout>
+                    <EditText
+                        android:id="@+id/numChip"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:hint="Número Microchip"
+                        android:inputType="number" />
+
+                    <TextView
+                        android:id="@+id/localizacionChip"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Localización del Chip" />
+                </LinearLayout>
+
+                <ScrollView
+                    android:id="@+id/scrollViewDesc"
+                    android:layout_width="330dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginBottom="20dp"
+                    android:visibility="visible"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <EditText
+                        android:id="@+id/editTextTextMultiLine"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:editable="false"
+                        android:ems="10"
+                        android:gravity="start|top"
+                        android:inputType="none" />
+                </ScrollView>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <RadioGroup
+            android:id="@+id/radioGroup"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toTopOf="@+id/cardView"
+            app:layout_constraintEnd_toStartOf="@+id/infoDue"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <RadioButton
+                android:id="@+id/descripcion"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:onClick="desc"
+                android:text="Descripcion" />
+
+            <RadioButton
+                android:id="@+id/microchip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="micro"
+                android:text="Microchip" />
+
+        </RadioGroup>
 
         <LinearLayout
             android:id="@+id/layoutDue"
@@ -105,22 +202,28 @@
             app:layout_constraintTop_toBottomOf="@+id/infoDue">
 
             <TextView
+                android:id="@+id/apellidosDue"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Apellidos" />
+
+            <TextView
                 android:id="@+id/nombreDue"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="nombre" />
-
-            <TextView
-                android:id="@+id/ubicacionDue"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="ubicación" />
+                android:hint="Nombre" />
 
             <TextView
                 android:id="@+id/correoDue"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="correo" />
+                android:hint="Correo" />
+
+            <TextView
+                android:id="@+id/telefonoDue"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Telefono" />
 
         </LinearLayout>
 
@@ -128,35 +231,14 @@
             android:id="@+id/infoDue"
             android:layout_width="180dp"
             android:layout_height="wrap_content"
+            android:background="#1F3A20"
             android:drawableLeft="@android:drawable/arrow_down_float"
             android:onClick="mostrar"
+            android:textColor="#FFFFFF"
             android:textOff="Información Dueño"
             android:textOn="Información Dueño"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
-
-        <ScrollView
-            android:id="@+id/scrollView"
-            android:layout_width="330dp"
-            android:layout_height="100dp"
-            android:layout_marginStart="10dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginEnd="10dp"
-            android:layout_marginRight="10dp"
-            android:background="#78CD64"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/layoutDue">
-
-            <EditText
-                android:id="@+id/editTextTextMultiLine"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:gravity="start|top"
-                android:inputType="none" />
-        </ScrollView>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

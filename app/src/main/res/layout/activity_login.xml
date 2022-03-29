@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#C992E47E"
+    android:background="#C9E3AF"
     tools:context=".features.login.LoginActivity">
 
     <Button
@@ -20,7 +20,7 @@
         android:onClick="register"
         android:text="Register"
         android:textColor="#FFFFFF"
-        app:backgroundTint="#E44D672F"
+        app:backgroundTint="#1F3A20"
         app:iconTint="#000000"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -61,6 +61,7 @@
         android:ems="10"
         android:hint="Contraseña"
         android:inputType="textPersonName"
+        android:password="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"

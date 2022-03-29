@@ -17,6 +17,7 @@ public class UserActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user);
+        this.setTitle("Ajustes Usuario");
     }
 
     public void goToSettings_U(View view){
