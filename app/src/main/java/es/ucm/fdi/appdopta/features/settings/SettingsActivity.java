@@ -10,6 +10,7 @@ import androidx.preference.PreferenceFragmentCompat;
 import es.ucm.fdi.appdopta.R;
 import es.ucm.fdi.appdopta.features.login.LoginActivity;
 import es.ucm.fdi.appdopta.features.register.RegisterActivity;
+import es.ucm.fdi.appdopta.features.user.UserActivity;
 
 public class SettingsActivity extends AppCompatActivity {
 
@@ -30,7 +31,7 @@ public class SettingsActivity extends AppCompatActivity {
         }
     }
 
-    public void changePw(View view){
+    public void changePw_S(View view){
         Intent intent = new Intent(getApplicationContext(), RegisterActivity.class);
         startActivity(intent);
     }
@@ -42,6 +43,16 @@ public class SettingsActivity extends AppCompatActivity {
 
     public void logOut(View view){
         Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
+        startActivity(intent);
+    }
+
+    public void goToMain(View view){
+        //Intent intent = new Intent(getApplicationContext(), RegisterActivity.class);
+        //startActivity(intent);
+    }
+
+    public void userInfoActivity(View view){
+        Intent intent = new Intent(getApplicationContext(), UserActivity.class);
         startActivity(intent);
     }
 }

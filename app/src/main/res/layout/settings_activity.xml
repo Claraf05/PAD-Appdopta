@@ -60,7 +60,8 @@
         app:layout_constraintStart_toEndOf="@id/userInfoButton"
         app:layout_constraintTop_toTopOf="@+id/toolbar"
         app:layout_constraintVertical_bias="0.736"
-        app:srcCompat="@drawable/ic_settings" />
+        app:srcCompat="@drawable/ic_settings"
+        tools:ignore="VectorDrawableCompat" />
 
     <ImageButton
         android:id="@+id/userInfoButton"
@@ -73,6 +74,7 @@
         android:layout_marginRight="8dp"
         android:layout_marginBottom="1dp"
         android:background="#00FFFFFF"
+        android:onClick="userInfoActivity"
         android:scaleType="centerInside"
         android:scaleX="1.5"
         android:scaleY="1.5"
@@ -82,7 +84,8 @@
         app:layout_constraintStart_toEndOf="@+id/mainActButton"
         app:layout_constraintTop_toTopOf="@+id/toolbar"
         app:layout_constraintVertical_bias="0.736"
-        app:srcCompat="@drawable/ic_user" />
+        app:srcCompat="@drawable/ic_user"
+        tools:ignore="VectorDrawableCompat" />
 
     <ImageButton
         android:id="@+id/mainActButton"
@@ -95,6 +98,7 @@
         android:layout_marginRight="8dp"
         android:layout_marginBottom="1dp"
         android:background="#00FFFFFF"
+        android:onClick="goToMain"
         android:scaleType="centerInside"
         android:scaleX="1.75"
         android:scaleY="1.75"
@@ -104,12 +108,13 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/toolbar"
         app:layout_constraintVertical_bias="0.684"
-        app:srcCompat="@drawable/ic_paw" />
+        app:srcCompat="@drawable/ic_paw"
+        tools:ignore="VectorDrawableCompat" />
 
     <LinearLayout
         android:id="@+id/linearLayout3"
-        android:layout_width="411dp"
-        android:layout_height="203dp"
+        android:layout_width="409dp"
+        android:layout_height="241dp"
         android:layout_marginEnd="2dp"
         android:layout_marginRight="2dp"
         android:orientation="vertical"
@@ -145,6 +150,20 @@
             android:textSize="16sp" />
 
         <TextView
+            android:id="@+id/changePw3"
+            android:layout_width="match_parent"
+            android:layout_height="32dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginLeft="24dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginRight="24dp"
+            android:onClick="userInfoActivity"
+            android:text="Información de usuario"
+            android:textColor="#000000"
+            android:textSize="16sp" />
+
+        <TextView
             android:id="@+id/changeUser"
             android:layout_width="match_parent"
             android:layout_height="32dp"
@@ -167,7 +186,7 @@
             android:layout_marginTop="10dp"
             android:layout_marginEnd="24dp"
             android:layout_marginRight="24dp"
-            android:onClick="changePw"
+            android:onClick="changePw_S"
             android:text="Cambiar contraseña"
             android:textColor="#000000"
             android:textSize="16sp" />

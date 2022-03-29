@@ -9,9 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Appdopta">
+        <activity android:name=".features.user.UserActivity"></activity>
         <activity
             android:name=".features.settings.SettingsActivity"
-            android:label="@string/title_activity_settings"></activity>
+            android:label="@string/title_activity_settings" />
         <activity android:name=".features.login.LoginActivity" />
         <activity android:name=".features.register.RegisterActivity" />
         <activity android:name=".ficha" />
