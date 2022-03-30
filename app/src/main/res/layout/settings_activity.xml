@@ -55,14 +55,14 @@
         android:scaleType="centerInside"
         android:scaleX="1.75"
         android:scaleY="1.75"
-        android:tint="#A7DD9A"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/userInfoButton"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/toolbar"
         app:layout_constraintVertical_bias="0.684"
         app:srcCompat="@drawable/ic_paw"
-        tools:ignore="VectorDrawableCompat" />
+        tools:ignore="VectorDrawableCompat,SpeakableTextPresentCheck"
+        app:tint="#A7DD9A" />
 
     <ImageButton
         android:id="@+id/userInfoButton"
@@ -86,7 +86,7 @@
         app:layout_constraintTop_toTopOf="@+id/toolbar"
         app:layout_constraintVertical_bias="0.736"
         app:srcCompat="@drawable/ic_user"
-        tools:ignore="VectorDrawableCompat" />
+        tools:ignore="VectorDrawableCompat,SpeakableTextPresentCheck" />
 
     <ImageButton
         android:id="@+id/settingsButton"
@@ -110,26 +110,26 @@
         app:layout_constraintTop_toTopOf="@+id/toolbar"
         app:layout_constraintVertical_bias="0.736"
         app:srcCompat="@drawable/ic_settings"
-        tools:ignore="VectorDrawableCompat" />
+        tools:ignore="VectorDrawableCompat,SpeakableTextPresentCheck" />
 
     <LinearLayout
         android:id="@+id/linearLayout3"
-        android:layout_width="409dp"
-        android:layout_height="241dp"
+        android:layout_width="405dp"
+        android:layout_height="363dp"
         android:layout_marginEnd="2dp"
         android:layout_marginRight="2dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toTopOf="@+id/toolbar"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.19">
+        app:layout_constraintVertical_bias="0.057">
 
         <Switch
             android:id="@+id/notificationSwitch"
             android:layout_width="match_parent"
-            android:layout_height="29dp"
+            android:layout_height="48dp"
             android:layout_marginStart="24dp"
             android:layout_marginLeft="24dp"
             android:layout_marginTop="32dp"
@@ -147,13 +147,14 @@
             android:layout_marginTop="10dp"
             android:layout_marginEnd="24dp"
             android:layout_marginRight="24dp"
+            android:minHeight="48dp"
             android:text="Modo Oscuro"
             android:textSize="16sp" />
 
         <TextView
             android:id="@+id/changePw3"
             android:layout_width="match_parent"
-            android:layout_height="32dp"
+            android:layout_height="48dp"
             android:layout_marginStart="24dp"
             android:layout_marginLeft="24dp"
             android:layout_marginTop="10dp"
@@ -167,7 +168,7 @@
         <TextView
             android:id="@+id/changeUser"
             android:layout_width="match_parent"
-            android:layout_height="32dp"
+            android:layout_height="48dp"
             android:layout_marginStart="24dp"
             android:layout_marginLeft="24dp"
             android:layout_marginTop="10dp"
@@ -181,7 +182,7 @@
         <TextView
             android:id="@+id/changePw"
             android:layout_width="match_parent"
-            android:layout_height="32dp"
+            android:layout_height="48dp"
             android:layout_marginStart="24dp"
             android:layout_marginLeft="24dp"
             android:layout_marginTop="10dp"

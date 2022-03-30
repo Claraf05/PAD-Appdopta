@@ -11,13 +11,13 @@
         android:id="@+id/linearEdit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="174dp"
-        android:layout_marginRight="174dp"
-        android:layout_marginBottom="61dp"
         android:orientation="vertical"
-        app:layout_constraintBottom_toTopOf="@+id/scrollView2"
+        app:layout_constraintBottom_toBottomOf="@+id/linear"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/linear">
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/linear"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.393">
 
         <TextView
             android:id="@+id/Username_U"
@@ -85,36 +85,31 @@
         android:id="@+id/changePwButton"
         android:layout_width="267dp"
         android:layout_height="56dp"
-        android:layout_marginStart="58dp"
-        android:layout_marginLeft="58dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginLeft="32dp"
         android:layout_marginTop="6dp"
-        android:layout_marginEnd="86dp"
-        android:layout_marginRight="86dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginRight="32dp"
         android:onClick="changePw_U"
         android:text="Cambiar contraseña"
         app:backgroundTint="#1F3A20"
         app:layout_constraintBottom_toTopOf="@+id/logoutUserButton"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.512"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/changeUserButton" />
 
     <Button
         android:id="@+id/logoutUserButton"
-        android:layout_width="159dp"
+        android:layout_width="wrap_content"
         android:layout_height="58dp"
-        android:layout_marginStart="108dp"
-        android:layout_marginLeft="108dp"
         android:layout_marginTop="8dp"
-        android:layout_marginEnd="144dp"
-        android:layout_marginRight="144dp"
         android:layout_marginBottom="24dp"
         android:onClick="logOut_U"
         android:text="Cerrar sesión"
         app:backgroundTint="#1F3A20"
         app:layout_constraintBottom_toTopOf="@+id/toolbar5"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/changePwButton" />
 
@@ -223,12 +218,13 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="32dp"
         android:layout_marginRight="32dp"
-        android:layout_marginBottom="352dp"
+        android:layout_marginBottom="416dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toTopOf="@+id/toolbar5"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.058"
-        app:layout_constraintStart_toStartOf="parent">
+        app:layout_constraintHorizontal_bias="0.053"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <TextView
             android:id="@+id/Username_"
@@ -309,20 +305,20 @@
 
     <Button
         android:id="@+id/changeUserButton"
-        android:layout_width="267dp"
+        android:layout_width="wrap_content"
         android:layout_height="56dp"
-        android:layout_marginStart="57dp"
-        android:layout_marginLeft="57dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginLeft="32dp"
         android:layout_marginTop="5dp"
-        android:layout_marginEnd="87dp"
-        android:layout_marginRight="87dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginRight="32dp"
         android:layout_marginBottom="6dp"
         android:onClick="changeUser_U"
         android:text="Cambiar usuario"
         app:backgroundTint="#1F3A20"
         app:layout_constraintBottom_toTopOf="@+id/changePwButton"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/scrollView2" />
 
@@ -332,7 +328,6 @@
         android:layout_height="153dp"
         android:layout_marginStart="22dp"
         android:layout_marginLeft="22dp"
-        android:layout_marginTop="32dp"
         android:layout_marginEnd="25dp"
         android:layout_marginRight="25dp"
         android:layout_marginBottom="5dp"
@@ -356,12 +351,14 @@
         android:layout_marginLeft="108dp"
         android:layout_marginEnd="113dp"
         android:layout_marginRight="113dp"
-        android:layout_marginBottom="60dp"
+        android:layout_marginBottom="76dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toTopOf="@+id/scrollView2"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.939"
-        app:layout_constraintStart_toEndOf="@+id/linear">
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/linear"
+        app:layout_constraintTop_toTopOf="@+id/linearEdit"
+        app:layout_constraintVertical_bias="0.974">
 
         <ImageButton
             android:id="@+id/userName_UButton"
