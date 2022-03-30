@@ -16,7 +16,7 @@ import es.ucm.fdi.appdopta.features.settings.SettingsActivity;
 
 public class LoginActivity extends AppCompatActivity {
 
-    EditText username, password;
+    EditText username, password; //h
     Button loginButt, registerButt;
     AppdoptaDBHelper dbHelper;
 
