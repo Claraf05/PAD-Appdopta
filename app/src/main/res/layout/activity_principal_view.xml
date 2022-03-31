@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#78CD64"
+    android:background="#C7F0BE"
+
     tools:context=".features.login.LoginActivity">
 
     <LinearLayout
@@ -42,6 +43,7 @@
             android:layout_weight="1"
             android:gravity="center_horizontal"
             android:text="APPDOPTA ORIGINALS"
+            android:textColor="#1F3A20"
             android:textSize="27dp"
             android:textStyle="bold" />
 
@@ -62,7 +64,7 @@
 
     </LinearLayout>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <!--<androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout"
         android:layout_width="wrap_content"
         android:layout_height="40dp"
@@ -70,40 +72,12 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/div_line">
+-->
 
-        <TextView
-            android:id="@+id/textView2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="100dp"
-            android:layout_marginLeft="100dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="100dp"
-            android:layout_marginRight="100dp"
-            android:layout_marginBottom="8dp"
-            android:text="¡Encuentra tu mascota ideal!"
-            android:textSize="20sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <ImageView
-            android:id="@+id/menu"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_marginStart="6dp"
-            android:layout_marginLeft="6dp"
-            android:layout_marginEnd="23dp"
-            android:layout_marginRight="23dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/textView2"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/menu" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
+    <!--</androidx.constraintlayout.widget.ConstraintLayout>
 
     <LinearLayout
+        android:id="@+id/linearLayout4"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:background="#C9E3AF"
@@ -112,38 +86,153 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/constraintLayout">
+-->
 
-        <LinearLayout
-            android:layout_width="match_parent"
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="100dp"
+        android:layout_marginLeft="100dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="100dp"
+        android:layout_marginRight="100dp"
+        android:layout_marginBottom="8dp"
+        android:text="¡Encuentra tu mascota ideal!"
+        android:textColor="#1F3A20"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.348"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.127" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout5"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="5dp"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@+id/textView2">
+
+        <SearchView
+            android:id="@+id/searchView"
+            android:layout_width="343dp"
+            android:layout_height="wrap_content"
+            android:baselineAligned="false"
+            android:iconifiedByDefault="false"
+            android:queryHint="Buscar">
+        </SearchView>
+
+        <ImageView
+            android:id="@+id/filtro"
+            android:layout_width="50dp"
             android:layout_height="50dp"
-            android:orientation="horizontal">
-
-            <SearchView
-                android:id="@+id/searchView"
-                android:layout_width="343dp"
-                android:layout_height="wrap_content"
-                android:baselineAligned="false"
-                android:iconifiedByDefault="false"
-                android:queryHint="Buscar"></SearchView>
-
-            <ImageView
-                android:id="@+id/filtro"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                app:srcCompat="@drawable/filtro" />
-        </LinearLayout>
-
+            app:srcCompat="@drawable/filtro" />
     </LinearLayout>
+
+    <!-- </LinearLayout>-->
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/listaMascotas"
-        android:layout_width="325dp"
-        android:layout_height="525dp"
+        android:layout_width="340dp"
+        android:layout_height="474dp"
         android:layout_gravity="center"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/toolbar"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout5">
 
     </androidx.recyclerview.widget.RecyclerView>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+     <androidx.appcompat.widget.Toolbar
+         android:id="@+id/toolbar"
+         android:layout_width="0dp"
+         android:layout_height="wrap_content"
+         android:background="#1F3A20"
+         android:minHeight="?attr/actionBarSize"
+         android:theme="?attr/actionBarTheme"
+         app:layout_constraintBottom_toBottomOf="parent"
+         app:layout_constraintEnd_toEndOf="parent"
+         app:layout_constraintHorizontal_bias="0.0"
+         app:layout_constraintStart_toStartOf="parent"
+         app:layout_constraintTop_toTopOf="parent"
+         app:layout_constraintVertical_bias="1.0" />
+
+     <ImageButton
+         android:id="@+id/mainActButton"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:layout_marginStart="8dp"
+         android:layout_marginLeft="8dp"
+         android:layout_marginTop="1dp"
+         android:layout_marginEnd="8dp"
+         android:layout_marginRight="8dp"
+         android:layout_marginBottom="1dp"
+         android:background="#00FFFFFF"
+         android:onClick="goToMain"
+         android:scaleType="centerInside"
+         android:scaleX="1.75"
+         android:scaleY="1.75"
+         app:layout_constraintBottom_toBottomOf="parent"
+         app:layout_constraintEnd_toStartOf="@+id/userInfoButton"
+         app:layout_constraintStart_toStartOf="parent"
+         app:layout_constraintTop_toTopOf="@+id/toolbar"
+         app:layout_constraintVertical_bias="0.684"
+         app:srcCompat="@drawable/ic_paw"
+         tools:ignore="VectorDrawableCompat,SpeakableTextPresentCheck"
+         app:tint="#A7DD9A" />
+
+     <ImageButton
+         android:id="@+id/userInfoButton"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:layout_marginStart="8dp"
+         android:layout_marginLeft="8dp"
+         android:layout_marginTop="1dp"
+         android:layout_marginEnd="8dp"
+         android:layout_marginRight="8dp"
+         android:layout_marginBottom="1dp"
+         android:background="#00FFFFFF"
+         android:onClick="userInfoActivity"
+         android:scaleType="centerInside"
+         android:scaleX="1.5"
+         android:scaleY="1.5"
+         android:tint="#A7DD9A"
+         app:layout_constraintBottom_toBottomOf="parent"
+         app:layout_constraintEnd_toStartOf="@+id/settingsButton"
+         app:layout_constraintStart_toEndOf="@+id/mainActButton"
+         app:layout_constraintTop_toTopOf="@+id/toolbar"
+         app:layout_constraintVertical_bias="0.736"
+         app:srcCompat="@drawable/ic_user"
+         tools:ignore="VectorDrawableCompat,SpeakableTextPresentCheck" />
+
+     <ImageButton
+         android:id="@+id/settingsButton"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:layout_marginStart="8dp"
+         android:layout_marginLeft="8dp"
+         android:layout_marginTop="1dp"
+         android:layout_marginEnd="8dp"
+         android:layout_marginRight="8dp"
+         android:layout_marginBottom="1dp"
+         android:background="#00FFFFFF"
+         android:scaleType="centerInside"
+         android:scaleX="1.5"
+         android:scaleY="1.5"
+         android:tint="#A7DD9A"
+         app:layout_constraintBottom_toBottomOf="parent"
+         app:layout_constraintEnd_toEndOf="parent"
+         app:layout_constraintHorizontal_bias="0.696"
+         app:layout_constraintStart_toEndOf="@id/userInfoButton"
+         app:layout_constraintTop_toTopOf="@+id/toolbar"
+         app:layout_constraintVertical_bias="0.736"
+         app:srcCompat="@drawable/ic_settings"
+         tools:ignore="VectorDrawableCompat,SpeakableTextPresentCheck" />
+ </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+<!-- android:background="#78CD64"-->
