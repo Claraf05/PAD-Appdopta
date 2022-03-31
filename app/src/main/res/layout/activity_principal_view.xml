@@ -10,26 +10,26 @@
 
     <LinearLayout
         android:id="@+id/linearLayout"
-        android:layout_width="407dp"
-        android:layout_height="93dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/div_line"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_marginBottom="@+id/div_line">
 
         <ImageView
             android:id="@+id/imageView"
-            android:layout_width="87dp"
-            android:layout_height="91dp"
+            android:layout_width="90dp"
+            android:layout_height="90dp"
             android:layout_marginStart="0dp"
             android:layout_marginLeft="0dp"
             android:layout_marginTop="0dp"
-            android:layout_marginEnd="32dp"
-            android:layout_marginRight="32dp"
-            android:layout_marginBottom="0dp"
+            android:layout_marginEnd="35dp"
+            android:layout_marginRight="35dp"
             android:baselineAlignBottom="true"
-            android:contentDescription="logoo"
-            android:scaleType="fitCenter"
+            android:contentDescription="@string/logoo"
             app:layout_constraintBottom_toBottomOf="@id/textView"
             app:layout_constraintStart_toStartOf="@id/textView"
             app:layout_constraintTop_toTopOf="@id/textView"
@@ -37,92 +37,66 @@
 
         <TextView
             android:id="@+id/textView"
-            android:layout_width="300dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
-            android:layout_weight="1"
+            android:layout_marginEnd="30dp"
+            android:layout_marginRight="30dp"
             android:gravity="center_horizontal"
             android:text="APPDOPTA ORIGINALS"
             android:textColor="#1F3A20"
-            android:textSize="27dp"
+            android:textSize="35sp"
             android:textStyle="bold" />
 
     </LinearLayout>
 
     <LinearLayout
-
         android:id="@+id/div_line"
         android:layout_width="fill_parent"
-        android:layout_height="1dp"
-        android:layout_marginTop="2dp"
+        android:layout_height="2dp"
         android:background="@color/black"
         android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/textView2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout">
 
-
     </LinearLayout>
-
-    <!--<androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/constraintLayout"
-        android:layout_width="wrap_content"
-        android:layout_height="40dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/div_line">
--->
-
-    <!--</androidx.constraintlayout.widget.ConstraintLayout>
-
-    <LinearLayout
-        android:id="@+id/linearLayout4"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:background="#C9E3AF"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/constraintLayout">
--->
 
     <TextView
         android:id="@+id/textView2"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="100dp"
-        android:layout_marginLeft="100dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="100dp"
-        android:layout_marginRight="100dp"
-        android:layout_marginBottom="8dp"
-        android:text="¡Encuentra tu mascota ideal!"
+        android:layout_marginBottom="2dp"
+        android:gravity="center"
+        android:text="🐾  Encuentra tu mascota ideal  🐾"
         android:textColor="#1F3A20"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout5"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.348"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.127" />
+        app:layout_constraintTop_toBottomOf="@+id/div_line" />
 
     <LinearLayout
         android:id="@+id/linearLayout5"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="2dp"
         android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/textView3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView2">
 
         <SearchView
             android:id="@+id/searchView"
-            android:layout_width="343dp"
+            android:layout_width="345dp"
             android:layout_height="wrap_content"
             android:baselineAligned="false"
             android:iconifiedByDefault="false"
             android:queryHint="Buscar">
+
         </SearchView>
 
         <ImageView
@@ -132,36 +106,50 @@
             app:srcCompat="@drawable/filtro" />
     </LinearLayout>
 
-    <!-- </LinearLayout>-->
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="2dp"
+        android:gravity="left"
+        android:text="Mascotas en adopción:"
+        android:textColor="#1F3A20"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/listaMascotas"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout5" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/listaMascotas"
         android:layout_width="340dp"
         android:layout_height="474dp"
         android:layout_gravity="center"
+        android:layout_marginTop="2dp"
         app:layout_constraintBottom_toTopOf="@+id/toolbar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout5">
+        app:layout_constraintTop_toBottomOf="@+id/textView3">
 
     </androidx.recyclerview.widget.RecyclerView>
 
 
-     <androidx.appcompat.widget.Toolbar
-         android:id="@+id/toolbar"
-         android:layout_width="0dp"
-         android:layout_height="wrap_content"
-         android:background="#1F3A20"
-         android:minHeight="?attr/actionBarSize"
-         android:theme="?attr/actionBarTheme"
-         app:layout_constraintBottom_toBottomOf="parent"
-         app:layout_constraintEnd_toEndOf="parent"
-         app:layout_constraintHorizontal_bias="0.0"
-         app:layout_constraintStart_toStartOf="parent"
-         app:layout_constraintTop_toTopOf="parent"
-         app:layout_constraintVertical_bias="1.0" />
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="1dp"
+        android:background="#1F3A20"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/listaMascotas" />
 
-     <ImageButton
+    <ImageButton
          android:id="@+id/mainActButton"
          android:layout_width="wrap_content"
          android:layout_height="wrap_content"
@@ -233,6 +221,3 @@
          app:srcCompat="@drawable/ic_settings"
          tools:ignore="VectorDrawableCompat,SpeakableTextPresentCheck" />
  </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-<!-- android:background="#78CD64"-->
