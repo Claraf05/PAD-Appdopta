@@ -1,5 +1,6 @@
 package es.ucm.fdi.appdopta;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -12,7 +13,13 @@ import android.widget.RadioGroup;
 import android.widget.ScrollView;
 import android.widget.ToggleButton;
 
-public class ficha extends AppCompatActivity {
+import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.OnMapReadyCallback;
+import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.MarkerOptions;
+
+public class ficha extends AppCompatActivity implements OnMapReadyCallback {
 
     ToggleButton infoButton;
     LinearLayout dataDue;
@@ -30,6 +37,9 @@ public class ficha extends AppCompatActivity {
         desc = findViewById(R.id.scrollViewDesc);
         dataChip = findViewById(R.id.dataChip);
 
+        SupportMapFragment mapFragment= (SupportMapFragment)getSupportFragmentManager()
+                .findFragmentById(R.id.map);
+        mapFragment.getMapAsync(this);
     }
     public void desc(View view){
         desc.setVisibility(View.VISIBLE);
@@ -48,5 +58,10 @@ public class ficha extends AppCompatActivity {
             dataDue.setVisibility(View.INVISIBLE);
             Log.d("prueba", "NO");
         }
+    }
+
+    @Override
+    public void onMapReady(@NonNull GoogleMap googleMap) {
+        googleMap.addMarker(new MarkerOptions().position(new LatLng(0,0)).title("Marker"));
     }
 }
