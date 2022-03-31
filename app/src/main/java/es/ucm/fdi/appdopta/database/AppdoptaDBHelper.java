@@ -123,6 +123,7 @@ public class AppdoptaDBHelper extends SQLiteOpenHelper {
         }
     }
 
+    //por terminar
     public boolean insertPetData(int id, int id_owner, String petname, String gender, String race, String specie, String bday, int vacc_rabia, int vacc_parvovirus, int vacc_moquillo, int vacc_polivalente, int chip_num, int chip_date, int chip_loc) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();

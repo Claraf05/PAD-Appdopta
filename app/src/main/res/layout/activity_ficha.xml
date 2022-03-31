@@ -159,7 +159,8 @@
                         android:editable="false"
                         android:ems="10"
                         android:gravity="start|top"
-                        android:inputType="none" />
+                        android:inputType="none"
+                        android:minHeight="48dp" />
                 </ScrollView>
             </androidx.constraintlayout.widget.ConstraintLayout>
 
