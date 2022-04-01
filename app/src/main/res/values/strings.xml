@@ -17,4 +17,6 @@
     </string>
     <string name="attachment_summary_off">Only download attachments when manually requested</string>
     <string name="logoo">logo</string>
+    <string name="nombreMascota">Nombre</string>
+    <string name="especieMascota">Especie</string>
 </resources>
