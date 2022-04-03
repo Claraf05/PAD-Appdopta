@@ -3,16 +3,20 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Belen/Documents/PAD-Appdopta/app/src/main/res/layout-land/activity_login.xml" value="0.2109375" />
+        <entry key="..\:/Users/Belen/Documents/PAD-Appdopta/app/src/main/res/layout/activity_ficha.xml" value="0.22" />
+        <entry key="..\:/Users/Belen/Documents/PAD-Appdopta/app/src/main/res/layout/activity_login.xml" value="0.1796875" />
+        <entry key="..\:/Users/Belen/Documents/PAD-Appdopta/app/src/main/res/layout/activity_main.xml" value="0.22" />
+        <entry key="..\:/Users/clara/Desktop/PAD/Proyecto/PAD-Appdopta/app/src/main/res/drawable/ic_email.xml" value="0.1345" />
+        <entry key="..\:/Users/clara/Desktop/PAD/Proyecto/PAD-Appdopta/app/src/main/res/drawable/ic_paw.xml" value="0.1345" />
+        <entry key="..\:/Users/clara/Desktop/PAD/Proyecto/PAD-Appdopta/app/src/main/res/drawable/ic_phone.xml" value="0.153" />
+        <entry key="..\:/Users/clara/Desktop/PAD/Proyecto/PAD-Appdopta/app/src/main/res/layout-land/activity_login.xml" value="0.3177083333333333" />
+        <entry key="..\:/Users/clara/Desktop/PAD/Proyecto/PAD-Appdopta/app/src/main/res/layout-land/activity_principal_view.xml" value="0.20520833333333333" />
         <entry key="..\:/Users/clara/Desktop/PAD/Proyecto/PAD-Appdopta/app/src/main/res/layout/activity_login.xml" value="0.16590678824721378" />
-        <entry key="..\:/Users/clara/Desktop/PAD/Proyecto/PAD-Appdopta/app/src/main/res/layout/activity_register.xml" value="0.2984375" />
+        <entry key="..\:/Users/clara/Desktop/PAD/Proyecto/PAD-Appdopta/app/src/main/res/layout/activity_principal_view.xml" value="0.20364583333333333" />
+        <entry key="..\:/Users/clara/Desktop/PAD/Proyecto/PAD-Appdopta/app/src/main/res/layout/activity_register.xml" value="0.33" />
         <entry key="..\:/Users/clara/Desktop/PAD/Proyecto/PAD-Appdopta/app/src/main/res/layout/activity_user.xml" value="0.2984375" />
         <entry key="..\:/Users/clara/Desktop/PAD/Proyecto/PAD-Appdopta/app/src/main/res/layout/settings_activity.xml" value="0.2984375" />
-        <entry key="..\:/Users/lenovo/OneDrive/Documentos/PAD-Appdopta/app/src/main/res/layout-land/activity_principal_view.xml" value="0.38828828828828826" />
-        <entry key="..\:/Users/lenovo/OneDrive/Documentos/PAD-Appdopta/app/src/main/res/layout/activity_ficha.xml" value="0.22447916666666667" />
-        <entry key="..\:/Users/lenovo/OneDrive/Documentos/PAD-Appdopta/app/src/main/res/layout/activity_main.xml" value="0.22447916666666667" />
-        <entry key="..\:/Users/lenovo/OneDrive/Documentos/PAD-Appdopta/app/src/main/res/layout/activity_principal_view.xml" value="0.25" />
-        <entry key="..\:/Users/lenovo/OneDrive/Documentos/PAD-Appdopta/app/src/main/res/layout/activity_user.xml" value="0.22447916666666667" />
-        <entry key="..\:/Users/lenovo/OneDrive/Documentos/PAD-Appdopta/app/src/main/res/layout/item_list.xml" value="0.5" />
       </map>
     </option>
   </component>
