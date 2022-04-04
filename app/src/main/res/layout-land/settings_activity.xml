@@ -14,7 +14,6 @@
         android:layout_height="57dp"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
-        android:layout_marginTop="32dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:onClick="logOut"
@@ -22,9 +21,7 @@
         app:backgroundTint="#1F3A20"
         app:layout_constraintBottom_toTopOf="@+id/toolbar"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout3"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
@@ -112,108 +109,107 @@
         app:srcCompat="@drawable/ic_settings"
         tools:ignore="VectorDrawableCompat,SpeakableTextPresentCheck" />
 
-    <LinearLayout
-        android:id="@+id/linearLayout3"
-        android:layout_width="411dp"
-        android:layout_height="437dp"
-        android:layout_marginEnd="2dp"
-        android:layout_marginRight="2dp"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toTopOf="@+id/toolbar"
+    <ScrollView
+        android:layout_width="721dp"
+        android:layout_height="243dp"
+        app:layout_constraintBottom_toTopOf="@+id/logoutButton"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.057">
+        app:layout_constraintTop_toTopOf="parent">
 
-        <Switch
-            android:id="@+id/notificationSwitch"
-            android:layout_width="match_parent"
-            android:layout_height="48dp"
-            android:layout_marginStart="24dp"
-            android:layout_marginLeft="24dp"
-            android:layout_marginTop="32dp"
-            android:layout_marginEnd="24dp"
-            android:layout_marginRight="24dp"
-            android:text="Notificaciones"
-            android:textSize="16sp" />
-
-        <TextView
-            android:id="@+id/languageText"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="24dp"
-            android:layout_marginLeft="24dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="24dp"
-            android:layout_marginRight="24dp"
-            android:gravity="center_vertical"
-            android:minHeight="48dp"
-            android:text="Idioma:"
-            android:textColor="#000000"
-            android:textSize="16sp" />
+            android:orientation="vertical">
 
-        <RadioButton
-            android:id="@+id/spanishLanguaje"
-            android:layout_width="157dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:drawableLeft="@drawable/ic_spanish"
-            android:text="Español" />
+            <TextView
+                android:id="@+id/changeUser"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginLeft="24dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="24dp"
+                android:layout_marginRight="24dp"
+                android:gravity="center_vertical"
+                android:onClick="changeUser"
+                android:text="Cambiar nombre de usuario"
+                android:textColor="#000000"
+                android:textSize="16sp" />
 
-        <RadioButton
-            android:id="@+id/englishLanguaje"
-            android:layout_width="156dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:drawableLeft="@drawable/ic_english"
-            android:text="English" />
+            <TextView
+                android:id="@+id/changePw"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginLeft="24dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="24dp"
+                android:layout_marginRight="24dp"
+                android:gravity="center_vertical"
+                android:onClick="changePw_S"
+                android:text="Cambiar contraseña"
+                android:textColor="#000000"
+                android:textSize="16sp" />
 
-        <TextView
-            android:id="@+id/changePw3"
-            android:layout_width="match_parent"
-            android:layout_height="48dp"
-            android:layout_marginStart="24dp"
-            android:layout_marginLeft="24dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="24dp"
-            android:layout_marginRight="24dp"
-            android:gravity="center_vertical"
-            android:onClick="userInfoActivity"
-            android:text="Información de usuario"
-            android:textColor="#000000"
-            android:textSize="16sp" />
+            <TextView
+                android:id="@+id/languageText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginLeft="24dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="24dp"
+                android:layout_marginRight="24dp"
+                android:gravity="center_vertical"
+                android:minHeight="48dp"
+                android:text="Idioma:"
+                android:textColor="#000000"
+                android:textSize="16sp" />
 
-        <TextView
-            android:id="@+id/changeUser"
-            android:layout_width="match_parent"
-            android:layout_height="48dp"
-            android:layout_marginStart="24dp"
-            android:layout_marginLeft="24dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="24dp"
-            android:layout_marginRight="24dp"
-            android:gravity="center_vertical"
-            android:onClick="changeUser"
-            android:text="Cambiar nombre de usuario"
-            android:textColor="#000000"
-            android:textSize="16sp" />
+            <RadioButton
+                android:id="@+id/spanishLanguaje"
+                android:layout_width="157dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:drawableLeft="@drawable/ic_spanish"
+                android:text="Español" />
 
-        <TextView
-            android:id="@+id/changePw"
-            android:layout_width="match_parent"
-            android:layout_height="48dp"
-            android:layout_marginStart="24dp"
-            android:layout_marginLeft="24dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="24dp"
-            android:layout_marginRight="24dp"
-            android:gravity="center_vertical"
-            android:onClick="changePw_S"
-            android:text="Cambiar contraseña"
-            android:textColor="#000000"
-            android:textSize="16sp" />
+            <RadioButton
+                android:id="@+id/englishLanguaje"
+                android:layout_width="156dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:drawableLeft="@drawable/ic_english"
+                android:text="English" />
 
-    </LinearLayout>
+            <Switch
+                android:id="@+id/notificationSwitch"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginLeft="24dp"
+                android:layout_marginTop="32dp"
+                android:layout_marginEnd="24dp"
+                android:layout_marginRight="24dp"
+                android:text="Notificaciones"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/changePw3"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginLeft="24dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="24dp"
+                android:layout_marginRight="24dp"
+                android:gravity="center_vertical"
+                android:onClick="userInfoActivity"
+                android:text="Información de usuario"
+                android:textColor="#000000"
+                android:textSize="16sp" />
+        </LinearLayout>
+    </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
