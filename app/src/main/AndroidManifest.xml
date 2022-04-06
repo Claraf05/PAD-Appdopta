@@ -22,7 +22,7 @@
             android:label="@string/title_activity_settings" />
         <activity android:name=".features.login.LoginActivity" />
         <activity android:name=".features.register.RegisterActivity" />
-        <activity android:name=".ficha" />
+        <activity android:name=".fichaActivity" />
         <activity
             android:name=".MainActivity"
             android:exported="true">
