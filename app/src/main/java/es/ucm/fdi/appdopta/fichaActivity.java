@@ -56,7 +56,7 @@ public class fichaActivity extends AppCompatActivity implements OnMapReadyCallba
         card = findViewById(R.id.cardView);
 
         Geocoder geo = new Geocoder(this);
-        String loc = "Espartinas";
+        String loc = "San Blas";
         try{
             List<Address> ads = geo.getFromLocationName(loc + "Spain",1);
             if(ads!=null && !ads.isEmpty()){

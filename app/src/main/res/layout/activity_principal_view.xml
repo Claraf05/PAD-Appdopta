@@ -13,11 +13,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintBottom_toTopOf="@+id/div_line"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_marginBottom="@+id/div_line">
+        >
 
         <ImageView
             android:id="@+id/imageView"
@@ -50,19 +49,6 @@
 
     </LinearLayout>
 
-    <LinearLayout
-        android:id="@+id/div_line"
-        android:layout_width="fill_parent"
-        android:layout_height="2dp"
-        android:background="@color/black"
-        android:orientation="horizontal"
-        app:layout_constraintBottom_toTopOf="@+id/textView2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout">
-
-    </LinearLayout>
-
     <TextView
         android:id="@+id/textView2"
         android:layout_width="match_parent"
@@ -76,7 +62,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/div_line" />
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
 
     <LinearLayout
         android:id="@+id/linearLayout5"

@@ -15,7 +15,6 @@ import java.util.Random;
 import es.ucm.fdi.appdopta.R;
 import es.ucm.fdi.appdopta.database.AppdoptaDBHelper;
 import es.ucm.fdi.appdopta.features.login.LoginActivity;
-import es.ucm.fdi.appdopta.ficha;
 
 public class RegisterActivity extends AppCompatActivity {
 

@@ -22,10 +22,8 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
-        android:layout_marginLeft="10dp"
         android:layout_marginTop="50dp"
         android:layout_marginEnd="20dp"
-        android:layout_marginRight="20dp"
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/imagen"
@@ -35,7 +33,9 @@
             android:id="@+id/nombreAnimal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Nombre" />
+            android:hint="Nombre"
+            android:textSize="24sp"
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/razaAnimal"
@@ -55,10 +55,11 @@
             android:layout_height="wrap_content"
             android:hint="Sexo" />
 
-        <EditText
+        <TextView
             android:id="@+id/fechaAnimal"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
             android:ems="10"
             android:hint="Fecha Nacimiento"
             android:inputType="date"
@@ -91,6 +92,7 @@
             android:visibility="visible"
             app:cardBackgroundColor="#B7FFFFFF"
             app:cardCornerRadius="25dp"
+            app:cardElevation="0dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.509"
@@ -105,6 +107,10 @@
                     android:id="@+id/dataChip"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginBottom="10dp"
                     android:orientation="vertical"
                     android:visibility="invisible"
                     app:layout_constraintBottom_toBottomOf="parent"
@@ -112,21 +118,23 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent">
 
-                    <EditText
+                    <TextView
                         android:id="@+id/fechaChip"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:background="@android:color/transparent"
                         android:ems="10"
                         android:hint="Fecha Implantación"
-                        android:inputType="date" />
+                        android:inputType="none" />
 
-                    <EditText
+                    <TextView
                         android:id="@+id/numChip"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:background="@android:color/transparent"
                         android:ems="10"
                         android:hint="Número Microchip"
-                        android:inputType="number" />
+                        android:inputType="none" />
 
                     <TextView
                         android:id="@+id/localizacionChip"
@@ -137,13 +145,11 @@
 
                 <ScrollView
                     android:id="@+id/scrollViewDesc"
-                    android:layout_width="330dp"
+                    android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_marginStart="10dp"
-                    android:layout_marginLeft="10dp"
                     android:layout_marginTop="20dp"
                     android:layout_marginEnd="10dp"
-                    android:layout_marginRight="10dp"
                     android:layout_marginBottom="20dp"
                     android:visibility="visible"
                     app:layout_constraintBottom_toBottomOf="parent"
@@ -151,15 +157,17 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent">
 
-                    <EditText
+                    <TextView
                         android:id="@+id/editTextTextMultiLine"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:editable="false"
+                        android:layout_marginRight="10dp"
+                        android:background="@android:color/transparent"
                         android:ems="10"
                         android:gravity="start|top"
                         android:inputType="none"
                         android:minHeight="48dp"
+                        android:text="aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
                         tools:ignore="SpeakableTextPresentCheck" />
                 </ScrollView>
             </androidx.constraintlayout.widget.ConstraintLayout>
@@ -204,7 +212,7 @@
             android:layout_height="0dp"
             android:orientation="vertical"
             android:paddingLeft="10dp"
-            android:visibility="visible"
+            android:visibility="invisible"
             app:layout_constraintBottom_toTopOf="@+id/cardView"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/infoDue">
