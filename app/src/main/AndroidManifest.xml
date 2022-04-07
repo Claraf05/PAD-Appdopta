@@ -22,7 +22,8 @@
             android:label="@string/title_activity_settings" />
         <activity android:name=".features.login.LoginActivity" />
         <activity android:name=".features.register.RegisterActivity" />
-        <activity android:name=".fichaActivity" />
+        <activity android:name=".features.Fichas.fichaActivity" />
+        <activity android:name=".features.Fichas.aniadirFichaActivity"/>
         <activity
             android:name=".MainActivity"
             android:exported="true">
