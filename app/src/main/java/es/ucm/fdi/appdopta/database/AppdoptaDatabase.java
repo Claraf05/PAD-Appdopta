@@ -5,7 +5,6 @@ import android.provider.BaseColumns;
 public class AppdoptaDatabase {
 
     private AppdoptaDatabase() {}
-
    //pa poner lo que salga en cada tabla
 
     //tabla users
@@ -28,7 +27,7 @@ public class AppdoptaDatabase {
     public static class PetOwnerTable implements BaseColumns{
             public static final String TABLE_NAME = "pet_owners";
             public static final String ID_C = "id_user";
-            public static final String POSTCOD_C = "post_code";
+            public static final String LOCALIDAD_C = "post_code";
     }
 
     //tabla mascotas
@@ -44,9 +43,9 @@ public class AppdoptaDatabase {
         public static final String BDAY_C = "bday";
          //una columna por cada tipiode vacuna
         public static final String VACC_RABIA_C = "vacc_rabia";
-        public static final String VACC_PARVOVIRUS_C = "vacc_parvovirus";
-        public static final String VACC_MOQUILLO_C = "vacc_moquillo";
-        public static final String VACC_POLIVALENTE_C = "vacc_polivalente";
+        public static final String VACC_HEPATITIS_C = "vacc_hepatitis";
+        public static final String VACC_LEISMANIOSIS_C = "vacc_leismaniosis";
+
         //1 columna por dato del chip(mirar la view de ficha
         public static final String CHIP_NUM_C = "chip_num";
         public static final String CHIP_DATE_C = "chip_date";

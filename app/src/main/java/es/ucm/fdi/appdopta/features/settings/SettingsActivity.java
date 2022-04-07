@@ -14,6 +14,9 @@ import es.ucm.fdi.appdopta.features.user.UserActivity;
 
 public class SettingsActivity extends AppCompatActivity {
 
+    private Bundle infoUserName;
+    private String u;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,6 +26,8 @@ public class SettingsActivity extends AppCompatActivity {
         if (actionBar != null) {
             actionBar.setDisplayHomeAsUpEnabled(true);
         }
+        infoUserName = getIntent().getExtras();
+        u = infoUserName.getString("username");
     }
 
     public static class SettingsFragment extends PreferenceFragmentCompat {
@@ -54,6 +59,7 @@ public class SettingsActivity extends AppCompatActivity {
 
     public void userInfoActivity(View view){
         Intent intent = new Intent(getApplicationContext(), UserActivity.class);
+        intent.putExtra("username", u);
         startActivity(intent);
     }
 }

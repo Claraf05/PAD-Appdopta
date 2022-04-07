@@ -9,75 +9,42 @@
 
     <LinearLayout
         android:id="@+id/linearEdit"
-        android:layout_width="wrap_content"
+        android:layout_width="148dp"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="@+id/linear"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.006"
         app:layout_constraintStart_toEndOf="@+id/linear"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.393">
+        app:layout_constraintVertical_bias="1.0">
 
-        <TextView
+        <EditText
             android:id="@+id/Username_U"
             android:layout_width="104dp"
-            android:layout_height="34dp"
+            android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:text="Usuario"
             android:textColor="#000000"
-            android:textSize="24sp"
-            app:layout_constraintBottom_toTopOf="@+id/toolbar2"
-            app:layout_constraintEnd_toEndOf="@+id/toolbar2"
-            app:layout_constraintHorizontal_bias="0.539"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.0" />
+            android:textSize="24sp" />
 
-        <TextView
-            android:id="@+id/userName_U"
-            android:layout_width="104dp"
-            android:layout_height="34dp"
-            android:layout_marginTop="8dp"
-            android:text="Nombre"
-            android:textColor="#000000"
-            android:textSize="24sp"
-            app:layout_constraintBottom_toTopOf="@+id/toolbar2"
-            app:layout_constraintEnd_toEndOf="@+id/toolbar2"
-            app:layout_constraintHorizontal_bias="0.539"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.0" />
-
-        <TextView
+        <EditText
             android:id="@+id/userPhone_U"
-            android:layout_width="wrap_content"
-            android:layout_height="34dp"
+            android:layout_width="111dp"
+            android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:text="Telefono"
             android:textColor="#000000"
-            android:textSize="24sp"
-            app:layout_constraintBottom_toTopOf="@+id/toolbar2"
-            app:layout_constraintEnd_toEndOf="@+id/toolbar2"
-            app:layout_constraintHorizontal_bias="0.539"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.0" />
+            android:textSize="24sp" />
 
-        <TextView
+        <EditText
             android:id="@+id/userEmail_U"
-            android:layout_width="79dp"
-            android:layout_height="34dp"
+            android:layout_width="96dp"
+            android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:text="Email"
             android:textColor="#000000"
-            android:textSize="24sp"
-            app:layout_constraintBottom_toTopOf="@+id/toolbar2"
-            app:layout_constraintEnd_toEndOf="@+id/toolbar2"
-            app:layout_constraintHorizontal_bias="0.539"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.0" />
+            android:textSize="24sp" />
 
     </LinearLayout>
 
@@ -86,16 +53,13 @@
         android:layout_width="267dp"
         android:layout_height="56dp"
         android:layout_marginStart="32dp"
-        android:layout_marginLeft="32dp"
         android:layout_marginTop="6dp"
         android:layout_marginEnd="32dp"
-        android:layout_marginRight="32dp"
         android:onClick="changePw_U"
         android:text="Cambiar contraseña"
         app:backgroundTint="#1F3A20"
         app:layout_constraintBottom_toTopOf="@+id/logoutUserButton"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.512"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/changeUserButton" />
 
@@ -214,10 +178,9 @@
 
     <LinearLayout
         android:id="@+id/linear"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="110dp"
+        android:layout_height="161dp"
         android:layout_marginEnd="32dp"
-        android:layout_marginRight="32dp"
         android:layout_marginBottom="416dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toTopOf="@+id/toolbar5"
@@ -232,21 +195,6 @@
             android:layout_height="34dp"
             android:layout_marginTop="8dp"
             android:text="Usuario:"
-            android:textColor="#000000"
-            android:textSize="24sp"
-            app:layout_constraintBottom_toTopOf="@+id/toolbar2"
-            app:layout_constraintEnd_toEndOf="@+id/toolbar2"
-            app:layout_constraintHorizontal_bias="0.539"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.0" />
-
-        <TextView
-            android:id="@+id/userName_"
-            android:layout_width="104dp"
-            android:layout_height="34dp"
-            android:layout_marginTop="8dp"
-            android:text="Nombre:"
             android:textColor="#000000"
             android:textSize="24sp"
             app:layout_constraintBottom_toTopOf="@+id/toolbar2"
@@ -286,21 +234,6 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.0" />
 
-        <TextView
-            android:id="@+id/textView13"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:text="Mascotas: "
-            android:textColor="#000000"
-            android:textSize="24sp"
-            app:layout_constraintBottom_toTopOf="@+id/toolbar2"
-            app:layout_constraintEnd_toEndOf="@+id/toolbar2"
-            app:layout_constraintHorizontal_bias="0.539"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.0" />
-
     </LinearLayout>
 
     <Button
@@ -308,10 +241,7 @@
         android:layout_width="wrap_content"
         android:layout_height="56dp"
         android:layout_marginStart="32dp"
-        android:layout_marginLeft="32dp"
-        android:layout_marginTop="5dp"
         android:layout_marginEnd="32dp"
-        android:layout_marginRight="32dp"
         android:layout_marginBottom="6dp"
         android:onClick="changeUser_U"
         android:text="Cambiar usuario"
@@ -320,58 +250,21 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/scrollView2" />
+        app:layout_constraintTop_toBottomOf="@+id/linearEdit" />
 
     <LinearLayout
-        android:id="@+id/scrollView2"
-        android:layout_width="380dp"
-        android:layout_height="153dp"
-        android:layout_marginStart="22dp"
-        android:layout_marginLeft="22dp"
-        android:layout_marginEnd="25dp"
-        android:layout_marginRight="25dp"
-        android:layout_marginBottom="5dp"
+        android:layout_width="43dp"
+        android:layout_height="101dp"
+        android:layout_marginTop="113dp"
+        android:layout_marginEnd="113dp"
+        android:layout_marginBottom="64dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toTopOf="@+id/changeUserButton"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.538"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linear"
-        app:layout_constraintVertical_bias="0.0">
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="52dp"
-        android:layout_height="130dp"
-        android:layout_marginStart="108dp"
-        android:layout_marginLeft="108dp"
-        android:layout_marginEnd="113dp"
-        android:layout_marginRight="113dp"
-        android:layout_marginBottom="76dp"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toTopOf="@+id/scrollView2"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/linear"
-        app:layout_constraintTop_toTopOf="@+id/linearEdit"
-        app:layout_constraintVertical_bias="0.974">
-
-        <ImageButton
-            android:id="@+id/userName_UButton"
-            android:layout_width="wrap_content"
-            android:layout_height="47dp"
-            android:background="#00FFFFFF"
-            android:onClick="goToMain_U"
-            android:scaleType="centerInside"
-            android:scaleX="1"
-            android:scaleY="1"
-            android:tint="#000000"
-            app:srcCompat="@drawable/ic_edit"
-            tools:ignore="VectorDrawableCompat" />
+        app:layout_constraintStart_toEndOf="@+id/linearEdit"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.8">
 
         <ImageButton
             android:id="@+id/userPhone_UButton"

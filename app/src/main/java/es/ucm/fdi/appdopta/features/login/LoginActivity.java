@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -19,6 +20,7 @@ public class LoginActivity extends AppCompatActivity {
     EditText username, password; //h
     Button loginButt, registerButt;
     AppdoptaDBHelper dbHelper;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,6 +47,7 @@ public class LoginActivity extends AppCompatActivity {
                 CharSequence txt = "Bienvenido: " + user;
                 Toast.makeText(LoginActivity.this, txt, Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(getApplicationContext(), SettingsActivity.class);
+                intent.putExtra("username", user);
                 startActivity(intent);
             }
             else{
