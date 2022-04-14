@@ -5,6 +5,10 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+
+import java.util.ArrayList;
+
+import es.ucm.fdi.appdopta.Animal;
 import es.ucm.fdi.appdopta.database.AppdoptaDatabase.StandardUserTable;
 import es.ucm.fdi.appdopta.database.AppdoptaDatabase.PetTable;
 import es.ucm.fdi.appdopta.database.AppdoptaDatabase.PetOwnerTable;
@@ -155,6 +159,26 @@ public class AppdoptaDBHelper extends SQLiteOpenHelper {
         else {
             return true;
         }
+    }
+
+    public ArrayList<Animal> readListPetData() {
+        SQLiteDatabase db = this.getReadableDatabase();
+
+        Cursor petsCursor = db.rawQuery("SELECT * FROM " + PetTable.TABLE_NAME, null);
+
+        ArrayList<Animal> petsList = new ArrayList<>();
+
+        if (petsCursor.moveToFirst()) {
+            do {
+                petsList.add(new Animal(petsCursor.getString(1),  // Columna nombre
+                petsCursor.getString(2),  // Columna id
+                petsCursor.getString(8),  // Columna especie
+                petsCursor.getString(16))); // Columna ubicación
+
+            } while (petsCursor.moveToNext());
+        }
+        petsCursor.close();
+        return petsList;
     }
 
     public boolean checkUserName(String user){
