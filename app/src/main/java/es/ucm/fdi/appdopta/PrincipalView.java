@@ -1,5 +1,6 @@
 package es.ucm.fdi.appdopta;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
@@ -22,7 +23,7 @@ public class PrincipalView extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_principal_view);
-
+        Intent intent = getIntent();
         petsList = new ArrayList<>();
         dbHelper = new AppdoptaDBHelper(this);
         petsList = dbHelper.readListPetData();
