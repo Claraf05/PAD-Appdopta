@@ -36,7 +36,7 @@ public class AppdoptaDBHelper extends SQLiteOpenHelper {
     private static final String CREATE_PET_OWNER_TABLE =
             "CREATE TABLE " + PetOwnerTable.TABLE_NAME + " (" +
                     PetOwnerTable.ID_C + " TEXT UNIQUE NOT NULL PRIMARY KEY," +
-                    PetOwnerTable.POSTCOD_C + "INTEGER NOT NULL);";
+                    PetOwnerTable.LOCAL_C + "INTEGER NOT NULL);";
 
 
     private static final String CREATE_PET_TABLE =
@@ -55,9 +55,8 @@ public class AppdoptaDBHelper extends SQLiteOpenHelper {
 
                     //TODAS LAS VACUNAS SON INTEGER QUE PUEDEN SER 1 O 0
                     PetTable.VACC_RABIA_C + " INTEGER NOT NULL," +
-                    PetTable.VACC_PARVOVIRUS_C + " INTEGER NOT NULL," +
-                    PetTable.VACC_MOQUILLO_C + " INTEGER NOT NULL," +
-                    PetTable.VACC_POLIVALENTE_C + " INTEGER NOT NULL," +
+                    PetTable.VACC_HEPATITIS_C + " INTEGER NOT NULL," +
+                    PetTable.VACC_LEISHMANIASIS_C + " INTEGER NOT NULL," +
 
                     //INFO CHIP
                     PetTable.CHIP_NUM_C + " INTEGER UNIQUE NOT NULL," +
@@ -116,7 +115,7 @@ public class AppdoptaDBHelper extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
         contentValues.put(PetOwnerTable.ID_C, id_user);
-        contentValues.put(PetOwnerTable.POSTCOD_C, post_code);
+        contentValues.put(PetOwnerTable.LOCAL_C, post_code);
 
         long result = db.insert(PetTable.TABLE_NAME, null, contentValues);
         if(result == -1) {
@@ -127,7 +126,7 @@ public class AppdoptaDBHelper extends SQLiteOpenHelper {
         }
     }
 
-    public boolean insertPetData(String id, String id_owner, String petname, String gender, String race, String desc, String specie, String bday, int vacc_rabia, int vacc_parvovirus, int vacc_moquillo, int vacc_polivalente, int chip_num, String chip_date, String chip_loc) {
+    public boolean insertPetData(String id, String id_owner, String petname, String gender, String race, String desc, String specie, String bday, int vacc_rabia, int vacc_hepatitis, int vacc_leishmaniasis, int chip_num, String chip_date, String chip_loc) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
 
@@ -141,9 +140,8 @@ public class AppdoptaDBHelper extends SQLiteOpenHelper {
 
         //vaccinations
         contentValues.put(PetTable.VACC_RABIA_C, vacc_rabia);
-        contentValues.put(PetTable.VACC_PARVOVIRUS_C, vacc_parvovirus);
-        contentValues.put(PetTable.VACC_MOQUILLO_C, vacc_moquillo);
-        contentValues.put(PetTable.VACC_POLIVALENTE_C, vacc_polivalente);
+        contentValues.put(PetTable.VACC_HEPATITIS_C, vacc_hepatitis);
+        contentValues.put(PetTable.VACC_LEISHMANIASIS_C, vacc_leishmaniasis);
 
         //chip info
         contentValues.put(PetTable.CHIP_NUM_C, chip_num);
@@ -192,6 +190,12 @@ public class AppdoptaDBHelper extends SQLiteOpenHelper {
         }
     }
 
+    public String getuserId(String user){
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor cursor = db.rawQuery("Select "+ StandardUserTable.ID_C +"from "+StandardUserTable.TABLE_NAME+" where "+StandardUserTable.USERNAME_C+" = ?", new String[] {user});
+        return cursor.getString(0);
+    }
+
     public boolean checkUserPassword(String user, String passw){
         SQLiteDatabase db = this.getWritableDatabase();
         Cursor cursor = db.rawQuery("Select * from "+StandardUserTable.TABLE_NAME+" where "+StandardUserTable.USERNAME_C+" = ? and "+StandardUserTable.PASSWORD_C+" = ?", new String[] {user,passw});
@@ -207,6 +211,18 @@ public class AppdoptaDBHelper extends SQLiteOpenHelper {
     public boolean checkUserId(String id){
         SQLiteDatabase db = this.getWritableDatabase();
         Cursor cursor = db.rawQuery("Select * from "+StandardUserTable.TABLE_NAME+" where "+StandardUserTable.ID_C+" = ?", new String[] {id});
+
+        if(cursor.getCount() > 0){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+
+    public boolean checkPetId(String id){
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor cursor = db.rawQuery("Select * from "+PetTable.TABLE_NAME+" where "+PetTable.ID_PET_C+" = ?", new String[] {id});
 
         if(cursor.getCount() > 0){
             return true;

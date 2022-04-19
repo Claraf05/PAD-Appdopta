@@ -33,16 +33,10 @@
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/apellidosDueno"
+                android:id="@+id/userName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Apellidos" />
-
-            <TextView
-                android:id="@+id/nombreDueno"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Nombre" />
+                android:text="username" />
 
             <EditText
                 android:id="@+id/correoDueno"
@@ -114,6 +108,7 @@
                 tools:ignore="TouchTargetSizeCheck" />
 
             <RadioGroup
+                android:id="@+id/grupoSexoMasc"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
@@ -190,6 +185,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:layout_marginBottom="40dp"
                 android:orientation="horizontal">
 
                 <CheckBox
@@ -213,6 +209,13 @@
                     android:text="Leishmaniasis" />
 
             </LinearLayout>
+
+            <Button
+                android:id="@+id/confirmarFicha"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="ConfirmarFicha"
+                android:text="Confirmar" />
 
         </LinearLayout>
     </ScrollView>
