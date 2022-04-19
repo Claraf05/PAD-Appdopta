@@ -2,6 +2,7 @@ package es.ucm.fdi.appdopta.features.Fichas;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.EditText;
@@ -43,12 +44,13 @@ public class aniadirFichaActivity extends AppCompatActivity {
         nombreM = (EditText) findViewById(R.id.nombreMasc);
 
         sexo = (RadioGroup) findViewById(R.id.grupoSexoMasc);
-        selectedSex = (RadioButton) sexo.getChildAt(sexo.getCheckedRadioButtonId());
+        selectedSex = (RadioButton) findViewById(sexo.getCheckedRadioButtonId());
 
         nacimientoM = (EditText) findViewById(R.id.nacimientoMasc);
         chiplocal = findViewById(R.id.localizacionChipMasc);
         fechaChip = findViewById(R.id.fechaChipMasc);
         numChip = findViewById(R.id.numChipMasc);
+
 
         descripcion = (TextView) findViewById(R.id.editTextTextMultiLineMasc);
 
@@ -74,7 +76,11 @@ public class aniadirFichaActivity extends AppCompatActivity {
         String desc = descripcion.getText().toString();
         String locChip = chiplocal.getText().toString();
         String fechChip = fechaChip.getText().toString();
-        int nChip = Integer.parseInt(numChip.getText().toString());
+        int nChip = 0;
+        if(!numChip.getText().toString().isEmpty()){
+            nChip = Integer.parseInt(numChip.getText().toString());
+        }
+
 
         int rabiaV, hepatitisV,leishmaniasisV;
         if(rabia.isChecked()) rabiaV = 1;
@@ -84,22 +90,25 @@ public class aniadirFichaActivity extends AppCompatActivity {
         if(leishmaniasis.isChecked()) leishmaniasisV = 1;
         else leishmaniasisV = 0;
 
-        if(especie.isEmpty() || raza.isEmpty() || nombreMasc.isEmpty() || sexoMasc.isEmpty() || bday.isEmpty()){
+        if(especie.isEmpty() || raza.isEmpty() || nombreMasc.isEmpty() || sexoMasc.isEmpty() || bday.isEmpty() || nChip == 0){
             Toast.makeText(aniadirFichaActivity.this, "Por favor rellene todos los campos", Toast.LENGTH_SHORT).show();
         }
+        else{
+            //assign an id to a pet
+            boolean idcount;
+            int id = new Random().nextInt(3000);
+            do{
+                id = new Random().nextInt(3000);
+                idcount = dbHelper.checkPetId(String.valueOf(id));
+            }
+            while(idcount);
 
+            String idDue = dbHelper.getuserId(usern);
+            dbHelper.insertPetData(String.valueOf(id), idDue, nombreMasc, sexoMasc, raza, desc,especie, bday, rabiaV,hepatitisV,leishmaniasisV, nChip, fechChip,locChip);
 
-        //assign an id to a pet
-        boolean idcount;
-        int id = new Random().nextInt(3000);
-        do{
-            id = new Random().nextInt(3000);
-            idcount = dbHelper.checkPetId(String.valueOf(id));
         }
-        while(idcount);
 
-        String idDue = dbHelper.getuserId(usern);
-        dbHelper.insertPetData(String.valueOf(id), idDue, nombreMasc, sexoMasc, raza, desc,especie, bday, rabiaV,hepatitisV,leishmaniasisV, nChip, fechChip,locChip);
-    }
+
+        }
 
 }
