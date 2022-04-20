@@ -36,7 +36,7 @@ public class AppdoptaDBHelper extends SQLiteOpenHelper {
     private static final String CREATE_PET_OWNER_TABLE =
             "CREATE TABLE " + PetOwnerTable.TABLE_NAME + " (" +
                     PetOwnerTable.ID_C + " TEXT UNIQUE NOT NULL PRIMARY KEY," +
-                    PetOwnerTable.LOCAL_C + "INTEGER NOT NULL);";
+                    PetOwnerTable.LOCAL_C + "TEXT NOT NULL);";
 
 
     private static final String CREATE_PET_TABLE =
@@ -111,11 +111,11 @@ public class AppdoptaDBHelper extends SQLiteOpenHelper {
         }
     }
 
-    public boolean insertPetOwnerData(String id_user, int post_code) {
+    public boolean insertPetOwnerData(String id_user, String local_c) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
         contentValues.put(PetOwnerTable.ID_C, id_user);
-        contentValues.put(PetOwnerTable.LOCAL_C, post_code);
+        contentValues.put(PetOwnerTable.LOCAL_C, local_c);
 
         long result = db.insert(PetTable.TABLE_NAME, null, contentValues);
         if(result == -1) {
