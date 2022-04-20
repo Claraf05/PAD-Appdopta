@@ -3,13 +3,12 @@
     package="es.ucm.fdi.appdopta">
 
     <application
-        android:icon="@mipmap/logo"
-        android:label="@string/app_name"
-        android:theme="@style/Theme.Appdopta"
-        android:banner="@drawable/logo"
-        android:roundIcon="@drawable/logo"
         android:allowBackup="true"
-        android:supportsRtl="true">
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Appdopta">
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"
@@ -24,20 +23,16 @@
             android:label="@string/title_activity_settings" />
         <activity android:name=".features.login.LoginActivity" />
         <activity android:name=".features.register.RegisterActivity" />
-        <activity android:name=".features.Fichas.fichaActivity" />
-        <activity android:name=".features.Fichas.aniadirFichaActivity"/>
-        <activity android:name=".PrincipalView"></activity>
-
+        <activity android:name=".fichaActivity" />
         <activity
             android:name=".MainActivity"
-            android:exported="true"
-            android:label="@string/app_name">
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
     </application>
 
 </manifest>
