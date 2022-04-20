@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#C9E3AF"
-    tools:context=".fichaActivity">
+    tools:context=".features.Fichas.fichaActivity">
 
     <ImageView
         android:id="@+id/imagen"

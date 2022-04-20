@@ -1,4 +1,4 @@
-package es.ucm.fdi.appdopta;
+package es.ucm.fdi.appdopta.features.Fichas;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -26,6 +26,8 @@ import com.google.android.gms.maps.model.MarkerOptions;
 
 import java.io.IOException;
 import java.util.List;
+
+import es.ucm.fdi.appdopta.R;
 
 public class fichaActivity extends AppCompatActivity implements OnMapReadyCallback {
 
