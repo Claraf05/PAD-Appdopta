@@ -50,12 +50,12 @@ public class PrincipalView extends AppCompatActivity {
 //(String id, String id_owner, String petname, String gender, String race, String desc, String specie, String bday,
 // //int vacc_rabia, int vacc_parvovirus, int vacc_moquillo, int vacc_polivalente, int chip_num, String chip_date, String chip_loc) {
 
-            dbHelper.insertPetData("1", "1", "1", "1", "chiguagua", "1", "Perro",
+        /*dbHelper.insertPetData("1", "1", "1", "1", "chiguagua", "1", "Perro",
                     "1", 1, 2, 3, 1, 2, "1", "Madrid");
         dbHelper.insertPetData("1", "", "", "", ":)", "", "Gato",
                 "", 1, 2, 3, 1, 2, "", "Madrid");
         dbHelper.insertPetData("1", "", "", "", "Labrador", "", "Perro",
-                "", 1, 2, 3, 1, 2, "", "Valencia");
+                "", 1, 2, 3, 1, 2, "", "Valencia");*/
     }
     /*public void OnclickButtonListener() {
 
