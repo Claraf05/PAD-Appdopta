@@ -1,18 +1,30 @@
 package es.ucm.fdi.appdopta.features.Fichas;
 
+import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.net.Uri;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.util.Log;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AppCompatActivity;
 
+import java.io.ByteArrayOutputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.InputStream;
 import java.util.Random;
 
 import es.ucm.fdi.appdopta.R;
@@ -27,6 +39,8 @@ public class aniadirFichaActivity extends AppCompatActivity {
     CheckBox rabia,hepatitis,leishmaniasis;
     AppdoptaDBHelper dbHelper = new AppdoptaDBHelper(this);
     String idDue;
+    ImageView previewImage;
+    Bitmap bitmap;
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
@@ -41,8 +55,8 @@ public class aniadirFichaActivity extends AppCompatActivity {
         localizacionD = (EditText) findViewById(R.id.localizacionDueno);
 
         //insertamos datos de la BBDD
-        correoD.setText(dbHelper.getuserCorreo(idDue));
-        telefonoD.setText(dbHelper.getuserPhone(idDue));
+        correoD.setText(dbHelper.buscarUsuario(idDue).getEmail());
+        telefonoD.setText(dbHelper.buscarUsuario(idDue).getPhone());
 
         especieM = (EditText) findViewById(R.id.especieMasc);
         razaM = (EditText) findViewById(R.id.razaMasc);
@@ -63,8 +77,38 @@ public class aniadirFichaActivity extends AppCompatActivity {
         hepatitis = (CheckBox) findViewById(R.id.checkBox2);
         leishmaniasis = (CheckBox) findViewById(R.id.checkBox3);
 
+        previewImage = (ImageView) findViewById(R.id.imagePreview);
+
     }
 
+    private final ActivityResultLauncher<Intent> launcher = registerForActivityResult(
+            new ActivityResultContracts.StartActivityForResult(),
+            result -> {
+                if (result.getResultCode() == Activity.RESULT_OK
+                        && result.getData() != null) {
+                    Uri photoUri = result.getData().getData();
+                    previewImage.setImageURI(photoUri);
+
+
+                    try {
+                        InputStream imageStream = getContentResolver().openInputStream(photoUri);
+                        bitmap = BitmapFactory.decodeStream(imageStream);
+
+                    } catch (FileNotFoundException e) {
+                        // TODO Auto-generated catch block
+                        e.printStackTrace();
+                    } catch (IOException e) {
+                        // TODO Auto-generated catch block
+                        e.printStackTrace();
+                    }
+                }
+            }
+    );
+
+    public void seleccionarImagen(View view){
+        Intent intent = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+        launcher.launch(intent);
+    }
 
     public void ConfirmarFicha(View view){
         String usern = username.getText().toString();
@@ -109,7 +153,7 @@ public class aniadirFichaActivity extends AppCompatActivity {
             while(idcount);
 
             String idDue = dbHelper.getuserId(usern);
-            dbHelper.insertPetData(String.valueOf(id), idDue, nombreMasc, sexoMasc, raza, desc,especie, bday, rabiaV,hepatitisV,leishmaniasisV, nChip, fechChip,locChip, localizacion);
+            dbHelper.insertPetData(String.valueOf(id), idDue, nombreMasc, sexoMasc, raza, desc,especie, bday, rabiaV,hepatitisV,leishmaniasisV, nChip, fechChip,locChip, localizacion, bitmap);
 
         }
 

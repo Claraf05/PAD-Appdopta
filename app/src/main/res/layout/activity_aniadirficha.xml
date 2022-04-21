@@ -134,6 +134,30 @@
 
             </RadioGroup>
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="5dp"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/buttonImageMasc"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="40dp"
+                    android:layout_marginBottom="5dp"
+                    android:onClick="seleccionarImagen"
+                    android:text="Imagen"
+                    app:layout_constraintBottom_toTopOf="@+id/nacimientoMasc"
+                    app:layout_constraintTop_toBottomOf="@+id/grupoSexoMasc" />
+
+                <ImageView
+                    android:id="@+id/imagePreview"
+                    android:layout_width="50dp"
+                    android:layout_height="match_parent"
+                    tools:srcCompat="@tools:sample/avatars" />
+            </LinearLayout>
+
             <EditText
                 android:id="@+id/nacimientoMasc"
                 android:layout_width="wrap_content"

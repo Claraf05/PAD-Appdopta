@@ -9,9 +9,11 @@ import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.location.Address;
 import android.location.Geocoder;
+import android.media.Image;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RadioGroup;
 import android.widget.ScrollView;
@@ -28,6 +30,7 @@ import java.io.IOException;
 import java.util.List;
 
 import es.ucm.fdi.appdopta.R;
+import es.ucm.fdi.appdopta.database.AppdoptaDBHelper;
 
 public class fichaActivity extends AppCompatActivity implements OnMapReadyCallback {
 
@@ -39,13 +42,16 @@ public class fichaActivity extends AppCompatActivity implements OnMapReadyCallba
     View fMap;
     CardView card;
     String localidad;
+    ImageView imagen;
     double Lat, Lng;
     GoogleMap g;
     int zoom[] = {1,5,10,15,20};
     int zoomP;
+    AppdoptaDBHelper dbHelper = new AppdoptaDBHelper(this);
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_ficha);
         Intent intent = getIntent();
         infoButton = findViewById(R.id.infoDue);
@@ -56,6 +62,10 @@ public class fichaActivity extends AppCompatActivity implements OnMapReadyCallba
         botonesZoom = findViewById(R.id.botonesZoom);
         fMap = findViewById(R.id.map);
         card = findViewById(R.id.cardView);
+        imagen = findViewById(R.id.imagen);
+
+        //cuando tengamos aqui el id de la mascota,descomentar
+        //imagen.setImageBitmap(dbHelper.buscarImagen(idMasc));
 
         Geocoder geo = new Geocoder(this);
         String loc = "San Blas";

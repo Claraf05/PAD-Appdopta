@@ -5,7 +5,11 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
 import java.util.ArrayList;
 
 import es.ucm.fdi.appdopta.Animal;
@@ -53,6 +57,7 @@ public class AppdoptaDBHelper extends SQLiteOpenHelper {
                     PetTable.BDAY_C + " TEXT NOT NULL," +
                     PetTable.DESCRIPTION_C + " TEXT NOT NULL," +
                     PetTable.LOCAL_C + "TEXT NOT NULL, " +
+                    PetTable.IMAGE_C + "BLOB," +
 
                     //TODAS LAS VACUNAS SON INTEGER QUE PUEDEN SER 1 O 0
                     PetTable.VACC_RABIA_C + " INTEGER NOT NULL," +
@@ -127,7 +132,7 @@ public class AppdoptaDBHelper extends SQLiteOpenHelper {
         }
     }
 
-    public boolean insertPetData(String id, String id_owner, String petname, String gender, String race, String desc, String specie, String bday, int vacc_rabia, int vacc_hepatitis, int vacc_leishmaniasis, int chip_num, String chip_date, String chip_loc, String localizacion) {
+    public boolean insertPetData(String id, String id_owner, String petname, String gender, String race, String desc, String specie, String bday, int vacc_rabia, int vacc_hepatitis, int vacc_leishmaniasis, int chip_num, String chip_date, String chip_loc, String localizacion, Bitmap bitmap) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
 
@@ -138,6 +143,12 @@ public class AppdoptaDBHelper extends SQLiteOpenHelper {
         contentValues.put(PetTable.RACE_C, race);
         contentValues.put(PetTable.SPECIES_C, specie);
         contentValues.put(PetTable.BDAY_C, bday);
+
+        //image
+        ByteArrayOutputStream baos = new ByteArrayOutputStream(20480);
+        bitmap.compress(Bitmap.CompressFormat.PNG, 0 , baos);
+        byte[] blob = baos.toByteArray();
+        contentValues.put(PetTable.IMAGE_C, blob);
 
         //vaccinations
         contentValues.put(PetTable.VACC_RABIA_C, vacc_rabia);
@@ -160,7 +171,22 @@ public class AppdoptaDBHelper extends SQLiteOpenHelper {
             return true;
         }
     }
+    public Bitmap buscarImagen(String id){
+        SQLiteDatabase db = this.getReadableDatabase();
 
+        Cursor cursor = db.rawQuery("SELECT "+ PetTable.IMAGE_C+" FROM "+ PetTable.TABLE_NAME+ " where " + PetTable.ID_PET_C +" = ?", new String[] {id});
+        Bitmap bitmap = null;
+        if(cursor.moveToFirst()){
+            byte[] blob = cursor.getBlob(0);
+            ByteArrayInputStream bais = new ByteArrayInputStream(blob);
+            bitmap = BitmapFactory.decodeStream(bais);
+        }
+        if (cursor != null && !cursor.isClosed()) {
+            cursor.close();
+        }
+        db.close();
+        return bitmap;
+    }
     public ArrayList<Animal> readListPetData() {
         SQLiteDatabase db = this.getReadableDatabase();
 
@@ -194,20 +220,8 @@ public class AppdoptaDBHelper extends SQLiteOpenHelper {
 
     public String getuserId(String user){
         SQLiteDatabase db = this.getWritableDatabase();
-        Cursor cursor = db.rawQuery("Select "+ StandardUserTable.ID_C +"from "+StandardUserTable.TABLE_NAME+" where "+StandardUserTable.USERNAME_C+" = ?", new String[] {user});
+        Cursor cursor = db.rawQuery("Select "+ StandardUserTable.ID_C +" from "+StandardUserTable.TABLE_NAME+" where "+StandardUserTable.USERNAME_C+" = ?", new String[] {user});
         return cursor.getString(0);
-    }
-
-    public String getuserCorreo(String id){
-        SQLiteDatabase db = this.getWritableDatabase();
-        Cursor cursor = db.rawQuery("Select "+ StandardUserTable.EMAIL_C +"from "+StandardUserTable.TABLE_NAME+" where "+StandardUserTable.ID_C+" = ?", new String[] {id});
-        return cursor.getString(0);
-    }
-
-    public int getuserPhone(String id){
-        SQLiteDatabase db = this.getWritableDatabase();
-        Cursor cursor = db.rawQuery("Select "+ StandardUserTable.PHONE_C +"from "+StandardUserTable.TABLE_NAME+" where "+StandardUserTable.ID_C+" = ?", new String[] {id});
-        return cursor.getInt(0);
     }
 
     public boolean checkUserPassword(String user, String passw){

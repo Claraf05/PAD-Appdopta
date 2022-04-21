@@ -1,5 +1,7 @@
 package es.ucm.fdi.appdopta.database;
 
+import android.graphics.Bitmap;
+import android.net.Uri;
 import android.provider.BaseColumns;
 
 public class AppdoptaDatabase {
@@ -44,6 +46,7 @@ public class AppdoptaDatabase {
         public static final String SPECIES_C = "specie";
         public static final String BDAY_C = "bday";
         public static final String LOCAL_C = "local";
+        public static final String IMAGE_C = "image";
          //una columna por cada tipiode vacuna
         public static final String VACC_RABIA_C = "vacc_rabia";
         public static final String VACC_HEPATITIS_C = "vacc_hepatitis";
