@@ -89,6 +89,8 @@
             android:id="@+id/filtro"
             android:layout_width="50dp"
             android:layout_height="50dp"
+            android:clickable="true"
+            android:onClick="filtrar"
             app:srcCompat="@drawable/filtro" />
     </LinearLayout>
 
