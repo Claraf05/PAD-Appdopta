@@ -17,6 +17,7 @@ public class AppdoptaDatabase {
         public static final String USERNAME_C = "username";
         public static final String PASSWORD_C = "password";
         //public static final String NAME_C = "name";
+
         public static final String PHONE_C = "phone";
         public static final String EMAIL_C = "email";
         public static final String OWNER_C = "is_owner";
@@ -28,7 +29,6 @@ public class AppdoptaDatabase {
     public static class PetOwnerTable implements BaseColumns{
             public static final String TABLE_NAME = "pet_owners";
             public static final String ID_C = "id_user";
-            public static final String LOCAL_C = "local";
             public static final String PETNAME_C = "petname";
     }
 
@@ -43,6 +43,7 @@ public class AppdoptaDatabase {
         public static final String RACE_C = "race";
         public static final String SPECIES_C = "specie";
         public static final String BDAY_C = "bday";
+        public static final String LOCAL_C = "local";
          //una columna por cada tipiode vacuna
         public static final String VACC_RABIA_C = "vacc_rabia";
         public static final String VACC_HEPATITIS_C = "vacc_hepatitis";

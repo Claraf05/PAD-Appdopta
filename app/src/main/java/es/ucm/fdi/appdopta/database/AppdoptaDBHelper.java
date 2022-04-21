@@ -36,8 +36,7 @@ public class AppdoptaDBHelper extends SQLiteOpenHelper {
     //for users with StandardUserTable.OWNER_C = 1;
     private static final String CREATE_PET_OWNER_TABLE =
             "CREATE TABLE " + PetOwnerTable.TABLE_NAME + " (" +
-                    PetOwnerTable.ID_C + " TEXT UNIQUE NOT NULL PRIMARY KEY," +
-                    PetOwnerTable.LOCAL_C + "TEXT NOT NULL);";
+                    PetOwnerTable.ID_C + " TEXT UNIQUE NOT NULL PRIMARY KEY);";
 
 
     private static final String CREATE_PET_TABLE =
@@ -53,6 +52,7 @@ public class AppdoptaDBHelper extends SQLiteOpenHelper {
                     PetTable.RACE_C + " TEXT NOT NULL," +
                     PetTable.BDAY_C + " TEXT NOT NULL," +
                     PetTable.DESCRIPTION_C + " TEXT NOT NULL," +
+                    PetTable.LOCAL_C + "TEXT NOT NULL, " +
 
                     //TODAS LAS VACUNAS SON INTEGER QUE PUEDEN SER 1 O 0
                     PetTable.VACC_RABIA_C + " INTEGER NOT NULL," +
@@ -116,7 +116,7 @@ public class AppdoptaDBHelper extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
         contentValues.put(PetOwnerTable.ID_C, id_user);
-        contentValues.put(PetOwnerTable.LOCAL_C, local_c);
+        //contentValues.put(PetOwnerTable.LOCAL_C, local_c);
 
         long result = db.insert(PetTable.TABLE_NAME, null, contentValues);
         if(result == -1) {
@@ -127,7 +127,7 @@ public class AppdoptaDBHelper extends SQLiteOpenHelper {
         }
     }
 
-    public boolean insertPetData(String id, String id_owner, String petname, String gender, String race, String desc, String specie, String bday, int vacc_rabia, int vacc_hepatitis, int vacc_leishmaniasis, int chip_num, String chip_date, String chip_loc) {
+    public boolean insertPetData(String id, String id_owner, String petname, String gender, String race, String desc, String specie, String bday, int vacc_rabia, int vacc_hepatitis, int vacc_leishmaniasis, int chip_num, String chip_date, String chip_loc, String localizacion) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
 
@@ -150,6 +150,7 @@ public class AppdoptaDBHelper extends SQLiteOpenHelper {
         contentValues.put(PetTable.CHIP_LOCATION_C, chip_loc);
 
         contentValues.put(PetTable.DESCRIPTION_C, desc);
+        contentValues.put(PetTable.LOCAL_C, localizacion);
 
         long result = db.insert(PetTable.TABLE_NAME, null, contentValues);
         if(result == -1) {
@@ -195,6 +196,18 @@ public class AppdoptaDBHelper extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getWritableDatabase();
         Cursor cursor = db.rawQuery("Select "+ StandardUserTable.ID_C +"from "+StandardUserTable.TABLE_NAME+" where "+StandardUserTable.USERNAME_C+" = ?", new String[] {user});
         return cursor.getString(0);
+    }
+
+    public String getuserCorreo(String id){
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor cursor = db.rawQuery("Select "+ StandardUserTable.EMAIL_C +"from "+StandardUserTable.TABLE_NAME+" where "+StandardUserTable.ID_C+" = ?", new String[] {id});
+        return cursor.getString(0);
+    }
+
+    public int getuserPhone(String id){
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor cursor = db.rawQuery("Select "+ StandardUserTable.PHONE_C +"from "+StandardUserTable.TABLE_NAME+" where "+StandardUserTable.ID_C+" = ?", new String[] {id});
+        return cursor.getInt(0);
     }
 
     public boolean checkUserPassword(String user, String passw){

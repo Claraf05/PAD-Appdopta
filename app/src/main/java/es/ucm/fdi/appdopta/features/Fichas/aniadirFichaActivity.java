@@ -26,18 +26,23 @@ public class aniadirFichaActivity extends AppCompatActivity {
     TextView descripcion, username, chiplocal, fechaChip,numChip;
     CheckBox rabia,hepatitis,leishmaniasis;
     AppdoptaDBHelper dbHelper = new AppdoptaDBHelper(this);
-
+    String idDue;
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_aniadirficha);
         Intent intent = getIntent();
+        idDue = intent.getStringExtra("id");
 
         username = findViewById(R.id.userName);
 
         correoD =(EditText) findViewById(R.id.correoDueno);
         telefonoD = (EditText) findViewById(R.id.telefonoDueno);
         localizacionD = (EditText) findViewById(R.id.localizacionDueno);
+
+        //insertamos datos de la BBDD
+        correoD.setText(dbHelper.getuserCorreo(idDue));
+        telefonoD.setText(dbHelper.getuserPhone(idDue));
 
         especieM = (EditText) findViewById(R.id.especieMasc);
         razaM = (EditText) findViewById(R.id.razaMasc);
@@ -63,8 +68,8 @@ public class aniadirFichaActivity extends AppCompatActivity {
 
     public void ConfirmarFicha(View view){
         String usern = username.getText().toString();
-        String correo = correoD.getText().toString();
-        String telefono = telefonoD.getText().toString();
+       // String correo = correoD.getText().toString();
+       // String telefono = telefonoD.getText().toString();
         String localizacion = localizacionD.getText().toString();
 
         String especie = especieM.getText().toString();
@@ -104,7 +109,7 @@ public class aniadirFichaActivity extends AppCompatActivity {
             while(idcount);
 
             String idDue = dbHelper.getuserId(usern);
-            dbHelper.insertPetData(String.valueOf(id), idDue, nombreMasc, sexoMasc, raza, desc,especie, bday, rabiaV,hepatitisV,leishmaniasisV, nChip, fechChip,locChip);
+            dbHelper.insertPetData(String.valueOf(id), idDue, nombreMasc, sexoMasc, raza, desc,especie, bday, rabiaV,hepatitisV,leishmaniasisV, nChip, fechChip,locChip, localizacion);
 
         }
 
