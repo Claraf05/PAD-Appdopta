@@ -11,6 +11,8 @@ import es.ucm.fdi.appdopta.R;
 import es.ucm.fdi.appdopta.features.login.LoginActivity;
 import es.ucm.fdi.appdopta.features.register.RegisterActivity;
 import es.ucm.fdi.appdopta.features.user.UserActivity;
+import es.ucm.fdi.appdopta.features.user.changeInfo.ChangePasswordActivity;
+import es.ucm.fdi.appdopta.features.user.changeInfo.ChangeUserActivity;
 
 public class SettingsActivity extends AppCompatActivity {
 
@@ -33,12 +35,12 @@ public class SettingsActivity extends AppCompatActivity {
     }
 
     public void changePw_S(View view){
-        Intent intent = new Intent(getApplicationContext(), RegisterActivity.class);
+        Intent intent = new Intent(getApplicationContext(), ChangePasswordActivity.class);
         startActivity(intent);
     }
 
     public void changeUser(View view){
-        Intent intent = new Intent(getApplicationContext(), RegisterActivity.class);
+        Intent intent = new Intent(getApplicationContext(), ChangeUserActivity.class);
         startActivity(intent);
     }
 

@@ -15,6 +15,7 @@ import java.util.Random;
 import es.ucm.fdi.appdopta.R;
 import es.ucm.fdi.appdopta.database.AppdoptaDBHelper;
 import es.ucm.fdi.appdopta.features.login.LoginActivity;
+import es.ucm.fdi.appdopta.features.user.UserInfo;
 
 public class RegisterActivity extends AppCompatActivity {
 
@@ -63,7 +64,11 @@ public class RegisterActivity extends AppCompatActivity {
                     Boolean reg = dbHelper.insertUserData(String.valueOf(id), user, pass, Integer.parseInt(ph), mail, 0);
                     if(reg == true){
                         Toast.makeText(RegisterActivity.this, "Usuario registrado con éxito", Toast.LENGTH_SHORT).show();
+                        //TODO crear un usuario para pasarlo al intent con la info de telefono y tal a null que eso ya se rellena en el user info activity
+                        //UserInfo uInfo = new UserInfo();
                         Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
+                        //TODO pasarle el usuario al intent para llevarlo a la actividad de info de usuario
+                        //intent.putExtra("userInfo", )
                         startActivity(intent);
                     }
                 }

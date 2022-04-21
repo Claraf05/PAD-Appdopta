@@ -13,6 +13,7 @@ import es.ucm.fdi.appdopta.R;
 import es.ucm.fdi.appdopta.database.AppdoptaDBHelper;
 import es.ucm.fdi.appdopta.features.register.RegisterActivity;
 import es.ucm.fdi.appdopta.features.settings.SettingsActivity;
+import es.ucm.fdi.appdopta.features.user.UserInfo;
 
 public class LoginActivity extends AppCompatActivity {
 

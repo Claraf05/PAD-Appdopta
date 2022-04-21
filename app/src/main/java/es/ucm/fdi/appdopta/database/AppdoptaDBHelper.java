@@ -12,6 +12,7 @@ import es.ucm.fdi.appdopta.Animal;
 import es.ucm.fdi.appdopta.database.AppdoptaDatabase.StandardUserTable;
 import es.ucm.fdi.appdopta.database.AppdoptaDatabase.PetTable;
 import es.ucm.fdi.appdopta.database.AppdoptaDatabase.PetOwnerTable;
+import es.ucm.fdi.appdopta.features.user.UserInfo;
 
 public class AppdoptaDBHelper extends SQLiteOpenHelper {
 
@@ -231,4 +232,32 @@ public class AppdoptaDBHelper extends SQLiteOpenHelper {
             return false;
         }
     }
+
+    public UserInfo buscarUsuario(String id){
+
+        SQLiteDatabase db = this.getReadableDatabase();
+
+        //user a usar
+        UserInfo user = new UserInfo();
+
+        //info user a meter
+        String name;
+        String passw;
+        String phone;
+        String email;
+
+        Cursor cursor = db.rawQuery("Select * from " + StandardUserTable.TABLE_NAME + " where " + StandardUserTable.USERNAME_C+ " =' " + id + "'", null );
+        if(cursor.moveToFirst()){
+            do{
+                name = cursor.getString(1);
+                passw = cursor.getString(2);
+                phone = cursor.getString(3);
+                email = cursor.getString(4);
+
+            }while(cursor.moveToNext());
+            user = new UserInfo(id,name,passw,phone,email);
+        }
+        return user;
+    }
+
 }

@@ -7,53 +7,60 @@
     android:background="#C9E3AF"
     tools:context=".features.user.UserActivity">
 
-    <LinearLayout
-        android:id="@+id/linearEdit"
-        android:layout_width="152dp"
-        android:layout_height="180dp"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="@+id/linear"
+    <ScrollView
+        android:layout_width="720dp"
+        android:layout_height="284dp"
+        app:layout_constraintBottom_toTopOf="@+id/logoutButton"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.006"
-        app:layout_constraintStart_toEndOf="@+id/linear"
-        app:layout_constraintTop_toTopOf="@+id/linear"
-        app:layout_constraintVertical_bias="1.0">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-        <EditText
-            android:id="@+id/Username_U"
-            android:layout_width="134dp"
+        <LinearLayout
+            android:id="@+id/linearEdit"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:text="Usuario"
-            android:textColor="#000000"
-            android:textSize="24sp" />
+            android:orientation="vertical">
 
-        <EditText
-            android:id="@+id/userPhone_U"
-            android:layout_width="134dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:text="Telefono"
-            android:textColor="#000000"
-            android:textSize="24sp" />
+            <EditText
+                android:id="@+id/Username_U"
+                android:layout_width="134dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Usuario"
+                android:textColor="#000000"
+                android:textSize="24sp" />
 
-        <EditText
-            android:id="@+id/userEmail_U"
-            android:layout_width="96dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:text="Email"
-            android:textColor="#000000"
-            android:textSize="24sp" />
+            <EditText
+                android:id="@+id/userPhone_U"
+                android:layout_width="134dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Telefono"
+                android:textColor="#000000"
+                android:textSize="24sp" />
 
-    </LinearLayout>
+            <EditText
+                android:id="@+id/userEmail_U"
+                android:layout_width="96dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Email"
+                android:textColor="#000000"
+                android:textSize="24sp" />
+
+            <TextView
+                android:id="@+id/petsTxt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+    </ScrollView>
 
     <Button
         android:id="@+id/changePwButton"
         android:layout_width="0dp"
-        android:layout_height="56dp"
+        android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="6dp"
         android:layout_marginEnd="32dp"
         android:onClick="changePw_U"
         android:text="Cambiar contraseña"
@@ -171,69 +178,6 @@
         app:srcCompat="@drawable/ic_paw"
         tools:ignore="VectorDrawableCompat,SpeakableTextPresentCheck" />
 
-    <LinearLayout
-        android:id="@+id/linear"
-        android:layout_width="109dp"
-        android:layout_height="181dp"
-        android:layout_marginEnd="32dp"
-        android:layout_marginBottom="416dp"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toTopOf="@+id/toolbar5"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.053"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <TextView
-            android:id="@+id/Username_"
-            android:layout_width="104dp"
-            android:layout_height="52dp"
-            android:layout_marginTop="8dp"
-            android:gravity="center"
-            android:text="Usuario:"
-            android:textColor="#000000"
-            android:textSize="24sp"
-            app:layout_constraintBottom_toTopOf="@+id/toolbar2"
-            app:layout_constraintEnd_toEndOf="@+id/toolbar2"
-            app:layout_constraintHorizontal_bias="0.539"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.0" />
-
-        <TextView
-            android:id="@+id/userPhone_"
-            android:layout_width="wrap_content"
-            android:layout_height="50dp"
-            android:layout_marginTop="8dp"
-            android:gravity="center"
-            android:text="Telefono:"
-            android:textColor="#000000"
-            android:textSize="24sp"
-            app:layout_constraintBottom_toTopOf="@+id/toolbar2"
-            app:layout_constraintEnd_toEndOf="@+id/toolbar2"
-            app:layout_constraintHorizontal_bias="0.539"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.0" />
-
-        <TextView
-            android:id="@+id/userEmail_"
-            android:layout_width="79dp"
-            android:layout_height="47dp"
-            android:layout_marginTop="8dp"
-            android:gravity="center"
-            android:text="Email:"
-            android:textColor="#000000"
-            android:textSize="24sp"
-            app:layout_constraintBottom_toTopOf="@+id/toolbar2"
-            app:layout_constraintEnd_toEndOf="@+id/toolbar2"
-            app:layout_constraintHorizontal_bias="0.539"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.0" />
-
-    </LinearLayout>
-
     <Button
         android:id="@+id/petsButton"
         android:layout_width="0dp"
@@ -262,7 +206,7 @@
         app:backgroundTint="#1F3A20"
         app:layout_constraintBottom_toTopOf="@+id/changePwButton"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/petsButton" />
 
