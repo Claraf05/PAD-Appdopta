@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -8,204 +9,151 @@
 
     tools:context=".features.login.LoginActivity">
 
-    <LinearLayout
-        android:id="@+id/linearLayout"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        >
-
-        <ImageView
-            android:id="@+id/imageView"
-            android:layout_width="90dp"
-            android:layout_height="90dp"
-            android:layout_marginStart="0dp"
-            android:layout_marginLeft="0dp"
-            android:layout_marginTop="0dp"
-            android:layout_marginEnd="35dp"
-            android:layout_marginRight="35dp"
-            android:baselineAlignBottom="true"
-            android:contentDescription="@string/logoo"
-            app:layout_constraintBottom_toBottomOf="@id/textView"
-            app:layout_constraintStart_toStartOf="@id/textView"
-            app:layout_constraintTop_toTopOf="@id/textView"
-            app:srcCompat="@drawable/logo" />
-
-        <TextView
-            android:id="@+id/textView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:layout_marginEnd="30dp"
-            android:layout_marginRight="30dp"
-            android:gravity="center_horizontal"
-            android:text="APPDOPTA ORIGINALS"
-            android:textColor="#1F3A20"
-            android:textSize="35sp"
-            android:textStyle="bold" />
-
-    </LinearLayout>
-
-    <TextView
-        android:id="@+id/textView2"
+    <RelativeLayout
+        android:id="@+id/relativeLayout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="2dp"
-        android:gravity="center"
-        android:text="🐾  Encuentra tu mascota ideal  🐾"
-        android:textColor="#1F3A20"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout5"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
-
-    <LinearLayout
-        android:id="@+id/linearLayout5"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_marginTop="2dp"
-        android:orientation="horizontal"
-        app:layout_constraintBottom_toTopOf="@+id/textView3"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2">
-
-        <SearchView
-            android:id="@+id/searchView"
-            android:layout_width="345dp"
-            android:layout_height="wrap_content"
-            android:baselineAligned="false"
-            android:iconifiedByDefault="false"
-            android:queryHint="Buscar">
-
-        </SearchView>
-
-        <ImageView
-            android:id="@+id/filtro"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:clickable="true"
-            android:onClick="filtrar"
-            app:srcCompat="@drawable/filtro" />
-    </LinearLayout>
-
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="15dp"
-        android:layout_marginTop="2dp"
-        android:gravity="left"
-        android:text="Mascotas en adopción:"
-        android:textColor="#1F3A20"
-        android:textSize="16sp"
-        app:layout_constraintBottom_toTopOf="@+id/listaMascotas"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout5" />
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/listaMascotas"
-        android:layout_width="340dp"
-        android:layout_height="474dp"
-        android:layout_gravity="center"
-        android:layout_marginTop="2dp"
-        app:layout_constraintBottom_toTopOf="@+id/toolbar"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView3">
-
-    </androidx.recyclerview.widget.RecyclerView>
-
-
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar"
-        android:layout_width="727dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="1dp"
-        android:background="#1F3A20"
-        android:minHeight="?attr/actionBarSize"
-        android:theme="?attr/actionBarTheme"
+        android:layout_height="match_parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/listaMascotas" />
+        app:layout_constraintTop_toTopOf="parent">
 
-    <ImageButton
-         android:id="@+id/mainActButton"
-         android:layout_width="wrap_content"
-         android:layout_height="wrap_content"
-         android:layout_marginStart="8dp"
-         android:layout_marginLeft="8dp"
-         android:layout_marginTop="1dp"
-         android:layout_marginEnd="8dp"
-         android:layout_marginRight="8dp"
-         android:layout_marginBottom="1dp"
-         android:background="#00FFFFFF"
-         android:onClick="goToMain"
-         android:scaleType="centerInside"
-         android:scaleX="1.75"
-         android:scaleY="1.75"
-         app:layout_constraintBottom_toBottomOf="parent"
-         app:layout_constraintEnd_toStartOf="@+id/userInfoButton"
-         app:layout_constraintStart_toStartOf="parent"
-         app:layout_constraintTop_toTopOf="@+id/toolbar"
-         app:layout_constraintVertical_bias="0.684"
-         app:srcCompat="@drawable/ic_paw"
-         tools:ignore="VectorDrawableCompat,SpeakableTextPresentCheck"
-         app:tint="#A7DD9A" />
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
-     <ImageButton
-         android:id="@+id/userInfoButton"
-         android:layout_width="wrap_content"
-         android:layout_height="wrap_content"
-         android:layout_marginStart="8dp"
-         android:layout_marginLeft="8dp"
-         android:layout_marginTop="1dp"
-         android:layout_marginEnd="8dp"
-         android:layout_marginRight="8dp"
-         android:layout_marginBottom="1dp"
-         android:background="#00FFFFFF"
-         android:onClick="userInfoActivity"
-         android:scaleType="centerInside"
-         android:scaleX="1.5"
-         android:scaleY="1.5"
-         android:tint="#A7DD9A"
-         app:layout_constraintBottom_toBottomOf="parent"
-         app:layout_constraintEnd_toStartOf="@+id/settingsButton"
-         app:layout_constraintStart_toEndOf="@+id/mainActButton"
-         app:layout_constraintTop_toTopOf="@+id/toolbar"
-         app:layout_constraintVertical_bias="0.736"
-         app:srcCompat="@drawable/ic_user"
-         tools:ignore="VectorDrawableCompat,SpeakableTextPresentCheck" />
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="90dp"
+                android:layout_height="90dp"
+                android:layout_marginStart="0dp"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="0dp"
+                android:layout_marginEnd="35dp"
+                android:layout_marginRight="35dp"
+                android:baselineAlignBottom="true"
+                android:contentDescription="@string/logoo"
+                app:layout_constraintBottom_toBottomOf="@id/textView"
+                app:layout_constraintStart_toStartOf="@id/textView"
+                app:layout_constraintTop_toTopOf="@id/textView"
+                app:srcCompat="@drawable/logo" />
 
-     <ImageButton
-         android:id="@+id/settingsButton"
-         android:layout_width="wrap_content"
-         android:layout_height="wrap_content"
-         android:layout_marginStart="8dp"
-         android:layout_marginLeft="8dp"
-         android:layout_marginTop="1dp"
-         android:layout_marginEnd="8dp"
-         android:layout_marginRight="8dp"
-         android:layout_marginBottom="1dp"
-         android:background="#00FFFFFF"
-         android:scaleType="centerInside"
-         android:scaleX="1.5"
-         android:scaleY="1.5"
-         android:tint="#A7DD9A"
-         app:layout_constraintBottom_toBottomOf="parent"
-         app:layout_constraintEnd_toEndOf="parent"
-         app:layout_constraintHorizontal_bias="0.696"
-         app:layout_constraintStart_toEndOf="@id/userInfoButton"
-         app:layout_constraintTop_toTopOf="@+id/toolbar"
-         app:layout_constraintVertical_bias="0.736"
-         app:srcCompat="@drawable/ic_settings"
-         tools:ignore="VectorDrawableCompat,SpeakableTextPresentCheck" />
- </androidx.constraintlayout.widget.ConstraintLayout>
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginEnd="30dp"
+                android:layout_marginRight="30dp"
+                android:gravity="center_horizontal"
+                android:text="APPDOPTA ORIGINALS"
+                android:textColor="#1F3A20"
+                android:textSize="35sp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:layout_below="@+id/linearLayout"
+            android:layout_marginTop="0dp">
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="2dp"
+                android:gravity="center"
+                android:text="🐾  Encuentra tu mascota ideal  🐾"
+                android:textColor="#1F3A20"
+                android:textSize="24sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayout5"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="125dp"
+            android:orientation="horizontal">
+
+            <SearchView
+                android:id="@+id/searchView"
+                android:layout_width="350dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="0dp"
+                android:baselineAligned="false"
+                android:iconifiedByDefault="false"
+                android:queryHint="Buscar"></SearchView>
+
+            <ImageView
+                android:id="@+id/filtro"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:clickable="true"
+                android:onClick="filtrar"
+                app:srcCompat="@drawable/filtro" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/layoutBoton"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_below="@+id/linearLayout5"
+            android:layout_marginTop="1dp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:textAlignment="center">
+            ¡
+
+            <Button
+                android:id="@+id/buttonBuscar"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:onClick="filtrar"
+                android:text="OK"
+                android:textColor="@color/white"
+                app:backgroundTint="#1F3A20"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/linearLayout5" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/layoutBoton"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="0dp"
+            android:gravity="left"
+            android:text="Mascotas en adopción:"
+            android:textColor="#1F3A20"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toTopOf="@+id/listaMascotas"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/layoutBoton" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/listaMascotas"
+            android:layout_width="300dp"
+            android:layout_height="350dp"
+            android:layout_below="@+id/textView3"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="3dp"
+            app:layout_constraintBottom_toTopOf="@+id/toolbar"
+            app:layout_constraintTop_toBottomOf="@+id/textView3">
+
+        </androidx.recyclerview.widget.RecyclerView>
+
+    </RelativeLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
