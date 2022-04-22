@@ -72,14 +72,14 @@
         android:text="🐾  Encuentra tu mascota ideal  🐾"
         android:textColor="#1F3A20"
         android:textSize="24sp"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout5"
+        app:layout_constraintBottom_toTopOf="@+id/layoutBusquedaFiltro"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/div_line" />
 
     <LinearLayout
-        android:id="@+id/linearLayout5"
+        android:id="@+id/layoutBusquedaFiltro"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_marginTop="2dp"
@@ -119,7 +119,7 @@
         app:layout_constraintBottom_toTopOf="@+id/listaMascotas"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout5" />
+        app:layout_constraintTop_toBottomOf="@+id/layoutBusquedaFiltro" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/listaMascotas"
