@@ -19,10 +19,9 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <LinearLayout
-            android:id="@+id/linearLayout"
+            android:id="@+id/layoutEncabezado"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
             android:orientation="horizontal"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -60,16 +59,16 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/layoutEslogan"
             android:layout_width="match_parent"
             android:layout_height="35dp"
-            android:layout_below="@+id/linearLayout"
-            android:layout_marginTop="0dp">
+            android:layout_below="@+id/layoutEncabezado"
+            android:layout_marginTop="5dp">
 
             <TextView
                 android:id="@+id/textView2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="2dp"
                 android:gravity="center"
                 android:text="🐾  Encuentra tu mascota ideal  🐾"
                 android:textColor="#1F3A20"
@@ -80,7 +79,8 @@
             android:id="@+id/linearLayout5"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:layout_marginTop="125dp"
+            android:layout_below="@+id/layoutEslogan"
+            android:layout_marginTop="15dp"
             android:orientation="horizontal">
 
             <SearchView
@@ -106,7 +106,7 @@
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_below="@+id/linearLayout5"
-            android:layout_marginTop="1dp"
+            android:layout_marginTop="2dp"
             android:gravity="center"
             android:orientation="horizontal"
             android:textAlignment="center">
@@ -116,7 +116,6 @@
                 android:id="@+id/buttonBuscar"
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
-                android:onClick="filtrar"
                 android:text="OK"
                 android:textColor="@color/white"
                 app:backgroundTint="#1F3A20"
@@ -153,7 +152,6 @@
 
         </androidx.recyclerview.widget.RecyclerView>
 
+
     </RelativeLayout>
-
-
 </androidx.constraintlayout.widget.ConstraintLayout>
