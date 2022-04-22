@@ -15,8 +15,10 @@
         android:layout_height="match_parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0">
 
         <LinearLayout
             android:id="@+id/layoutEncabezado"
@@ -32,7 +34,7 @@
                 android:layout_width="90dp"
                 android:layout_height="90dp"
                 android:layout_marginStart="0dp"
-                android:layout_marginLeft="0dp"
+                android:layout_marginLeft="10dp"
                 android:layout_marginTop="0dp"
                 android:layout_marginEnd="35dp"
                 android:layout_marginRight="35dp"
@@ -59,10 +61,20 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/lineaSeparadora"
+            android:layout_width="383dp"
+            android:layout_height="3dp"
+            android:layout_below="@+id/layoutEncabezado"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="3dp"
+            android:background="@color/black"
+            android:orientation="horizontal" />
+
+        <LinearLayout
             android:id="@+id/layoutEslogan"
             android:layout_width="match_parent"
             android:layout_height="35dp"
-            android:layout_below="@+id/layoutEncabezado"
+            android:layout_below="@+id/lineaSeparadora"
             android:layout_marginTop="5dp">
 
             <TextView
@@ -76,7 +88,7 @@
         </LinearLayout>
 
         <LinearLayout
-            android:id="@+id/linearLayout5"
+            android:id="@+id/layoutBusquedaFiltro"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_below="@+id/layoutEslogan"
@@ -105,12 +117,11 @@
             android:id="@+id/layoutBoton"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:layout_below="@+id/linearLayout5"
+            android:layout_below="@+id/layoutBusquedaFiltro"
             android:layout_marginTop="2dp"
             android:gravity="center"
             android:orientation="horizontal"
             android:textAlignment="center">
-            ¡
 
             <Button
                 android:id="@+id/buttonBuscar"
@@ -121,7 +132,7 @@
                 app:backgroundTint="#1F3A20"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/linearLayout5" />
+                app:layout_constraintTop_toBottomOf="@+id/layoutBusquedaFiltro" />
         </LinearLayout>
 
         <TextView
@@ -130,7 +141,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/layoutBoton"
             android:layout_marginLeft="15dp"
-            android:layout_marginTop="0dp"
+            android:layout_marginTop="7dp"
             android:gravity="left"
             android:text="Mascotas en adopción:"
             android:textColor="#1F3A20"
@@ -146,7 +157,7 @@
             android:layout_height="350dp"
             android:layout_below="@+id/textView3"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="3dp"
+            android:layout_marginTop="5dp"
             app:layout_constraintBottom_toTopOf="@+id/toolbar"
             app:layout_constraintTop_toBottomOf="@+id/textView3">
 
