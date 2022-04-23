@@ -244,6 +244,7 @@
         android:layout_marginTop="32dp"
         android:layout_marginEnd="32dp"
         android:layout_marginBottom="4dp"
+        android:onClick="goToPets"
         android:text="Ver Mascotas"
         android:textColor="#C9E3AF"
         app:backgroundTint="#1F3A20"

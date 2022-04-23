@@ -46,21 +46,28 @@ public class UserActivity extends AppCompatActivity {
         userE.setText(uwu.getEmail());
     }
 
+
+    public void goToPets(View view){
+        Intent intent = new Intent(getApplicationContext(), UserPetsActivity.class);
+        intent.putExtra("userInfo", userid);
+        startActivity(intent);
+    }
+
     public void goToSettings_U(View view){
         Intent intent = new Intent(getApplicationContext(), SettingsActivity.class);
-        intent.putExtras(intent.putExtra("userInfo", userid));
+        intent.putExtra("userInfo", userid);
         startActivity(intent);
     }
 
     public void changePw_U(View view){
         Intent intent = new Intent(getApplicationContext(), ChangePasswordActivity.class);
-        intent.putExtras(intent.putExtra("userInfo", userid));
+        intent.putExtra("userInfo", userid);
         startActivity(intent);
     }
 
     public void changeUser_U(View view){
         Intent intent = new Intent(getApplicationContext(), ChangeUserActivity.class);
-        intent.putExtras(intent.putExtra("userInfo", userid));
+        intent.putExtra("userInfo", userid);
         startActivity(intent);
     }
 
@@ -78,7 +85,7 @@ public class UserActivity extends AppCompatActivity {
 
     public void logOut_U(View view){
         Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
-        intent.putExtras(intent.putExtra("userInfo", userid));
+        intent.putExtra("userInfo", userid);
         startActivity(intent);
     }
 

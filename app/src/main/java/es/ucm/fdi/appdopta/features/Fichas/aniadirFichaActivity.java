@@ -43,7 +43,7 @@ public class aniadirFichaActivity extends AppCompatActivity {
     String idDue;
     ImageView previewImage;
     Bitmap bitmap;
-    UserInfo usuario;
+    UserInfo usuario = new UserInfo();
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);

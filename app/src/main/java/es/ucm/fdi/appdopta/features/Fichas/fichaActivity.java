@@ -56,7 +56,7 @@ public class fichaActivity extends AppCompatActivity implements OnMapReadyCallba
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_ficha);
-        Intent intent = getIntent();
+        //Intent intent = getIntent();
         user = getIntent().getExtras();
         idDue = user.getString("userInfo");
 
