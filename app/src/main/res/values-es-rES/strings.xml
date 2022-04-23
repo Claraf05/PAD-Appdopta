@@ -13,4 +13,7 @@
     <string name="email">Correo Electrónico</string>
     <string name="rePass">Repetir Contraseña</string>
     <string name="alrAcc">¿Ya tiene una cuenta?</string>
+    <string name="regSucc">Usuario registrado con éxito</string>
+    <string name="existingUser">El usuario ya existe</string>
+    <string name="diffPass">Las contraseñas no coinciden</string>
 </resources>

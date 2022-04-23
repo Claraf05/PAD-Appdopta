@@ -11,10 +11,13 @@
     <string name="phone">Phone Number</string>
     <string name="email">Email</string>
     <string name="alrAcc">Already have an account?</string>
+    <string name="regSucc">Successfully registered user</string>
 
     <!-- Error msg -->
     <string name="userNotFound">The user doesn\'t exists</string>
     <string name="fieldsNotCompleted">Fill all the fields</string>
+    <string name="existingUser">The user already exists</string>
+    <string name="diffPass">The passwords doesn\'t match</string>
 
 
 

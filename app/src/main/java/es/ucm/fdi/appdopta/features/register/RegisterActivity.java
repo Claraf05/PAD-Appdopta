@@ -56,7 +56,7 @@ public class RegisterActivity extends AppCompatActivity {
 
         //authentication
         if(user.equals("") || pass.equals("") || repassw.equals("") || ph.equals("") || mail.equals("")) {
-            Toast.makeText(RegisterActivity.this, "Por favor rellene todos los campos", Toast.LENGTH_SHORT).show();
+            Toast.makeText(RegisterActivity.this, R.string.fieldsNotCompleted, Toast.LENGTH_SHORT).show();
         }
         else{
             if(pass.equals(repassw)){
@@ -66,17 +66,17 @@ public class RegisterActivity extends AppCompatActivity {
                     if(reg == true){
                        // UserInfo useru = new UserInfo();
                         //dbHelper.getUserById(useru, String.valueOf(id));
-                        Toast.makeText(RegisterActivity.this, "Usuario registrado con éxito", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(RegisterActivity.this, R.string.regSucc, Toast.LENGTH_SHORT).show();
                         Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
                         startActivity(intent);
                     }
                 }
                 else{
-                    Toast.makeText(RegisterActivity.this, "El usuario ya existe", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(RegisterActivity.this, R.string.existingUser, Toast.LENGTH_SHORT).show();
                 }
             }
             else{
-                Toast.makeText(RegisterActivity.this, "Las contraseñas no coinciden", Toast.LENGTH_SHORT).show();
+                Toast.makeText(RegisterActivity.this, R.string.diffPass, Toast.LENGTH_SHORT).show();
             }
         }
     }
