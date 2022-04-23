@@ -55,8 +55,8 @@ public class aniadirFichaActivity extends AppCompatActivity {
         localizacionD = (EditText) findViewById(R.id.localizacionDueno);
 
         //insertamos datos de la BBDD
-        correoD.setText(dbHelper.buscarUsuario(idDue).getEmail());
-        telefonoD.setText(dbHelper.buscarUsuario(idDue).getPhone());
+        //correoD.setText(dbHelper.buscarUsuario(idDue).getEmail());
+        //telefonoD.setText(dbHelper.buscarUsuario(idDue).getPhone());
 
         especieM = (EditText) findViewById(R.id.especieMasc);
         razaM = (EditText) findViewById(R.id.razaMasc);
@@ -152,7 +152,7 @@ public class aniadirFichaActivity extends AppCompatActivity {
             }
             while(idcount);
 
-            String idDue = dbHelper.getuserId(usern);
+            //String idDue = dbHelper.getuserId(usern);
             dbHelper.insertPetData(String.valueOf(id), idDue, nombreMasc, sexoMasc, raza, desc,especie, bday, rabiaV,hepatitisV,leishmaniasisV, nChip, fechChip,locChip, localizacion, bitmap);
 
         }

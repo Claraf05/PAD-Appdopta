@@ -299,6 +299,40 @@ public class AppdoptaDBHelper extends SQLiteOpenHelper {
         return id;
     }
 
+    public void updateUserName(String id, String name){
+        //TODO ---------------------------
+        SQLiteDatabase db = this.getReadableDatabase();
+        String[] parametros = {id};
+        ContentValues contentValues = new ContentValues();
+        contentValues.put(StandardUserTable.USERNAME_C, name);
+        db.update(StandardUserTable.TABLE_NAME, contentValues, StandardUserTable.ID_C+"=?", parametros);
+    }
 
+    public void updateUserPw(String id, String pw){
+        //TODO ---------------------------
+        SQLiteDatabase db = this.getReadableDatabase();
+        String[] parametros = {id};
+        ContentValues contentValues = new ContentValues();
+        contentValues.put(StandardUserTable.PASSWORD_C, pw);
+        db.update(StandardUserTable.TABLE_NAME, contentValues, StandardUserTable.ID_C+"=?", parametros);
 
+    }
+
+    public void updateUserPhone(String id, int ph){
+        //TODO ---------------------------
+        SQLiteDatabase db = this.getReadableDatabase();
+        String[] parametros = {id};
+        ContentValues contentValues = new ContentValues();
+        contentValues.put(StandardUserTable.PHONE_C, ph);
+        db.update(StandardUserTable.TABLE_NAME, contentValues, StandardUserTable.ID_C+"=?", parametros);
+    }
+
+    public void updateUserEmail(String id, String email){
+        //TODO ---------------------------
+        SQLiteDatabase db = this.getReadableDatabase();
+        String[] parametros = {id};
+        ContentValues contentValues = new ContentValues();
+        contentValues.put(StandardUserTable.EMAIL_C, email);
+        db.update(StandardUserTable.TABLE_NAME, contentValues, StandardUserTable.ID_C+"=?", parametros);
+    }
 }

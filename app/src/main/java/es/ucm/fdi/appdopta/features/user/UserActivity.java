@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import es.ucm.fdi.appdopta.R;
 import es.ucm.fdi.appdopta.database.AppdoptaDBHelper;
@@ -61,11 +62,15 @@ public class UserActivity extends AppCompatActivity {
     }
 
     public void changeEmail_U(View view){
-        //TODO terminar metodo
+        String em = String.valueOf(userT.getText());
+        dbHelper.updateUserEmail(userid, em);
+        Toast.makeText(UserActivity.this, "Email actualizado con éxito", Toast.LENGTH_SHORT).show();
     }
 
     public void changePhone_U(View view){
-        //TODO terminar metodo
+        int ph = Integer.parseInt(String.valueOf(userT.getText()));
+        dbHelper.updateUserPhone(userid, ph);
+        Toast.makeText(UserActivity.this, "Telefono actualizado con éxito", Toast.LENGTH_SHORT).show();
     }
 
     public void logOut_U(View view){
