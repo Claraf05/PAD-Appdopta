@@ -38,14 +38,13 @@ public class LoginActivity extends AppCompatActivity {
         String pass = password.getText().toString();
 
         if(user.equals("") || pass.equals("")) {
-            Toast.makeText(LoginActivity.this, "Por favor rellene todos los campos", Toast.LENGTH_SHORT).show();
+            Toast.makeText(LoginActivity.this, R.string.fieldsNotCompleted, Toast.LENGTH_SHORT).show();
         }
         else{
 
             Boolean checkuser = dbHelper.checkUserPassword(user,pass);
             if(checkuser == true){
-                CharSequence txt = "Bienvenido: " + user;
-                Toast.makeText(LoginActivity.this, txt, Toast.LENGTH_SHORT).show();
+                Toast.makeText(LoginActivity.this, R.string.welcome, Toast.LENGTH_SHORT).show();
 
                 //TODO crear un usuario para pasarlo al intent con la info de telefono y tal a null que eso ya se rellena en el user info activity
                 UserInfo uInfo = new UserInfo();
@@ -60,7 +59,7 @@ public class LoginActivity extends AppCompatActivity {
                 startActivity(intent);
             }
             else{
-                Toast.makeText(LoginActivity.this, "El usuario no existe o se introdujo algun valor incorrecto", Toast.LENGTH_SHORT).show();
+                Toast.makeText(LoginActivity.this, R.string.userNotFound, Toast.LENGTH_SHORT).show();
             }
         }
     }

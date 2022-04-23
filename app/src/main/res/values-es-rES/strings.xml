@@ -1,5 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Appdopta</string>
-    <string name="title_activity_settings">Ajustes</string>
+    <string name="setting">Ajustes</string>
+    <string name="user">Usuario</string>
+    <string name="pass">Contraseña</string>
+    <string name="login">Iniciar Sesión</string>
+    <string name="register">Registrarse</string>
+    <string name="userNotFound">El usuario no existe</string>
+    <string name="fieldsNotCompleted">Por favor rellene todos los campos</string>
+    <string name="welcome">Bienvenido</string>
+    <string name="phone">Teléfono</string>
+    <string name="email">Correo Electrónico</string>
+    <string name="rePass">Repetir Contraseña</string>
+    <string name="alrAcc">¿Ya tiene una cuenta?</string>
 </resources>

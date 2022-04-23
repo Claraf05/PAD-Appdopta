@@ -1,5 +1,25 @@
 <resources>
     <string name="app_name">Appdopta</string>
+    <string name="setting">Settings</string>
+
+    <string name="user">User</string>
+    <string name="pass">Password</string>
+    <string name="rePass">Repeat Password</string>
+    <string name="login">Login</string>
+    <string name="register">Register</string>
+    <string name="welcome">Welcome</string>
+    <string name="phone">Phone Number</string>
+    <string name="email">Email</string>
+    <string name="alrAcc">Already have an account?</string>
+
+    <!-- Error msg -->
+    <string name="userNotFound">The user doesn\'t exists</string>
+    <string name="fieldsNotCompleted">Fill all the fields</string>
+
+
+
+
+
     <string name="title_activity_settings">SettingsActivity</string>
 
     <!-- Preference Titles -->
@@ -19,4 +39,5 @@
     <string name="logoo">logo</string>
     <string name="nombreMascota">Nombre</string>
     <string name="especieMascota">Especie</string>
+
 </resources>
