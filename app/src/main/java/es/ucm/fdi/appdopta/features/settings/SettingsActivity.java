@@ -2,6 +2,7 @@ package es.ucm.fdi.appdopta.features.settings;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.view.View;
 
 import androidx.appcompat.app.ActionBar;
@@ -17,6 +18,7 @@ import es.ucm.fdi.appdopta.features.user.changeInfo.ChangeUserActivity;
 public class SettingsActivity extends AppCompatActivity {
 
     private Bundle user;
+    String userid;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +27,8 @@ public class SettingsActivity extends AppCompatActivity {
         this.setTitle("Ajustes");
         //TODO coger los extras del intent para coger el usuario y mostrar su info por los ajustes
         user = getIntent().getExtras();
+        userid = user.getString("userInfo");
+
         ActionBar actionBar = getSupportActionBar();
         if (actionBar != null) {
             actionBar.setDisplayHomeAsUpEnabled(true);
@@ -60,6 +64,8 @@ public class SettingsActivity extends AppCompatActivity {
 
     public void userInfoActivity(View view){
         Intent intent = new Intent(getApplicationContext(), UserActivity.class);
+        //intent.putExtras(intent.putExtra("userInfo", (Parcelable) user));
+        intent.putExtras(intent.putExtra("userInfo", userid));
         startActivity(intent);
     }
 }

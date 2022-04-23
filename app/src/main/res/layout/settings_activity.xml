@@ -13,12 +13,11 @@
         android:layout_width="311dp"
         android:layout_height="57dp"
         android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
         android:layout_marginTop="32dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
         android:onClick="logOut"
         android:text="Cerrar sesión"
+        android:textColor="#C9E3AF"
         app:backgroundTint="#1F3A20"
         app:layout_constraintBottom_toTopOf="@+id/toolbar"
         app:layout_constraintEnd_toEndOf="parent"
@@ -116,8 +115,8 @@
         android:id="@+id/linearLayout3"
         android:layout_width="411dp"
         android:layout_height="437dp"
+        android:layout_marginTop="32dp"
         android:layout_marginEnd="2dp"
-        android:layout_marginRight="2dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toTopOf="@+id/toolbar"
         app:layout_constraintEnd_toEndOf="parent"
@@ -125,18 +124,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.057">
-
-        <Switch
-            android:id="@+id/notificationSwitch"
-            android:layout_width="match_parent"
-            android:layout_height="48dp"
-            android:layout_marginStart="24dp"
-            android:layout_marginLeft="24dp"
-            android:layout_marginTop="32dp"
-            android:layout_marginEnd="24dp"
-            android:layout_marginRight="24dp"
-            android:text="Notificaciones"
-            android:textSize="16sp" />
 
         <TextView
             android:id="@+id/languageText"
@@ -164,6 +151,7 @@
                 android:layout_gravity="center"
                 android:checked="true"
                 android:drawableLeft="@drawable/ic_spanish"
+                android:minHeight="48dp"
                 android:text="Español" />
 
             <RadioButton
@@ -172,6 +160,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:drawableLeft="@drawable/ic_english"
+                android:minHeight="48dp"
                 android:text="English" />
 
         </RadioGroup>

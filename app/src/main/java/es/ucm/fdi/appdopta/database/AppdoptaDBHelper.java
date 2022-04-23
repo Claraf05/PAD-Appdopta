@@ -299,4 +299,6 @@ public class AppdoptaDBHelper extends SQLiteOpenHelper {
         return id;
     }
 
+
+
 }

@@ -53,8 +53,10 @@ public class LoginActivity extends AppCompatActivity {
                 dbHelper.buscarUsuario(uInfo, idf);
 
                 Intent intent = new Intent(getApplicationContext(), SettingsActivity.class);
+
                 //TODO pasarle el usuario al intent para llevarlo a la actividad de info de usuario
-                intent.putExtra("userInfo", (Parcelable) uInfo);
+                //intent.putExtra("userInfo", (Parcelable) uInfo);
+                intent.putExtra("userInfo", idf);
                 startActivity(intent);
             }
             else{

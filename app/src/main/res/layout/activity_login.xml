@@ -104,6 +104,7 @@
         android:layout_marginBottom="32dp"
         android:onClick="login"
         android:text="Login"
+        android:textColor="#FFFFFF"
         app:backgroundTint="#1F3A20"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
