@@ -16,11 +16,15 @@ import es.ucm.fdi.appdopta.features.user.changeInfo.ChangeUserActivity;
 
 public class SettingsActivity extends AppCompatActivity {
 
+    private Bundle user;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.settings_activity);
         this.setTitle("Ajustes");
+        //TODO coger los extras del intent para coger el usuario y mostrar su info por los ajustes
+        user = getIntent().getExtras();
         ActionBar actionBar = getSupportActionBar();
         if (actionBar != null) {
             actionBar.setDisplayHomeAsUpEnabled(true);

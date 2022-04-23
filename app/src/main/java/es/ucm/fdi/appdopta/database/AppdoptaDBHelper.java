@@ -7,6 +7,8 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.util.Log;
+import android.widget.Toast;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
@@ -16,6 +18,7 @@ import es.ucm.fdi.appdopta.Animal;
 import es.ucm.fdi.appdopta.database.AppdoptaDatabase.StandardUserTable;
 import es.ucm.fdi.appdopta.database.AppdoptaDatabase.PetTable;
 import es.ucm.fdi.appdopta.database.AppdoptaDatabase.PetOwnerTable;
+import es.ucm.fdi.appdopta.features.register.RegisterActivity;
 import es.ucm.fdi.appdopta.features.user.UserInfo;
 
 public class AppdoptaDBHelper extends SQLiteOpenHelper {
@@ -218,12 +221,6 @@ public class AppdoptaDBHelper extends SQLiteOpenHelper {
         }
     }
 
-    public String getuserId(String user){
-        SQLiteDatabase db = this.getWritableDatabase();
-        Cursor cursor = db.rawQuery("Select "+ StandardUserTable.ID_C +" from "+StandardUserTable.TABLE_NAME+" where "+StandardUserTable.USERNAME_C+" = ?", new String[] {user});
-        return cursor.getString(0);
-    }
-
     public boolean checkUserPassword(String user, String passw){
         SQLiteDatabase db = this.getWritableDatabase();
         Cursor cursor = db.rawQuery("Select * from "+StandardUserTable.TABLE_NAME+" where "+StandardUserTable.USERNAME_C+" = ? and "+StandardUserTable.PASSWORD_C+" = ?", new String[] {user,passw});
@@ -260,31 +257,46 @@ public class AppdoptaDBHelper extends SQLiteOpenHelper {
         }
     }
 
-    public UserInfo buscarUsuario(String id){
+    public void buscarUsuario(UserInfo usuario, String userId){
 
         SQLiteDatabase db = this.getReadableDatabase();
-
-        //user a usar
-        UserInfo user = new UserInfo();
-
-        //info user a meter
         String name;
         String passw;
-        String phone;
+        int phone;
         String email;
+        String[] parametros = {userId};
+        String[] campos = {StandardUserTable.USERNAME_C, StandardUserTable.PASSWORD_C, StandardUserTable.PHONE_C, StandardUserTable.EMAIL_C};
 
-        Cursor cursor = db.rawQuery("Select * from " + StandardUserTable.TABLE_NAME + " where " + StandardUserTable.USERNAME_C+ " =' " + id + "'", null );
-        if(cursor.moveToFirst()){
-            do{
-                name = cursor.getString(1);
-                passw = cursor.getString(2);
-                phone = cursor.getString(3);
-                email = cursor.getString(4);
 
-            }while(cursor.moveToNext());
-            user = new UserInfo(id,name,passw,phone,email);
-        }
-        return user;
+        Cursor c = db.query(StandardUserTable.TABLE_NAME, campos, StandardUserTable.ID_C+"=?", parametros, null, null, null);
+        c.moveToFirst();
+
+        name = c.getString(0);
+        passw = c.getString(1);
+        phone = c.getInt(2);
+        email = c.getString(3);
+        c.close();
+
+        usuario.setId(userId);
+        usuario.setUsername(name);
+        usuario.setPassw(passw);
+        usuario.setEmail(email);
+        usuario.setPhone(phone);
+    }
+
+    public String getUserIdByName(String userName) {
+        String id = "";
+        SQLiteDatabase db = this.getReadableDatabase();
+        String[] parametros = {userName};
+        String[] campos = {StandardUserTable.ID_C};
+
+        Cursor c = db.query(StandardUserTable.TABLE_NAME, campos, StandardUserTable.USERNAME_C+"=?", parametros, null, null, null);
+        c.moveToFirst();
+
+        id = c.getString(0);
+        c.close();
+
+        return id;
     }
 
 }

@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -45,7 +46,15 @@ public class LoginActivity extends AppCompatActivity {
             if(checkuser == true){
                 CharSequence txt = "Bienvenido: " + user;
                 Toast.makeText(LoginActivity.this, txt, Toast.LENGTH_SHORT).show();
+
+                //TODO crear un usuario para pasarlo al intent con la info de telefono y tal a null que eso ya se rellena en el user info activity
+                UserInfo uInfo = new UserInfo();
+                String idf = dbHelper.getUserIdByName(user);
+                dbHelper.buscarUsuario(uInfo, idf);
+
                 Intent intent = new Intent(getApplicationContext(), SettingsActivity.class);
+                //TODO pasarle el usuario al intent para llevarlo a la actividad de info de usuario
+                intent.putExtra("userInfo", (Parcelable) uInfo);
                 startActivity(intent);
             }
             else{

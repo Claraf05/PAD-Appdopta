@@ -6,7 +6,7 @@ public class UserInfo {
     private String id;
     private String username;
     private String passw;
-    private String phone;
+    private int phone;
     private String email;
 
     //constructor vacio
@@ -14,8 +14,12 @@ public class UserInfo {
 
     }
 
-    public UserInfo(String id, String username, String passw, String phone, String email){
-
+    public UserInfo(String id, String username, String passw, int phone, String email){
+        this.id = id;
+        this.username = username;
+        this.passw = passw;
+        this.phone = phone;
+        this.email = email;
     }
 
     public void setId(String id) {
@@ -30,7 +34,7 @@ public class UserInfo {
         this.passw = passw;
     }
 
-    public void setPhone(String phone) {
+    public void setPhone(int phone) {
         this.phone = phone;
     }
 
@@ -50,7 +54,7 @@ public class UserInfo {
         return passw;
     }
 
-    public String getPhone() {
+    public int getPhone() {
         return phone;
     }
 

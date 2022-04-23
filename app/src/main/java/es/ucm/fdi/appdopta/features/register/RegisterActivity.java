@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -63,12 +64,10 @@ public class RegisterActivity extends AppCompatActivity {
                 if(checkuser == false){
                     Boolean reg = dbHelper.insertUserData(String.valueOf(id), user, pass, Integer.parseInt(ph), mail, 0);
                     if(reg == true){
+                       // UserInfo useru = new UserInfo();
+                        //dbHelper.getUserById(useru, String.valueOf(id));
                         Toast.makeText(RegisterActivity.this, "Usuario registrado con éxito", Toast.LENGTH_SHORT).show();
-                        //TODO crear un usuario para pasarlo al intent con la info de telefono y tal a null que eso ya se rellena en el user info activity
-                        //UserInfo uInfo = new UserInfo();
                         Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
-                        //TODO pasarle el usuario al intent para llevarlo a la actividad de info de usuario
-                        //intent.putExtra("userInfo", )
                         startActivity(intent);
                     }
                 }
