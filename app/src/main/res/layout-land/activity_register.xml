@@ -128,7 +128,7 @@
                 android:padding="5dp">
 
                 <TextView
-                    android:id="@+id/textView3"
+                    android:id="@+id/textoPrevLista"
                     android:layout_width="161dp"
                     android:layout_height="27dp"
                     android:text="Already have an account?" />

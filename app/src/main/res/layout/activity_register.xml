@@ -139,7 +139,7 @@
         app:layout_constraintVertical_bias="0.309">
 
         <TextView
-            android:id="@+id/textView3"
+            android:id="@+id/textoPrevLista"
             android:layout_width="161dp"
             android:layout_height="27dp"
             android:text="@string/alrAcc" />
