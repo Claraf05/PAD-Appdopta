@@ -31,9 +31,11 @@ import java.util.List;
 
 import es.ucm.fdi.appdopta.R;
 import es.ucm.fdi.appdopta.database.AppdoptaDBHelper;
+import es.ucm.fdi.appdopta.features.user.UserInfo;
 
 public class fichaActivity extends AppCompatActivity implements OnMapReadyCallback {
 
+    Bundle user;
     ToggleButton infoButton;
     LinearLayout dataDue;
     RadioGroup mRadio;
@@ -41,8 +43,9 @@ public class fichaActivity extends AppCompatActivity implements OnMapReadyCallba
     LinearLayout dataChip,botonesZoom;
     View fMap;
     CardView card;
-    String localidad;
+    String localidad, idDue;
     ImageView imagen;
+    UserInfo usuario;
     double Lat, Lng;
     GoogleMap g;
     int zoom[] = {1,5,10,15,20};
@@ -54,6 +57,11 @@ public class fichaActivity extends AppCompatActivity implements OnMapReadyCallba
 
         setContentView(R.layout.activity_ficha);
         Intent intent = getIntent();
+        user = getIntent().getExtras();
+        idDue = user.getString("userInfo");
+
+        dbHelper.buscarUsuario(usuario, idDue);
+
         infoButton = findViewById(R.id.infoDue);
         dataDue = findViewById(R.id.layoutDue);
         mRadio = findViewById(R.id.radioGroup);

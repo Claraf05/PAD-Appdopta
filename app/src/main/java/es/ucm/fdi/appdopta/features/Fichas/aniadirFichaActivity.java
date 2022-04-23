@@ -30,8 +30,10 @@ import java.util.Random;
 import es.ucm.fdi.appdopta.R;
 import es.ucm.fdi.appdopta.database.AppdoptaDBHelper;
 import es.ucm.fdi.appdopta.features.register.RegisterActivity;
+import es.ucm.fdi.appdopta.features.user.UserInfo;
 
 public class aniadirFichaActivity extends AppCompatActivity {
+    Bundle user;
     EditText correoD, telefonoD, localizacionD, especieM, razaM, nombreM, nacimientoM;
     RadioGroup sexo;
     RadioButton selectedSex;
@@ -41,12 +43,15 @@ public class aniadirFichaActivity extends AppCompatActivity {
     String idDue;
     ImageView previewImage;
     Bitmap bitmap;
+    UserInfo usuario;
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_aniadirficha);
         Intent intent = getIntent();
-        idDue = intent.getStringExtra("id");
+        user = getIntent().getExtras();
+        idDue = user.getString("userInfo");
+        //idDue = intent.getStringExtra("id");
 
         username = findViewById(R.id.userName);
 
@@ -55,8 +60,11 @@ public class aniadirFichaActivity extends AppCompatActivity {
         localizacionD = (EditText) findViewById(R.id.localizacionDueno);
 
         //insertamos datos de la BBDD
-        //correoD.setText(dbHelper.buscarUsuario(idDue).getEmail());
-        //telefonoD.setText(dbHelper.buscarUsuario(idDue).getPhone());
+        dbHelper.buscarUsuario(usuario,idDue);
+
+        username.setText(usuario.getUsername());
+        correoD.setText(usuario.getEmail());
+        telefonoD.setText(usuario.getPhone());
 
         especieM = (EditText) findViewById(R.id.especieMasc);
         razaM = (EditText) findViewById(R.id.razaMasc);
@@ -94,9 +102,6 @@ public class aniadirFichaActivity extends AppCompatActivity {
                         InputStream imageStream = getContentResolver().openInputStream(photoUri);
                         bitmap = BitmapFactory.decodeStream(imageStream);
 
-                    } catch (FileNotFoundException e) {
-                        // TODO Auto-generated catch block
-                        e.printStackTrace();
                     } catch (IOException e) {
                         // TODO Auto-generated catch block
                         e.printStackTrace();
