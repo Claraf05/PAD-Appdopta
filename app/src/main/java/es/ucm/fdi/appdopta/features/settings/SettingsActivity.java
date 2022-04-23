@@ -44,11 +44,13 @@ public class SettingsActivity extends AppCompatActivity {
 
     public void changePw_S(View view){
         Intent intent = new Intent(getApplicationContext(), ChangePasswordActivity.class);
+        intent.putExtras(intent.putExtra("userInfo", userid));
         startActivity(intent);
     }
 
     public void changeUser(View view){
         Intent intent = new Intent(getApplicationContext(), ChangeUserActivity.class);
+        intent.putExtras(intent.putExtra("userInfo", userid));
         startActivity(intent);
     }
 
