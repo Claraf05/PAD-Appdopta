@@ -5,7 +5,9 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.Toast;
 
@@ -18,14 +20,58 @@ import java.util.ArrayList;
 import es.ucm.fdi.appdopta.database.AppdoptaDBHelper;
 
 public class FiltroView extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
+    private Spinner animalSpinner;
+    private Spinner raceSpinner;
+    private Spinner locationSpinner;
+    private Button applySelection;
+    private Button eraseSelection;
+
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.filter_view);
         Intent intent = getIntent();
-        Spinner animalSpinner = findViewById(R.id.spinnerAnimal);
-        Spinner raceSpinner = findViewById(R.id.spinnerRace);
-        Spinner locationSpinner = findViewById(R.id.spinnerLocation);
+        animalSpinner = findViewById(R.id.spinnerAnimal);
+        raceSpinner = findViewById(R.id.spinnerRace);
+        locationSpinner = findViewById(R.id.spinnerLocation);
+        initSpinnerValues();
+        //applySelection = findViewById(R.)
 
+
+    }
+
+    @Override
+    public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+        adapterView.getSelectedItem();
+        if(i != 0) {
+            switch (adapterView.getId()) {
+
+                case R.id.spinnerAnimal:
+                    //Hacer algo aquí
+                    Toast.makeText(this, "Has seleccionado " + adapterView.getSelectedItem().toString(), Toast.LENGTH_LONG).show();
+
+                    break;
+                case R.id.spinnerRace:
+                    //Hacer algo aquí
+                    Toast.makeText(this, "Has seleccionado " + adapterView.getSelectedItem().toString(), Toast.LENGTH_LONG).show();
+
+                    break;
+                case R.id.spinnerLocation:
+                    //Hacer algo aquí
+                    Toast.makeText(this, "Has seleccionado " + adapterView.getSelectedItem().toString(), Toast.LENGTH_LONG).show();
+
+                    break;
+                default:
+                    break;
+            }
+        }
+    }
+
+    @Override
+    public void onNothingSelected(AdapterView<?> adapterView) {
+
+    }
+
+    public void initSpinnerValues(){
         //  Lista de elementos del spinner 1 --> tipos de animal
         ArrayList<String> petsType = new ArrayList<String>();
         petsType.add("Seleccionar animal...");
@@ -47,7 +93,27 @@ public class FiltroView extends AppCompatActivity implements AdapterView.OnItemS
         petsRace.add("Boyero de Berna");
 
         raceSpinner.setOnItemSelectedListener(this);
-        ArrayAdapter<String> adapterRace = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, petsRace){
+        ArrayAdapter<String> adapterRace = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, petsRace);
+        adapterRace.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        raceSpinner.setAdapter(adapterRace);
+
+        //  Lista de elementos del spinner 3 --> ubicación del animal
+        ArrayList<String> petsLocation = new ArrayList<String>();
+        petsLocation.add("Seleccionar ubicación...");
+        petsLocation.add("Madrid");
+        petsLocation.add("Barcelona");
+        petsLocation.add("Valencia");
+
+        locationSpinner.setOnItemSelectedListener(this);
+        ArrayAdapter<String> adapterLocation = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, petsLocation);
+        adapterLocation.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        locationSpinner.setAdapter(adapterLocation);
+    }
+}
+/*
+* TO DO:
+* Si todos return false --> boton aplicar = boton atras
+* {
             @Override
             public boolean isEnabled(int position){
                 if(position == 0)
@@ -64,40 +130,6 @@ public class FiltroView extends AppCompatActivity implements AdapterView.OnItemS
 
 
         };
-        adapterRace.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        raceSpinner.setAdapter(adapterRace);
-
-    }
-
-    @Override
-    public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-        adapterView.getSelectedItem();
-        switch (adapterView.getId())
-        {
-
-            case R.id.spinnerAnimal:
-                //Hacer algo aquí
-                Toast.makeText(this, "Has seleccionado " + adapterView.getSelectedItem().toString(), Toast.LENGTH_LONG).show();
-
-                break;
-            case R.id.spinnerRace:
-                //Hacer algo aquí
-                Toast.makeText(this, "Has seleccionado " + adapterView.getSelectedItem().toString(), Toast.LENGTH_LONG).show();
-
-                break;
-            default:
-                break;
-        }
-    }
-
-    @Override
-    public void onNothingSelected(AdapterView<?> adapterView) {
-
-    }
-}
-/*
-* TO DO:
-* Si todos return false --> boton aplicar = boton atras
-*
 *
 * */
+
