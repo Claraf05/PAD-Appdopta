@@ -33,7 +33,7 @@
             android:id="@+id/nombreAnimal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Nombre"
+            android:hint="@string/name"
             android:textSize="24sp"
             android:textStyle="bold" />
 
@@ -41,19 +41,19 @@
             android:id="@+id/razaAnimal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Especie" />
+            android:hint="@string/species" />
 
         <TextView
             android:id="@+id/edadAnimal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Raza" />
+            android:hint="@string/breed" />
 
         <TextView
             android:id="@+id/sexoAnimal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Sexo" />
+            android:hint="@string/sex" />
 
         <TextView
             android:id="@+id/fechaAnimal"
@@ -61,7 +61,7 @@
             android:layout_height="wrap_content"
             android:background="@android:color/transparent"
             android:ems="10"
-            android:hint="Fecha Nacimiento"
+            android:hint="@string/birth"
             android:inputType="date"
             tools:ignore="TouchTargetSizeCheck" />
 
@@ -188,21 +188,21 @@
                 android:layout_height="wrap_content"
                 android:checked="true"
                 android:onClick="desc"
-                android:text="Descripcion" />
+                android:text="@string/desc" />
 
             <RadioButton
                 android:id="@+id/microchip"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:onClick="micro"
-                android:text="Microchip" />
+                android:text="@string/chip" />
 
             <RadioButton
                 android:id="@+id/mapa"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:onClick="showMap"
-                android:text="Mapa" />
+                android:text="@string/map" />
 
         </RadioGroup>
 
@@ -218,28 +218,22 @@
             app:layout_constraintTop_toBottomOf="@+id/infoDue">
 
             <TextView
-                android:id="@+id/apellidosDue"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Apellidos" />
-
-            <TextView
                 android:id="@+id/nombreDue"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Nombre" />
+                android:hint="@string/name" />
 
             <TextView
                 android:id="@+id/correoDue"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Correo" />
+                android:hint="@string/email" />
 
             <TextView
                 android:id="@+id/telefonoDue"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Telefono" />
+                android:hint="@string/phone" />
 
         </LinearLayout>
 
@@ -251,8 +245,8 @@
             android:drawableLeft="@android:drawable/arrow_down_float"
             android:onClick="mostrar"
             android:textColor="#FFFFFF"
-            android:textOff="Información Dueño"
-            android:textOn="Información Dueño"
+            android:textOff="@string/ownInfo"
+            android:textOn="@string/ownInfo"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 

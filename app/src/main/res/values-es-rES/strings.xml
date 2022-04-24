@@ -62,4 +62,20 @@
     <string name="diffUser">Los nombres de usuario no coinciden</string>
     <string name="wrongCurrPass">Contraseña actual incorrecta</string>
     <string name="wrongCurrUser">Nombre de usuario actual incorrecto</string>
+    <string name="species">Especie</string>
+    <string name="sex">Sexo</string>
+    <string name="birth">Fecha de nacimiento</string>
+    <string name="desc">Descripción</string>
+    <string name="map">Mapa</string>
+    <string name="ownInfo">Información Dueño</string>
+    <string name="male">Macho</string>
+    <string name="petData">Información de la Mascota</string>
+    <string name="female">Hembra</string>
+    <string name="image">Imagen</string>
+    <string name="chipLoc">Localización del chip</string>
+    <string name="chipDate">Fecha de implantación</string>
+    <string name="chipNum">Número del chip</string>
+    <string name="rabies">Rabia</string>
+    <string name="leisma">Leishmaniasis</string>
+    <string name="confirm">Confirmar</string>
 </resources>

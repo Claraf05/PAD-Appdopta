@@ -28,7 +28,7 @@
                 android:id="@+id/Text1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Datos Usuario"
+                android:text="@string/userInfo"
                 android:textSize="24sp"
                 android:textStyle="bold" />
 
@@ -36,7 +36,7 @@
                 android:id="@+id/userName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="username" />
+                android:text="@string/user" />
 
             <EditText
                 android:id="@+id/correoDueno"
@@ -44,7 +44,7 @@
                 android:layout_height="wrap_content"
                 android:background="@android:color/transparent"
                 android:ems="10"
-                android:hint="Correo"
+                android:hint="@string/email"
                 android:inputType="textEmailAddress"
                 tools:ignore="TouchTargetSizeCheck" />
 
@@ -54,7 +54,7 @@
                 android:layout_height="wrap_content"
                 android:background="@android:color/transparent"
                 android:ems="10"
-                android:hint="Telefono"
+                android:hint="@string/phone"
                 android:inputType="phone"
                 tools:ignore="TouchTargetSizeCheck" />
 
@@ -65,7 +65,7 @@
                 android:layout_marginBottom="20dp"
                 android:background="@android:color/transparent"
                 android:ems="10"
-                android:hint="Localización"
+                android:hint="@string/local"
                 android:inputType="textPersonName"
                 tools:ignore="TouchTargetSizeCheck" />
 
@@ -73,7 +73,7 @@
                 android:id="@+id/Text2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Datos Mascota"
+                android:text="@string/petData"
                 android:textSize="24sp"
                 android:textStyle="bold" />
 
@@ -83,7 +83,7 @@
                 android:layout_height="wrap_content"
                 android:background="@android:color/transparent"
                 android:ems="10"
-                android:hint="Especie"
+                android:hint="@string/species"
                 android:inputType="textPersonName"
                 tools:ignore="TouchTargetSizeCheck" />
 
@@ -93,7 +93,7 @@
                 android:layout_height="wrap_content"
                 android:background="@android:color/transparent"
                 android:ems="10"
-                android:hint="Raza"
+                android:hint="@string/breed"
                 android:inputType="textPersonName"
                 tools:ignore="TouchTargetSizeCheck" />
 
@@ -103,7 +103,7 @@
                 android:layout_height="wrap_content"
                 android:background="@android:color/transparent"
                 android:ems="10"
-                android:hint="Nombre"
+                android:hint="@string/name"
                 android:inputType="textPersonName"
                 tools:ignore="TouchTargetSizeCheck" />
 
@@ -117,20 +117,20 @@
                     android:id="@+id/sexoMasc"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Sexo:" />
+                    android:text="@string/sex" />
 
                 <RadioButton
                     android:id="@+id/masculinoMasc"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:checked="true"
-                    android:text="Macho" />
+                    android:text="@string/male" />
 
                 <RadioButton
                     android:id="@+id/femeninoMasc"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Hembra" />
+                    android:text="@string/female" />
 
             </RadioGroup>
 
@@ -147,7 +147,7 @@
                     android:layout_marginRight="40dp"
                     android:layout_marginBottom="5dp"
                     android:onClick="seleccionarImagen"
-                    android:text="Imagen"
+                    android:text="@string/image"
                     app:layout_constraintBottom_toTopOf="@+id/nacimientoMasc"
                     app:layout_constraintTop_toBottomOf="@+id/grupoSexoMasc" />
 
@@ -164,7 +164,7 @@
                 android:layout_height="wrap_content"
                 android:background="@android:color/transparent"
                 android:ems="10"
-                android:hint="Fecha Nacimiento"
+                android:hint="@string/birth"
                 android:inputType="date"
                 tools:ignore="TouchTargetSizeCheck" />
 
@@ -172,7 +172,7 @@
                 android:id="@+id/localizacionChipMasc"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Localización del Chip"
+                android:hint="@string/chipLoc"
                 android:inputType="text" />
 
             <TextView
@@ -181,7 +181,7 @@
                 android:layout_height="wrap_content"
                 android:background="@android:color/transparent"
                 android:ems="10"
-                android:hint="Fecha Implantación"
+                android:hint="@string/chipDate"
                 android:inputType="date" />
 
             <TextView
@@ -191,7 +191,7 @@
                 android:layout_marginBottom="20dp"
                 android:background="@android:color/transparent"
                 android:ems="10"
-                android:hint="Número Microchip"
+                android:hint="@string/chipNum"
                 android:inputType="number" />
 
             <TextView
@@ -218,21 +218,21 @@
                     android:id="@+id/checkBox"
                     android:layout_width="92dp"
                     android:layout_height="match_parent"
-                    android:text="Rabia" />
+                    android:text="@string/rabies" />
 
                 <CheckBox
                     android:id="@+id/checkBox2"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:text="Hepatitis" />
+                    android:text="@string/hepa" />
 
                 <CheckBox
                     android:id="@+id/checkBox3"
                     android:layout_width="106dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:text="Leishmaniasis" />
+                    android:text="@string/leisma" />
 
             </LinearLayout>
 
@@ -241,7 +241,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:onClick="ConfirmarFicha"
-                android:text="Confirmar" />
+                android:text="@string/confirm" />
 
         </LinearLayout>
     </ScrollView>

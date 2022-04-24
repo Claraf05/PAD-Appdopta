@@ -42,6 +42,25 @@
     <string name="selected">You have selected</string>
     <string name="breed">Breed</string>
     <string name="local">Location</string>
+    <string name="species">Species</string>
+    <string name="sex">Sex</string>
+    <string name="birth">Birthdate</string>
+    <string name="desc">Description</string>
+    <string name="chip" translatable="false">Microchip</string>
+    <string name="map">Map</string>
+    <string name="ownInfo">Owner information</string>
+    <string name="petData">Pet information</string>
+    <string name="female">Female</string>
+    <string name="male">Male</string>
+    <string name="image">Image</string>
+    <string name="chipLoc">Microchip Location</string>
+    <string name="chipDate">Implantation date</string>
+    <string name="chipNum">Microchip number</string>
+    <string name="rabies">Rabies</string>
+    <string name="hepa" translatable="false">Hepatitis</string>
+    <string name="leisma">Leishmaniases</string>
+    <string name="confirm">Confirm</string>
+
 
     <string name="slcAnimal">Select animal...</string>
     <string name="dog">Dog</string>
@@ -81,7 +100,7 @@
     <string name="attachment_summary_on">Automatically download attachments for incoming emails
     </string>
     <string name="attachment_summary_off">Only download attachments when manually requested</string>
-    <string name="nombreMascota" translatable="false">Nombre</string>
-    <string name="especieMascota">Especie</string>
+
+
 
 </resources>

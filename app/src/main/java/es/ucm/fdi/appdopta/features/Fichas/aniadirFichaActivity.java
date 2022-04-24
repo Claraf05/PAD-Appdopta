@@ -145,7 +145,7 @@ public class aniadirFichaActivity extends AppCompatActivity {
         else leishmaniasisV = 0;
 
         if(especie.isEmpty() || raza.isEmpty() || nombreMasc.isEmpty() || sexoMasc.isEmpty() || bday.isEmpty() || nChip == 0){
-            Toast.makeText(aniadirFichaActivity.this, "Por favor rellene todos los campos", Toast.LENGTH_SHORT).show();
+            Toast.makeText(aniadirFichaActivity.this, R.string.fieldsNotCompleted, Toast.LENGTH_SHORT).show();
         }
         else{
             //assign an id to a pet

@@ -76,7 +76,7 @@ public class fichaActivity extends AppCompatActivity implements OnMapReadyCallba
         //imagen.setImageBitmap(dbHelper.buscarImagen(idMasc));
 
         Geocoder geo = new Geocoder(this);
-        String loc = "San Blas";
+        String loc = "San Blas"; //Viene de la BBDD
         try{
             List<Address> ads = geo.getFromLocationName(loc + "Spain",1);
             if(ads!=null && !ads.isEmpty()){
@@ -117,11 +117,9 @@ public class fichaActivity extends AppCompatActivity implements OnMapReadyCallba
     public void mostrar(View view){
         if(infoButton.isChecked()){
             dataDue.setVisibility(View.VISIBLE);
-            Log.d("prueba", "SI");
         }
         else {
             dataDue.setVisibility(View.INVISIBLE);
-            Log.d("prueba", "NO");
         }
     }
 
