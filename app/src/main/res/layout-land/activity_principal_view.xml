@@ -29,7 +29,6 @@
             android:layout_marginEnd="35dp"
             android:layout_marginRight="35dp"
             android:baselineAlignBottom="true"
-            android:contentDescription="@string/logoo"
             app:layout_constraintBottom_toBottomOf="@id/tituloEncabezado"
             app:layout_constraintStart_toStartOf="@id/tituloEncabezado"
             app:layout_constraintTop_toTopOf="@id/tituloEncabezado"
@@ -43,7 +42,7 @@
             android:layout_marginEnd="30dp"
             android:layout_marginRight="30dp"
             android:gravity="center_horizontal"
-            android:text="APPDOPTA ORIGINALS"
+            android:text="@string/app_group"
             android:textColor="#1F3A20"
             android:textSize="35sp"
             android:textStyle="bold" />
@@ -68,7 +67,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="2dp"
         android:gravity="center"
-        android:text="🐾  Encuentra tu mascota ideal  🐾"
+        android:text="@string/catchphrase"
         android:textColor="#1F3A20"
         android:textSize="24sp"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout5"
@@ -96,7 +95,7 @@
             android:layout_marginLeft="65dp"
             android:baselineAligned="false"
             android:iconifiedByDefault="false"
-            android:queryHint="Buscar">
+            android:queryHint="@string/search">
 
         </SearchView>
 
@@ -115,7 +114,7 @@
         android:layout_marginStart="30dp"
         android:layout_marginTop="2dp"
         android:gravity="left"
-        android:text="Mascotas en adopción:"
+        android:text="@string/adoptionPets"
         android:textColor="#1F3A20"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"

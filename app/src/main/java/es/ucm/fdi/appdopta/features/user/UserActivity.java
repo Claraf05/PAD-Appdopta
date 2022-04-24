@@ -74,13 +74,13 @@ public class UserActivity extends AppCompatActivity {
     public void changeEmail_U(View view){
         String em = String.valueOf(userT.getText());
         dbHelper.updateUserEmail(userid, em);
-        Toast.makeText(UserActivity.this, "Email actualizado con éxito", Toast.LENGTH_SHORT).show();
+        Toast.makeText(UserActivity.this, R.string.updatedEmail, Toast.LENGTH_SHORT).show();
     }
 
     public void changePhone_U(View view){
         int ph = Integer.parseInt(String.valueOf(userT.getText()));
         dbHelper.updateUserPhone(userid, ph);
-        Toast.makeText(UserActivity.this, "Telefono actualizado con éxito", Toast.LENGTH_SHORT).show();
+        Toast.makeText(UserActivity.this, R.string.updatedPhone, Toast.LENGTH_SHORT).show();
     }
 
     public void logOut_U(View view){

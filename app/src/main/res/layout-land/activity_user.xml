@@ -26,7 +26,8 @@
                 android:layout_width="134dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:text="Usuario"
+                android:editable="false"
+                android:text="@string/user"
                 android:textColor="#000000"
                 android:textSize="24sp" />
 
@@ -35,7 +36,7 @@
                 android:layout_width="134dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:text="Telefono"
+                android:text="@string/phone"
                 android:textColor="#000000"
                 android:textSize="24sp" />
 
@@ -44,7 +45,7 @@
                 android:layout_width="96dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:text="Email"
+                android:text="@string/email"
                 android:textColor="#000000"
                 android:textSize="24sp" />
 
@@ -63,7 +64,7 @@
         android:layout_marginStart="32dp"
         android:layout_marginEnd="32dp"
         android:onClick="changePw_U"
-        android:text="Cambiar contraseña"
+        android:text="@string/changePass"
         app:backgroundTint="#1F3A20"
         app:layout_constraintBottom_toTopOf="@+id/logoutUserButton"
         app:layout_constraintEnd_toEndOf="parent"
@@ -78,7 +79,7 @@
         android:layout_marginTop="8dp"
         android:layout_marginBottom="24dp"
         android:onClick="logOut_U"
-        android:text="Cerrar sesión"
+        android:text="@string/logout"
         app:backgroundTint="#1F3A20"
         app:layout_constraintBottom_toTopOf="@+id/toolbar5"
         app:layout_constraintEnd_toEndOf="parent"
@@ -186,7 +187,7 @@
         android:layout_marginTop="32dp"
         android:layout_marginEnd="32dp"
         android:layout_marginBottom="4dp"
-        android:text="Ver Mascotas"
+        android:text="@string/viewPets"
         app:backgroundTint="#1F3A20"
         app:layout_constraintBottom_toTopOf="@+id/changeUserButton"
         app:layout_constraintEnd_toEndOf="parent"
@@ -202,7 +203,7 @@
         android:layout_marginEnd="32dp"
         android:layout_marginBottom="6dp"
         android:onClick="changeUser_U"
-        android:text="Cambiar usuario"
+        android:text="@string/changeUser"
         app:backgroundTint="#1F3A20"
         app:layout_constraintBottom_toTopOf="@+id/changePwButton"
         app:layout_constraintEnd_toEndOf="parent"

@@ -15,7 +15,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
         android:onClick="logOut"
-        android:text="Cerrar sesión"
+        android:text="@string/logout"
         android:textColor="#C9E3AF"
         app:backgroundTint="#1F3A20"
         app:layout_constraintBottom_toTopOf="@+id/toolbar"
@@ -133,7 +133,7 @@
                 android:gravity="center_vertical"
                 android:minHeight="48dp"
                 android:onClick="changeUser"
-                android:text="Cambiar nombre de usuario"
+                android:text="@string/changeName"
                 android:textColor="#000000"
                 android:textSize="16sp" />
 
@@ -149,7 +149,7 @@
                 android:gravity="center_vertical"
                 android:minHeight="48dp"
                 android:onClick="changePw_S"
-                android:text="Cambiar contraseña"
+                android:text="@string/changePass"
                 android:textColor="#000000"
                 android:textSize="16sp" />
 
@@ -164,7 +164,7 @@
                 android:layout_marginRight="24dp"
                 android:gravity="center_vertical"
                 android:minHeight="48dp"
-                android:text="Idioma:"
+                android:text="@string/lang"
                 android:textColor="#000000"
                 android:textSize="16sp" />
 
@@ -175,7 +175,7 @@
                 android:layout_gravity="center"
                 android:drawableLeft="@drawable/ic_spanish"
                 android:minHeight="48dp"
-                android:text="Español" />
+                android:text="@string/es" />
 
             <RadioButton
                 android:id="@+id/englishLanguaje"
@@ -184,7 +184,7 @@
                 android:layout_gravity="center"
                 android:drawableLeft="@drawable/ic_english"
                 android:minHeight="48dp"
-                android:text="English" />
+                android:text="@string/en" />
 
             <TextView
                 android:id="@+id/changePw3"
@@ -197,7 +197,7 @@
                 android:layout_marginRight="24dp"
                 android:gravity="center_vertical"
                 android:onClick="userInfoActivity"
-                android:text="Información de usuario"
+                android:text="@string/userInfo"
                 android:textColor="#000000"
                 android:textSize="16sp" />
         </LinearLayout>

@@ -54,7 +54,7 @@
                         android:layout_weight="1"
                         android:drawableLeft="@drawable/ic_user"
                         android:ems="10"
-                        android:hint=" Usuario"
+                        android:hint="@string/user"
                         android:inputType="textPersonName" />
 
                     <EditText
@@ -64,7 +64,7 @@
                         android:layout_weight="1"
                         android:drawableLeft="@drawable/ic_phone"
                         android:ems="10"
-                        android:hint="Teléfono"
+                        android:hint="@string/phone"
                         android:inputType="number" />
 
                     <EditText
@@ -75,7 +75,7 @@
                         android:layout_weight="1"
                         android:drawableLeft="@drawable/ic_email"
                         android:ems="10"
-                        android:hint="Email"
+                        android:hint="@string/email"
                         android:inputType="textPersonName" />
 
                     <EditText
@@ -86,7 +86,7 @@
                         android:layout_weight="1"
                         android:drawableLeft="@drawable/ic_lock"
                         android:ems="10"
-                        android:hint="Contraseña"
+                        android:hint="@string/pass"
                         android:inputType="textPassword"
                         android:password="true" />
 
@@ -99,7 +99,7 @@
                         android:drawableLeft="@drawable/ic_repw"
                         android:ems="10"
                         android:fadingEdge="horizontal|vertical|none"
-                        android:hint="Repetir contraseña"
+                        android:hint="@string/rePass"
                         android:inputType="textPassword"
                         android:password="true"
                         android:requiresFadingEdge="horizontal|vertical|none" />
@@ -113,7 +113,7 @@
                     android:layout_gravity="bottom|center"
                     android:baselineAligned="false"
                     android:onClick="register"
-                    android:text="Register"
+                    android:text="@string/register"
                     app:backgroundTint="#1F3A20"
                     app:iconPadding="5dp"
                     app:iconTint="#FFFFFF" />
@@ -131,14 +131,14 @@
                     android:id="@+id/textoPrevLista"
                     android:layout_width="161dp"
                     android:layout_height="27dp"
-                    android:text="Already have an account?" />
+                    android:text="@string/alrAcc"/>
 
                 <TextView
                     android:id="@+id/textView4"
                     android:layout_width="70dp"
                     android:layout_height="wrap_content"
                     android:onClick="login"
-                    android:text="LOGIN"
+                    android:text="@string/login"
                     android:textColor="#105BEC"
                     android:textSize="16sp"
                     android:textStyle="bold|italic" />

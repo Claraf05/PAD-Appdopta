@@ -42,6 +42,7 @@ public class PrincipalView extends AppCompatActivity {
         else {
             mRecyclerView.setVisibility(View.GONE);
             //Toast.makeText(this, "Todavia no hay animales en nuestras bases de datos", Toast.LENGTH_LONG).show();
+            //SI SE DESCOMENTA AÑADIR AL STRING.XML PARA EL IDIOMA//
         }
         dbHelper.close();
     }
@@ -67,6 +68,7 @@ public class PrincipalView extends AppCompatActivity {
                 //Intent intent=new Intent(this,MapsActivity.class);
                 //startActivity(intent);
                 //Toast.makeText(this, "Has pulsado el filtro", Toast.LENGTH_LONG).show();
+                //SI SE DESCOMENTA AÑADIR AL STRING.XML PARA EL IDIOMA//
             }
         });
     }*/

@@ -1,17 +1,57 @@
 <resources>
-    <string name="app_name">Appdopta</string>
+    <string name="app_name" translatable="false">Appdopta</string>
+    <string name="app_group" translatable="false">APPDOPTA ORIGINALS</string>
     <string name="setting">Settings</string>
 
+    <string name="name">Name</string>
     <string name="user">User</string>
     <string name="pass">Password</string>
     <string name="rePass">Repeat Password</string>
     <string name="login">Login</string>
+    <string name="logout">Logout</string>
     <string name="register">Register</string>
     <string name="welcome">Welcome</string>
-    <string name="phone">Phone Number</string>
+    <string name="phone">Phone</string>
     <string name="email">Email</string>
     <string name="alrAcc">Already have an account?</string>
     <string name="regSucc">Successfully registered user</string>
+    <string name="lang">Language</string>
+    <string name="es">Spanish</string>
+    <string name="en">English</string>
+    <string name="userInfo">User information</string>
+    <string name="changeName">Change user name</string>
+    <string name="changePass">Change password</string>
+    <string name="changeUser">Change user</string>
+    <string name="catchphrase">🐾 Find your perfect pet 🐾</string>
+    <string name="search">Search</string>
+    <string name="adoptionPets">Pets for adoption</string>
+    <string name="viewPets">View your pets</string>
+    <string name="updatedEmail">Email successfully updated</string>
+    <string name="updatedPhone">Phone successfully updated</string>
+    <string name="addPets">Add a pet</string>
+    <string name="currPass">Current password</string>
+    <string name="newPass">New password</string>
+    <string name="reNewPass">Repeat new password</string>
+    <string name="Filter">FILTERS</string>
+    <string name="clnFilter">Clean filters</string>
+    <string name="applyFilter">Aplly filters</string>
+    <string name="selected">You have selected</string>
+    <string name="breed">Breed</string>
+    <string name="local">Location</string>
+
+    <string name="slcAnimal">Select animal...</string>
+    <string name="dog">Dog</string>
+    <string name="cat">Cat</string>
+    <string name="rabbit">Rabbit</string>
+    <string name="parrot">Parrot</string>
+    <string-array name="animal">
+        <item>@string/dog</item>
+        <item>@string/cat</item>
+        <item>@string/rabbit</item>
+        <item>@string/parrot</item>
+    </string-array>
+    <string name="slcBreed">Select breed...</string>
+    <string name="slcLoc">Select location...</string>
 
     <!-- Error msg -->
     <string name="userNotFound">The user doesn\'t exists</string>
@@ -19,11 +59,6 @@
     <string name="existingUser">The user already exists</string>
     <string name="diffPass">The passwords doesn\'t match</string>
 
-
-
-
-
-    <string name="title_activity_settings">SettingsActivity</string>
 
     <!-- Preference Titles -->
     <string name="messages_header">Messages</string>
@@ -39,7 +74,6 @@
     <string name="attachment_summary_on">Automatically download attachments for incoming emails
     </string>
     <string name="attachment_summary_off">Only download attachments when manually requested</string>
-    <string name="logoo">logo</string>
     <string name="nombreMascota">Nombre</string>
     <string name="especieMascota">Especie</string>
 

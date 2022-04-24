@@ -44,7 +44,7 @@ public class LoginActivity extends AppCompatActivity {
 
             Boolean checkuser = dbHelper.checkUserPassword(user,pass);
             if(checkuser == true){
-                Toast.makeText(LoginActivity.this, R.string.welcome, Toast.LENGTH_SHORT).show();
+                Toast.makeText(LoginActivity.this, getText(R.string.welcome) + " " + user, Toast.LENGTH_SHORT).show();
 
                 //TODO crear un usuario para pasarlo al intent con la info de telefono y tal a null que eso ya se rellena en el user info activity
                 UserInfo uInfo = new UserInfo();

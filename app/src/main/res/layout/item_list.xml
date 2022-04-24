@@ -24,7 +24,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="15dp"
             android:gravity="center"
-            android:text="@string/nombreMascota" />
+            android:text="@string/name" />
 
         <TextView
             android:id="@+id/especieMascota"
@@ -32,7 +32,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="15dp"
             android:gravity="center"
-            android:text="@string/especieMascota" />
+            android:text="@string/breed" />
 
         <TextView
             android:id="@+id/ubicacionMascota"
@@ -40,7 +40,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="15dp"
             android:gravity="center"
-            android:text="Ubicación" />
+            android:text="@string/local" />
 
     </LinearLayout>
 

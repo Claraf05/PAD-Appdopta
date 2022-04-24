@@ -2,6 +2,7 @@ package es.ucm.fdi.appdopta;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -16,6 +17,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 import es.ucm.fdi.appdopta.database.AppdoptaDBHelper;
 
@@ -47,17 +49,18 @@ public class FiltroView extends AppCompatActivity implements AdapterView.OnItemS
 
                 case R.id.spinnerAnimal:
                     //Hacer algo aquí
-                    Toast.makeText(this, "Has seleccionado " + adapterView.getSelectedItem().toString(), Toast.LENGTH_LONG).show();
+
+                    Toast.makeText(this, getText(R.string.selected) + " " + adapterView.getSelectedItem().toString(), Toast.LENGTH_LONG).show();
 
                     break;
                 case R.id.spinnerRace:
                     //Hacer algo aquí
-                    Toast.makeText(this, "Has seleccionado " + adapterView.getSelectedItem().toString(), Toast.LENGTH_LONG).show();
+                    Toast.makeText(this, getText(R.string.selected) + " " + adapterView.getSelectedItem().toString(), Toast.LENGTH_LONG).show();
 
                     break;
                 case R.id.spinnerLocation:
                     //Hacer algo aquí
-                    Toast.makeText(this, "Has seleccionado " + adapterView.getSelectedItem().toString(), Toast.LENGTH_LONG).show();
+                    Toast.makeText(this, getText(R.string.selected) + " " + adapterView.getSelectedItem().toString(), Toast.LENGTH_LONG).show();
 
                     break;
                 default:
@@ -74,11 +77,16 @@ public class FiltroView extends AppCompatActivity implements AdapterView.OnItemS
     public void initSpinnerValues(){
         //  Lista de elementos del spinner 1 --> tipos de animal
         ArrayList<String> petsType = new ArrayList<String>();
-        petsType.add("Seleccionar animal...");
-        petsType.add("Perro");
-        petsType.add("Gato");
-        petsType.add("Conejo");
-        petsType.add("Loro");
+        petsType.add(getText(R.string.slcAnimal).toString());
+
+        String[] animales = getResources().getStringArray(R.array.animal);
+        petsType.addAll(Arrays.asList(animales));
+        //PREGUNTAD A MIGUEL uwu
+
+        //petsType.add("Perro");
+        //petsType.add("Gato");
+        //petsType.add("Conejo");
+        //petsType.add("Loro");
 
         animalSpinner.setOnItemSelectedListener(this);
         ArrayAdapter<String> adapterPet = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, petsType);
@@ -87,7 +95,9 @@ public class FiltroView extends AppCompatActivity implements AdapterView.OnItemS
 
         //  Lista de elementos del spinner 2 --> razas de animal
         ArrayList<String> petsRace = new ArrayList<String>();
-        petsRace.add("Seleccionar raza...");
+        petsRace.add(getText(R.string.slcBreed).toString());
+        //Aqui se puede hacer lo mismo que con las especies ya me preguntais
+        //(Miguel)
         petsRace.add("Labrador");
         petsRace.add("Golden Retriever");
         petsRace.add("Boyero de Berna");
@@ -99,7 +109,9 @@ public class FiltroView extends AppCompatActivity implements AdapterView.OnItemS
 
         //  Lista de elementos del spinner 3 --> ubicación del animal
         ArrayList<String> petsLocation = new ArrayList<String>();
-        petsLocation.add("Seleccionar ubicación...");
+        petsLocation.add(getText(R.string.slcLoc).toString());
+        //Aqui se puede hacer lo mismo que con las especies ya me preguntais
+        //(Miguel)
         petsLocation.add("Madrid");
         petsLocation.add("Barcelona");
         petsLocation.add("Valencia");

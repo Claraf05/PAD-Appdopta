@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Appdopta</string>
     <string name="setting">Ajustes</string>
     <string name="user">Usuario</string>
     <string name="pass">Contraseña</string>
@@ -16,4 +15,44 @@
     <string name="regSucc">Usuario registrado con éxito</string>
     <string name="existingUser">El usuario ya existe</string>
     <string name="diffPass">Las contraseñas no coinciden</string>
+    <string name="lang">Idioma</string>
+    <string name="es">Español</string>
+    <string name="en">Inglés</string>
+    <string name="userInfo">Información del usuario</string>
+    <string name="changeName">Cambiar nombre de usuario</string>
+    <string name="changePass">Cambiar contraseña</string>
+    <string name="logout">Cerrar sesión</string>
+    <string name="catchphrase">🐾 Encuentra tu mascota ideal 🐾</string>
+    <string name="search">Buscar</string>
+    <string name="adoptionPets">Mascotas en adopción</string>
+    <string name="viewPets">Ver tus mascotas</string>
+    <string name="changeUser">Cambiar usuario</string>
+    <string name="updatedPhone">Telefono actualizado con éxito</string>
+    <string name="updatedEmail">Email actualizado con éxito</string>
+    <string name="addPets">Añadir una mascota</string>
+    <string name="currPass">Contraseña actual</string>
+    <string name="newPass">Contraseña nueva</string>
+    <string name="reNewPass">Repite contraseña nueva</string>
+    <string name="Filter">FILTROS</string>
+    <string name="clnFilter">Borrar filtros</string>
+    <string name="applyFilter">Aplicacar filtros</string>
+    <string name="selected">Has seleccionado</string>
+    <string name="dog">Perro</string>
+    <string name="cat">Gato</string>
+    <string name="rabbit">Conejo</string>
+    <string name="parrot">Loro</string>
+    <string name="slcAnimal">Seleccionar animal...</string>
+    <string name="slcBreed">Seleccionar raza...</string>
+    <string name="slcLoc">Seleccionar ubicación...</string>
+    <string name="messages_header">Mensaje</string>
+    <string name="signature_title">Su firma</string>
+    <string name="reply_title">Acción de respuesta predeterminada</string>
+    <string name="sync_header">Sincronizar</string>
+    <string name="sync_title">Sincroniza el correo electrónico periódicamente</string>
+    <string name="attachment_title">Descargar archivos adjuntos entrantes</string>
+    <string name="attachment_summary_on">Descargar automáticamente archivos adjuntos para correos electrónicos entrantes</string>
+    <string name="attachment_summary_off">Solo descargue archivos adjuntos cuando se solicite manualmente</string>
+    <string name="name">Nombre</string>
+    <string name="breed">Raza</string>
+    <string name="local">Ubicación</string>
 </resources>

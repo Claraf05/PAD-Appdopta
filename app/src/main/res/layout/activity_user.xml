@@ -9,7 +9,7 @@
 
     <LinearLayout
         android:id="@+id/linearEdit"
-        android:layout_width="152dp"
+        android:layout_width="wrap_content"
         android:layout_height="180dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="@+id/linear"
@@ -24,7 +24,8 @@
             android:layout_width="134dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:text="Usuario"
+            android:editable="false"
+            android:text="@string/user"
             android:textColor="#000000"
             android:textSize="24sp" />
 
@@ -33,7 +34,7 @@
             android:layout_width="134dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:text="Telefono"
+            android:text="@string/phone"
             android:textColor="#000000"
             android:textSize="24sp" />
 
@@ -42,7 +43,7 @@
             android:layout_width="96dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:text="Email"
+            android:text="@string/email"
             android:textColor="#000000"
             android:textSize="24sp" />
 
@@ -56,7 +57,7 @@
         android:layout_marginTop="6dp"
         android:layout_marginEnd="32dp"
         android:onClick="changePw_U"
-        android:text="Cambiar contraseña"
+        android:text="@string/changePass"
         android:textColor="#C9E3AF"
         app:backgroundTint="#1F3A20"
         app:layout_constraintBottom_toTopOf="@+id/logoutUserButton"
@@ -72,7 +73,7 @@
         android:layout_marginTop="8dp"
         android:layout_marginBottom="24dp"
         android:onClick="logOut_U"
-        android:text="Cerrar sesión"
+        android:text="@string/logout"
         android:textColor="#C9E3AF"
         app:backgroundTint="#1F3A20"
         app:layout_constraintBottom_toTopOf="@+id/toolbar5"
@@ -192,7 +193,7 @@
             android:layout_height="52dp"
             android:layout_marginTop="8dp"
             android:gravity="center"
-            android:text="Usuario:"
+            android:text="@string/user"
             android:textColor="#000000"
             android:textSize="24sp"
             app:layout_constraintBottom_toTopOf="@+id/toolbar2"
@@ -204,11 +205,11 @@
 
         <TextView
             android:id="@+id/userPhone_"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_marginTop="8dp"
             android:gravity="center"
-            android:text="Telefono:"
+            android:text="@string/phone"
             android:textColor="#000000"
             android:textSize="24sp"
             app:layout_constraintBottom_toTopOf="@+id/toolbar2"
@@ -224,7 +225,7 @@
             android:layout_height="47dp"
             android:layout_marginTop="8dp"
             android:gravity="center"
-            android:text="Email:"
+            android:text="@string/email"
             android:textColor="#000000"
             android:textSize="24sp"
             app:layout_constraintBottom_toTopOf="@+id/toolbar2"
@@ -245,7 +246,7 @@
         android:layout_marginEnd="32dp"
         android:layout_marginBottom="4dp"
         android:onClick="goToPets"
-        android:text="Ver Mascotas"
+        android:text="@string/viewPets"
         android:textColor="#C9E3AF"
         app:backgroundTint="#1F3A20"
         app:layout_constraintBottom_toTopOf="@+id/changeUserButton"
@@ -262,7 +263,7 @@
         android:layout_marginEnd="32dp"
         android:layout_marginBottom="6dp"
         android:onClick="changeUser_U"
-        android:text="Cambiar usuario"
+        android:text="@string/changeUser"
         android:textColor="#C9E3AF"
         app:backgroundTint="#1F3A20"
         app:layout_constraintBottom_toTopOf="@+id/changePwButton"

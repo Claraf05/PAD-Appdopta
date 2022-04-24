@@ -17,7 +17,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:onClick="aniadirMascota"
-            android:text="Añadir una mascota"
+            android:text="@string/addPets"
             android:textColor="#C9E3AF"
             app:backgroundTint="#1F3A20" />
     </LinearLayout>

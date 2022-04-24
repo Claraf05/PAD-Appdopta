@@ -16,7 +16,7 @@ public class MainActivity extends AppCompatActivity {
         //setContentView(R.layout.activity_principal_view);
 
         //Intent intent = new Intent(this, fichaActivity.class);
-        Intent intent = new Intent(this, PrincipalView.class);
+        Intent intent = new Intent(this, FiltroView.class);
         startActivity(intent);
 
 

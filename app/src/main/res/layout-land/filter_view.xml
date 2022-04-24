@@ -16,7 +16,7 @@
         android:layout_marginTop="25dp"
         android:layout_marginEnd="61dp"
         android:layout_marginBottom="10dp"
-        android:text="FILTROS"
+        android:text="@string/Filter"
         android:textColor="#1F3A20"
         android:textSize="30sp"
         app:layout_constraintBottom_toTopOf="@+id/spinnerAnimal"
@@ -92,7 +92,7 @@
             android:layout_marginRight="16dp"
             android:layout_weight="1"
             android:backgroundTint="#1F3A20"
-            android:text="Quitar filtros"
+            android:text="@string/clnFilter"
             android:textColor="#C9E3AF"
             android:textSize="16sp" />
 
@@ -106,7 +106,7 @@
             android:layout_weight="1"
             android:backgroundTint="#1F3A20"
             android:paddingRight="16dp"
-            android:text="Aplicar Filtros"
+            android:text="@string/applyFilter"
             android:textColor="#C9E3AF"
             android:textSize="16sp" />
     </LinearLayout>
