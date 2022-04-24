@@ -9,8 +9,8 @@
 
     <LinearLayout
         android:id="@+id/linearEdit"
-        android:layout_width="wrap_content"
-        android:layout_height="180dp"
+        android:layout_width="214dp"
+        android:layout_height="193dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="@+id/linear"
         app:layout_constraintEnd_toEndOf="parent"
@@ -21,7 +21,7 @@
 
         <EditText
             android:id="@+id/Username_U"
-            android:layout_width="134dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:editable="false"
@@ -31,7 +31,7 @@
 
         <EditText
             android:id="@+id/userPhone_U"
-            android:layout_width="134dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:text="@string/phone"
@@ -40,12 +40,12 @@
 
         <EditText
             android:id="@+id/userEmail_U"
-            android:layout_width="96dp"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="61dp"
             android:layout_marginTop="8dp"
             android:text="@string/email"
             android:textColor="#000000"
-            android:textSize="24sp" />
+            android:textSize="16sp" />
 
     </LinearLayout>
 
@@ -176,8 +176,8 @@
 
     <LinearLayout
         android:id="@+id/linear"
-        android:layout_width="109dp"
-        android:layout_height="181dp"
+        android:layout_width="wrap_content"
+        android:layout_height="194dp"
         android:layout_marginEnd="32dp"
         android:layout_marginBottom="416dp"
         android:orientation="vertical"
@@ -187,53 +187,29 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <TextView
+        <ImageView
             android:id="@+id/Username_"
-            android:layout_width="104dp"
-            android:layout_height="52dp"
+            android:layout_width="56dp"
+            android:layout_height="53dp"
             android:layout_marginTop="8dp"
-            android:gravity="center"
-            android:text="@string/user"
-            android:textColor="#000000"
-            android:textSize="24sp"
-            app:layout_constraintBottom_toTopOf="@+id/toolbar2"
-            app:layout_constraintEnd_toEndOf="@+id/toolbar2"
-            app:layout_constraintHorizontal_bias="0.539"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.0" />
+            android:tint="#1F3A20"
+            app:srcCompat="@drawable/ic_user" />
 
-        <TextView
+        <ImageView
             android:id="@+id/userPhone_"
-            android:layout_width="match_parent"
+            android:layout_width="58dp"
             android:layout_height="50dp"
             android:layout_marginTop="8dp"
-            android:gravity="center"
-            android:text="@string/phone"
-            android:textColor="#000000"
-            android:textSize="24sp"
-            app:layout_constraintBottom_toTopOf="@+id/toolbar2"
-            app:layout_constraintEnd_toEndOf="@+id/toolbar2"
-            app:layout_constraintHorizontal_bias="0.539"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.0" />
+            android:tint="#1F3A20"
+            app:srcCompat="@drawable/ic_phone" />
 
-        <TextView
+        <ImageView
             android:id="@+id/userEmail_"
-            android:layout_width="79dp"
-            android:layout_height="47dp"
+            android:layout_width="62dp"
+            android:layout_height="53dp"
             android:layout_marginTop="8dp"
-            android:gravity="center"
-            android:text="@string/email"
-            android:textColor="#000000"
-            android:textSize="24sp"
-            app:layout_constraintBottom_toTopOf="@+id/toolbar2"
-            app:layout_constraintEnd_toEndOf="@+id/toolbar2"
-            app:layout_constraintHorizontal_bias="0.539"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.0" />
+            android:tint="#1F3A20"
+            app:srcCompat="@drawable/ic_email" />
 
     </LinearLayout>
 
@@ -273,8 +249,8 @@
         app:layout_constraintTop_toBottomOf="@+id/petsButton" />
 
     <LinearLayout
-        android:layout_width="58dp"
-        android:layout_height="wrap_content"
+        android:layout_width="45dp"
+        android:layout_height="122dp"
         android:layout_marginEnd="113dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="@+id/linearEdit"
@@ -287,7 +263,7 @@
         <ImageButton
             android:id="@+id/userPhone_UButton"
             android:layout_width="match_parent"
-            android:layout_height="55dp"
+            android:layout_height="60dp"
             android:background="#00FFFFFF"
             android:onClick="changePhone_U"
             android:scaleType="centerInside"
@@ -295,12 +271,12 @@
             android:scaleY="1"
             android:tint="#000000"
             app:srcCompat="@drawable/ic_edit"
-            tools:ignore="VectorDrawableCompat,SpeakableTextPresentCheck" />
+            tools:ignore="VectorDrawableCompat,SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
         <ImageButton
             android:id="@+id/userEmail_UButton"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
+            android:layout_width="45dp"
+            android:layout_height="61dp"
             android:background="#00FFFFFF"
             android:onClick="changeEmail_U"
             android:scaleType="centerInside"
@@ -308,7 +284,7 @@
             android:scaleY="1"
             android:tint="#000000"
             app:srcCompat="@drawable/ic_edit"
-            tools:ignore="VectorDrawableCompat,SpeakableTextPresentCheck" />
+            tools:ignore="VectorDrawableCompat,SpeakableTextPresentCheck,TouchTargetSizeCheck" />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
