@@ -20,6 +20,16 @@
             android:text="@string/addPets"
             android:textColor="#C9E3AF"
             app:backgroundTint="#1F3A20" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/listaMascotasUser"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/textoPrevLista"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="5dp">
+
+        </androidx.recyclerview.widget.RecyclerView>
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

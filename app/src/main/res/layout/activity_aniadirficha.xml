@@ -55,7 +55,7 @@
                 android:background="@android:color/transparent"
                 android:ems="10"
                 android:hint="@string/phone"
-                android:inputType="phone"
+                android:inputType="number"
                 tools:ignore="TouchTargetSizeCheck" />
 
             <EditText

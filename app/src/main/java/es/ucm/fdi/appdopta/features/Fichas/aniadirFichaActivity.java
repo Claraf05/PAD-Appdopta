@@ -27,10 +27,12 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.Random;
 
+import es.ucm.fdi.appdopta.PrincipalView;
 import es.ucm.fdi.appdopta.R;
 import es.ucm.fdi.appdopta.database.AppdoptaDBHelper;
 import es.ucm.fdi.appdopta.features.register.RegisterActivity;
 import es.ucm.fdi.appdopta.features.user.UserInfo;
+import es.ucm.fdi.appdopta.features.user.UserPetsActivity;
 
 public class aniadirFichaActivity extends AppCompatActivity {
     Bundle user;
@@ -64,7 +66,9 @@ public class aniadirFichaActivity extends AppCompatActivity {
 
         username.setText(usuario.getUsername());
         correoD.setText(usuario.getEmail());
-        telefonoD.setText(usuario.getPhone());
+        telefonoD.setText(String.valueOf(usuario.getPhone()));
+
+
 
         especieM = (EditText) findViewById(R.id.especieMasc);
         razaM = (EditText) findViewById(R.id.razaMasc);
@@ -144,7 +148,7 @@ public class aniadirFichaActivity extends AppCompatActivity {
         if(leishmaniasis.isChecked()) leishmaniasisV = 1;
         else leishmaniasisV = 0;
 
-        if(especie.isEmpty() || raza.isEmpty() || nombreMasc.isEmpty() || sexoMasc.isEmpty() || bday.isEmpty() || nChip == 0){
+        if(especie.isEmpty() || raza.isEmpty() || nombreMasc.isEmpty() || sexoMasc.isEmpty() || bday.isEmpty() /*|| nChip == 0*/){
             Toast.makeText(aniadirFichaActivity.this, R.string.fieldsNotCompleted, Toast.LENGTH_SHORT).show();
         }
         else{
@@ -159,7 +163,9 @@ public class aniadirFichaActivity extends AppCompatActivity {
 
             //String idDue = dbHelper.getuserId(usern);
             dbHelper.insertPetData(String.valueOf(id), idDue, nombreMasc, sexoMasc, raza, desc,especie, bday, rabiaV,hepatitisV,leishmaniasisV, nChip, fechChip,locChip, localizacion, bitmap);
-
+            Intent intent = new Intent(getApplicationContext(), PrincipalView.class);
+            intent.putExtra("userInfo", idDue);
+            startActivity(intent);
         }
 
 

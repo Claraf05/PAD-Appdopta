@@ -70,7 +70,7 @@ public class AppdoptaDBHelper extends SQLiteOpenHelper {
                     //INFO CHIP
                     PetTable.CHIP_NUM_C + " INTEGER UNIQUE NOT NULL," +
                     PetTable.CHIP_DATE_C + " TEXT NOT NULL," +
-                    PetTable.CHIP_LOCATION_C + "TEXT NOT NULL);";
+                    PetTable.CHIP_LOCATION_C + " TEXT NOT NULL);";
 
 
     private static final String DELETE_USER_TABLE = "DROP TABLE IF EXISTS " +
@@ -203,6 +203,26 @@ public class AppdoptaDBHelper extends SQLiteOpenHelper {
                 petsCursor.getString(2),  // Columna id
                 petsCursor.getString(8),  // Columna especie
                 petsCursor.getString(16))); // Columna ubicación
+
+            } while (petsCursor.moveToNext());
+        }
+        petsCursor.close();
+        return petsList;
+    }
+
+    public ArrayList<Animal> readListPetDataByUserId(String id) {
+        SQLiteDatabase db = this.getReadableDatabase();
+
+        Cursor petsCursor = db.rawQuery("SELECT * FROM " + PetTable.TABLE_NAME + " where "+ PetTable.ID_OWNER_C+ " = ?", new String[] {id});
+
+        ArrayList<Animal> petsList = new ArrayList<>();
+
+        if (petsCursor.moveToFirst()) {
+            do {
+                petsList.add(new Animal(petsCursor.getString(1),  // Columna nombre
+                        petsCursor.getString(2),  // Columna id
+                        petsCursor.getString(8),  // Columna especie
+                        petsCursor.getString(16))); // Columna ubicación
 
             } while (petsCursor.moveToNext());
         }

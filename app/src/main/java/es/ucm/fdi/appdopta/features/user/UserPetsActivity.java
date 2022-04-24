@@ -5,14 +5,23 @@ import android.os.Bundle;
 import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
+import java.util.ArrayList;
+
+import es.ucm.fdi.appdopta.AdapterItemList;
+import es.ucm.fdi.appdopta.Animal;
 import es.ucm.fdi.appdopta.R;
+import es.ucm.fdi.appdopta.database.AppdoptaDBHelper;
 import es.ucm.fdi.appdopta.features.Fichas.aniadirFichaActivity;
-import es.ucm.fdi.appdopta.features.register.RegisterActivity;
 
 public class UserPetsActivity extends AppCompatActivity {
 
-
+    private ArrayList<Animal> petsList;
+    private AppdoptaDBHelper dbHelper;
+    private AdapterItemList adapter;
+    private RecyclerView mRecyclerView;
     Bundle user;
     String userid;
 
@@ -22,6 +31,26 @@ public class UserPetsActivity extends AppCompatActivity {
         //cogemos los datos del usuario
         user = getIntent().getExtras();
         userid = user.getString("userInfo");
+
+        petsList = new ArrayList<>();
+        dbHelper = new AppdoptaDBHelper(this);
+
+        petsList = dbHelper.readListPetDataByUserId(userid);
+        mRecyclerView = findViewById(R.id.listaMascotasUser);
+        mRecyclerView.setLayoutManager(new LinearLayoutManager(this, RecyclerView.VERTICAL, false));
+
+        if (petsList.size() > 0) {
+            mRecyclerView.setVisibility(View.VISIBLE);
+            adapter = new AdapterItemList(this, petsList);
+
+            mRecyclerView.setAdapter(adapter);
+        }
+        else {
+            mRecyclerView.setVisibility(View.GONE);
+            //Toast.makeText(this, "Todavia no hay animales en nuestras bases de datos", Toast.LENGTH_LONG).show();
+            //SI SE DESCOMENTA AÑADIR AL STRING.XML PARA EL IDIOMA//
+        }
+        dbHelper.close();
 
     }
 
