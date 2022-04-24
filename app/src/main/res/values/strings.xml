@@ -21,14 +21,18 @@
     <string name="userInfo">User information</string>
     <string name="changeName">Change user name</string>
     <string name="changePass">Change password</string>
-    <string name="changeUser">Change user</string>
     <string name="catchphrase">🐾 Find your perfect pet 🐾</string>
     <string name="search">Search</string>
     <string name="adoptionPets">Pets for adoption</string>
     <string name="viewPets">View your pets</string>
     <string name="updatedEmail">Email successfully updated</string>
     <string name="updatedPhone">Phone successfully updated</string>
+    <string name="updatedUser">User name successfully updated</string>
+    <string name="updatedPass">Password successfully updated</string>
     <string name="addPets">Add a pet</string>
+    <string name="currUser">Current username</string>
+    <string name="newUser">New username</string>
+    <string name="reNewUser">Repeat new username</string>
     <string name="currPass">Current password</string>
     <string name="newPass">New password</string>
     <string name="reNewPass">Repeat new password</string>
@@ -57,7 +61,10 @@
     <string name="userNotFound">The user doesn\'t exists</string>
     <string name="fieldsNotCompleted">Fill all the fields</string>
     <string name="existingUser">The user already exists</string>
+    <string name="diffUser">The usernames doesn\'t match</string>
+    <string name="wrongCurrUser">Wrong current username</string>
     <string name="diffPass">The passwords doesn\'t match</string>
+    <string name="wrongCurrPass">Wrong current password</string>
 
 
     <!-- Preference Titles -->
@@ -74,7 +81,7 @@
     <string name="attachment_summary_on">Automatically download attachments for incoming emails
     </string>
     <string name="attachment_summary_off">Only download attachments when manually requested</string>
-    <string name="nombreMascota">Nombre</string>
+    <string name="nombreMascota" translatable="false">Nombre</string>
     <string name="especieMascota">Especie</string>
 
 </resources>

@@ -47,24 +47,24 @@ public class ChangeUserActivity extends AppCompatActivity {
         String rep = repN.getText().toString();
 
         if(old.equals("") || us.equals("") || rep.equals("")) {
-            Toast.makeText(ChangeUserActivity.this, "Rellena todos los campos", Toast.LENGTH_SHORT).show();
+            Toast.makeText(ChangeUserActivity.this, R.string.fieldsNotCompleted, Toast.LENGTH_SHORT).show();
         }
         else{
             Boolean checkuser = dbHelper.checkUserName(old);
             if(checkuser == true) {
                 if (us.equals(rep)) {
                     dbHelper.updateUserName(userid, us);
-                    Toast.makeText(ChangeUserActivity.this, "Se cambió el usuario con exito", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(ChangeUserActivity.this, R.string.updatedUser, Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(getApplicationContext(), UserActivity.class);
                     intent.putExtra("userInfo", userid);
                     startActivity(intent);
                 }
                 else{
-                    Toast.makeText(ChangeUserActivity.this, "Los usuarios no coinciden", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(ChangeUserActivity.this, R.string.diffUser, Toast.LENGTH_SHORT).show();
                 }
             }
             else{
-                Toast.makeText(ChangeUserActivity.this, "Nombre de usuario actual inorrecto", Toast.LENGTH_SHORT).show();
+                Toast.makeText(ChangeUserActivity.this, R.string.wrongCurrUser, Toast.LENGTH_SHORT).show();
             }
         }
 

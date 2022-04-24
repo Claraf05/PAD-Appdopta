@@ -3,7 +3,13 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/ProgramasPad/PAD-Appdopta/app/src/main/res/layout-land/activity_change_password.xml" value="0.21510416666666668" />
+        <entry key="..\:/ProgramasPad/PAD-Appdopta/app/src/main/res/layout-land/activity_change_user.xml" value="0.4973958333333333" />
         <entry key="..\:/ProgramasPad/PAD-Appdopta/app/src/main/res/layout/activity_aniadirficha.xml" value="0.15" />
+        <entry key="..\:/ProgramasPad/PAD-Appdopta/app/src/main/res/layout/activity_change_password.xml" value="0.33" />
+        <entry key="..\:/ProgramasPad/PAD-Appdopta/app/src/main/res/layout/activity_change_user.xml" value="0.36666666666666664" />
+        <entry key="..\:/ProgramasPad/PAD-Appdopta/app/src/main/res/layout/activity_user.xml" value="0.36666666666666664" />
+        <entry key="..\:/ProgramasPad/PAD-Appdopta/app/src/main/res/layout/item_list.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/Belen/Documents/PAD-Appdopta/app/src/main/res/layout-land/activity_login.xml" value="0.2109375" />
         <entry key="..\:/Users/Belen/Documents/PAD-Appdopta/app/src/main/res/layout-land/activity_principal_view.xml" value="0.15745614035087718" />
         <entry key="..\:/Users/Belen/Documents/PAD-Appdopta/app/src/main/res/layout-land/activity_register.xml" value="0.14342105263157895" />

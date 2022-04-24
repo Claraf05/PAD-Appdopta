@@ -26,7 +26,6 @@
     <string name="search">Buscar</string>
     <string name="adoptionPets">Mascotas en adopción</string>
     <string name="viewPets">Ver tus mascotas</string>
-    <string name="changeUser">Cambiar usuario</string>
     <string name="updatedPhone">Telefono actualizado con éxito</string>
     <string name="updatedEmail">Email actualizado con éxito</string>
     <string name="addPets">Añadir una mascota</string>
@@ -55,4 +54,12 @@
     <string name="name">Nombre</string>
     <string name="breed">Raza</string>
     <string name="local">Ubicación</string>
+    <string name="updatedUser">Nombre de usuario actualizado correctamente</string>
+    <string name="updatedPass">Contraseña actualizada con éxito</string>
+    <string name="currUser">Nombre de usuario actual</string>
+    <string name="newUser">Nuevo nombre de usuario</string>
+    <string name="reNewUser">Repetir nuevo nombre de usuario</string>
+    <string name="diffUser">Los nombres de usuario no coinciden</string>
+    <string name="wrongCurrPass">Contraseña actual incorrecta</string>
+    <string name="wrongCurrUser">Nombre de usuario actual incorrecto</string>
 </resources>

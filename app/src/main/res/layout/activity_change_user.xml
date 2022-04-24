@@ -52,7 +52,7 @@
                 android:layout_height="wrap_content"
                 android:drawableLeft="@drawable/ic_user"
                 android:ems="10"
-                android:hint="Nombre de usuario actual"
+                android:hint="@string/currUser"
                 android:inputType="textPersonName"
                 android:minHeight="48dp" />
 
@@ -62,7 +62,7 @@
                 android:layout_height="wrap_content"
                 android:drawableLeft="@drawable/ic_usersimple"
                 android:ems="10"
-                android:hint="Nuevo nombre de usuario"
+                android:hint="@string/newUser"
                 android:inputType="textPersonName"
                 tools:ignore="TouchTargetSizeCheck" />
 
@@ -72,7 +72,7 @@
                 android:layout_height="wrap_content"
                 android:drawableLeft="@drawable/ic_newuser"
                 android:ems="10"
-                android:hint="Repite nuevo nombre"
+                android:hint="@string/reNewUser"
                 android:inputType="textPersonName"
                 android:minHeight="48dp" />
         </LinearLayout>
@@ -86,7 +86,7 @@
         android:layout_marginTop="37dp"
         android:background="#1F3A20"
         android:onClick="change"
-        android:text="Cambiar nombre de usuario"
+        android:text="@string/changeName"
         android:textColor="#C9E3AF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

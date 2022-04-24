@@ -123,7 +123,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="56dp"
                 android:onClick="changeUser_U"
-                android:text="@string/changeUser"
+                android:text="@string/changeName"
                 android:textColor="#C9E3AF"
                 app:backgroundTint="#1F3A20" />
 

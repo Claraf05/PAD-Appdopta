@@ -48,24 +48,24 @@ public class ChangePasswordActivity extends AppCompatActivity {
         String rep = repP.getText().toString();
 
         if(old.equals("") || pass.equals("") || rep.equals("")) {
-            Toast.makeText(ChangePasswordActivity.this, "Rellena todos los campos", Toast.LENGTH_SHORT).show();
+            Toast.makeText(ChangePasswordActivity.this, R.string.fieldsNotCompleted, Toast.LENGTH_SHORT).show();
         }
         else{
             Boolean checkuser = dbHelper.checkUserPassword(uwu.getUsername(), old);
             if(checkuser == true) {
                 if (pass.equals(rep)) {
                     dbHelper.updateUserPw(userid, pass);
-                    Toast.makeText(ChangePasswordActivity.this, "Se cambió la contraseña con exito", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(ChangePasswordActivity.this, R.string.updatedPass, Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(getApplicationContext(), UserActivity.class);
                     intent.putExtra("userInfo", userid);
                     startActivity(intent);
                 }
                 else{
-                    Toast.makeText(ChangePasswordActivity.this, "Las contraseñas no coinciden", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(ChangePasswordActivity.this, R.string.diffPass, Toast.LENGTH_SHORT).show();
                 }
             }
             else{
-                Toast.makeText(ChangePasswordActivity.this, "Contraseña actual inorrecta", Toast.LENGTH_SHORT).show();
+                Toast.makeText(ChangePasswordActivity.this, R.string.wrongCurrPass, Toast.LENGTH_SHORT).show();
             }
         }
     }
