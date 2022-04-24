@@ -72,7 +72,7 @@ public class UserActivity extends AppCompatActivity {
     }
 
     public void changeEmail_U(View view){
-        String em = String.valueOf(userT.getText());
+        String em = String.valueOf(userE.getText());
         dbHelper.updateUserEmail(userid, em);
         Toast.makeText(UserActivity.this, R.string.updatedEmail, Toast.LENGTH_SHORT).show();
     }

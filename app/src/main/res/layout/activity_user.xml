@@ -36,7 +36,7 @@
             android:layout_marginTop="8dp"
             android:text="@string/phone"
             android:textColor="#000000"
-            android:textSize="24sp" />
+            android:textSize="20sp" />
 
         <EditText
             android:id="@+id/userEmail_U"
@@ -45,7 +45,7 @@
             android:layout_marginTop="8dp"
             android:text="@string/email"
             android:textColor="#000000"
-            android:textSize="16sp" />
+            android:textSize="20sp" />
 
     </LinearLayout>
 
