@@ -7,98 +7,153 @@
     android:background="#C9E3AF"
     tools:context=".features.user.UserActivity">
 
-    <ScrollView
-        android:layout_width="720dp"
-        android:layout_height="284dp"
-        app:layout_constraintBottom_toTopOf="@+id/logoutButton"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <LinearLayout
-            android:id="@+id/linearEdit"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <EditText
-                android:id="@+id/Username_U"
-                android:layout_width="134dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:editable="false"
-                android:text="@string/user"
-                android:textColor="#000000"
-                android:textSize="24sp" />
-
-            <EditText
-                android:id="@+id/userPhone_U"
-                android:layout_width="134dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:text="@string/phone"
-                android:textColor="#000000"
-                android:textSize="24sp" />
-
-            <EditText
-                android:id="@+id/userEmail_U"
-                android:layout_width="96dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:text="@string/email"
-                android:textColor="#000000"
-                android:textSize="24sp" />
-
-            <TextView
-                android:id="@+id/petsTxt"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
-
-        </LinearLayout>
-    </ScrollView>
-
-    <Button
-        android:id="@+id/changePwButton"
-        android:layout_width="0dp"
+    <LinearLayout
+        android:id="@+id/linearEdit"
+        android:layout_width="563dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginEnd="32dp"
-        android:onClick="changePw_U"
-        android:text="@string/changePass"
-        app:backgroundTint="#1F3A20"
-        app:layout_constraintBottom_toTopOf="@+id/logoutUserButton"
+        android:layout_marginTop="50dp"
+        android:layout_marginBottom="35dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/tableLayout"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.512"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/changeUserButton" />
-
-    <Button
-        android:id="@+id/logoutUserButton"
-        android:layout_width="wrap_content"
-        android:layout_height="58dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="24dp"
-        android:onClick="logOut_U"
-        android:text="@string/logout"
-        app:backgroundTint="#1F3A20"
-        app:layout_constraintBottom_toTopOf="@+id/toolbar5"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/changePwButton" />
-
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar5"
-        android:layout_width="409dp"
-        android:layout_height="wrap_content"
-        android:background="?attr/colorPrimary"
-        android:minHeight="?attr/actionBarSize"
-        android:theme="?attr/actionBarTheme"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.261"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintVertical_bias="0.608">
+
+        <EditText
+            android:id="@+id/Username_U"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:drawableLeft="@drawable/ic_user"
+            android:editable="false"
+            android:text="@string/user"
+            android:textColor="#000000"
+            android:textSize="24sp" />
+
+        <EditText
+            android:id="@+id/userPhone_U"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:drawableLeft="@drawable/ic_phone"
+            android:text="@string/phone"
+            android:textColor="#000000"
+            android:textSize="24sp" />
+
+        <EditText
+            android:id="@+id/userEmail_U"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:drawableLeft="@drawable/ic_email"
+            android:text="@string/email"
+            android:textColor="#000000"
+            android:textSize="24sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="58dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="113dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="@+id/linearEdit"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/linearEdit"
+        app:layout_constraintTop_toTopOf="@+id/linearEdit"
+        app:layout_constraintVertical_bias="1.0">
+
+        <ImageButton
+            android:id="@+id/userPhone_UButton"
+            android:layout_width="match_parent"
+            android:layout_height="65dp"
+            android:background="#00FFFFFF"
+            android:onClick="goToMain_U"
+            android:scaleType="centerInside"
+            android:scaleX="1"
+            android:scaleY="1"
+            android:tint="#000000"
+            app:srcCompat="@drawable/ic_edit"
+            tools:ignore="VectorDrawableCompat,SpeakableTextPresentCheck" />
+
+        <ImageButton
+            android:id="@+id/userEmail_UButton"
+            android:layout_width="match_parent"
+            android:layout_height="61dp"
+            android:background="#00FFFFFF"
+            android:onClick="goToMain_U"
+            android:scaleType="centerInside"
+            android:scaleX="1"
+            android:scaleY="1"
+            android:tint="#000000"
+            app:srcCompat="@drawable/ic_edit"
+            tools:ignore="VectorDrawableCompat,SpeakableTextPresentCheck" />
+    </LinearLayout>
+
+    <TableLayout
+        android:id="@+id/tableLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="43dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="25dp"
+        android:layout_marginBottom="32dp"
+        app:layout_constraintBottom_toTopOf="@+id/toolbar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearEdit">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <Button
+                android:id="@+id/petsButton"
+                android:layout_width="wrap_content"
+                android:layout_height="56dp"
+                android:text="@string/viewPets"
+                android:textColor="#C9E3AF"
+                app:backgroundTint="#1F3A20" />
+
+            <Button
+                android:id="@+id/changeUserButton"
+                android:layout_width="wrap_content"
+                android:layout_height="56dp"
+                android:onClick="changeUser_U"
+                android:text="@string/changeUser"
+                android:textColor="#C9E3AF"
+                app:backgroundTint="#1F3A20" />
+
+            <Button
+                android:id="@+id/changePwButton"
+                android:layout_width="wrap_content"
+                android:layout_height="58dp"
+                android:onClick="changePw_U"
+                android:text="@string/changePass"
+                android:textColor="#C9E3AF"
+                app:backgroundTint="#1F3A20" />
+
+            <Button
+                android:id="@+id/logoutUserButton"
+                android:layout_width="wrap_content"
+                android:layout_height="58dp"
+                android:onClick="logOut_U"
+                android:text="@string/logout"
+                android:textColor="#C9E3AF"
+                app:backgroundTint="#1F3A20" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        </TableRow>
+
+    </TableLayout>
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
@@ -178,76 +233,5 @@
         app:layout_constraintVertical_bias="0.684"
         app:srcCompat="@drawable/ic_paw"
         tools:ignore="VectorDrawableCompat,SpeakableTextPresentCheck" />
-
-    <Button
-        android:id="@+id/petsButton"
-        android:layout_width="0dp"
-        android:layout_height="56dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="32dp"
-        android:layout_marginBottom="4dp"
-        android:text="@string/viewPets"
-        app:backgroundTint="#1F3A20"
-        app:layout_constraintBottom_toTopOf="@+id/changeUserButton"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearEdit" />
-
-    <Button
-        android:id="@+id/changeUserButton"
-        android:layout_width="0dp"
-        android:layout_height="56dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="4dp"
-        android:layout_marginEnd="32dp"
-        android:layout_marginBottom="6dp"
-        android:onClick="changeUser_U"
-        android:text="@string/changeUser"
-        app:backgroundTint="#1F3A20"
-        app:layout_constraintBottom_toTopOf="@+id/changePwButton"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/petsButton" />
-
-    <LinearLayout
-        android:layout_width="58dp"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="113dp"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="@+id/linearEdit"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/linearEdit"
-        app:layout_constraintTop_toTopOf="@+id/linearEdit"
-        app:layout_constraintVertical_bias="1.0">
-
-        <ImageButton
-            android:id="@+id/userPhone_UButton"
-            android:layout_width="match_parent"
-            android:layout_height="55dp"
-            android:background="#00FFFFFF"
-            android:onClick="goToMain_U"
-            android:scaleType="centerInside"
-            android:scaleX="1"
-            android:scaleY="1"
-            android:tint="#000000"
-            app:srcCompat="@drawable/ic_edit"
-            tools:ignore="VectorDrawableCompat,SpeakableTextPresentCheck" />
-
-        <ImageButton
-            android:id="@+id/userEmail_UButton"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:background="#00FFFFFF"
-            android:onClick="goToMain_U"
-            android:scaleType="centerInside"
-            android:scaleX="1"
-            android:scaleY="1"
-            android:tint="#000000"
-            app:srcCompat="@drawable/ic_edit"
-            tools:ignore="VectorDrawableCompat,SpeakableTextPresentCheck" />
-    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

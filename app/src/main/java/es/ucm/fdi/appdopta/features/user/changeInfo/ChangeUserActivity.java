@@ -41,7 +41,7 @@ public class ChangeUserActivity extends AppCompatActivity {
     }
 
     public void change(View view){
-       
+
         String old = actN.getText().toString();
         String us = newN.getText().toString();
         String rep = repN.getText().toString();

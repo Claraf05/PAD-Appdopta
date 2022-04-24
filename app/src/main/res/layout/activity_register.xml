@@ -121,9 +121,10 @@
             android:baselineAligned="false"
             android:onClick="register"
             android:text="@string/register"
+            android:textColor="#C9E3AF"
             app:backgroundTint="#1F3A20"
             app:iconPadding="5dp"
-            app:iconTint="#FFFFFF" />
+            app:iconTint="#C9E3AF" />
 
     </androidx.cardview.widget.CardView>
 
