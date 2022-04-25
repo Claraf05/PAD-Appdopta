@@ -1,14 +1,19 @@
 package es.ucm.fdi.appdopta.features.settings;
 
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.os.Bundle;
 import android.os.Parcelable;
+import android.util.Log;
 import android.view.View;
 
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.preference.PreferenceFragmentCompat;
 
+import java.util.Locale;
+
+import es.ucm.fdi.appdopta.LocaleHelper;
 import es.ucm.fdi.appdopta.PrincipalView;
 import es.ucm.fdi.appdopta.R;
 import es.ucm.fdi.appdopta.features.login.LoginActivity;
@@ -70,6 +75,26 @@ public class SettingsActivity extends AppCompatActivity {
     public void userInfoActivity(View view){
         Intent intent = new Intent(getApplicationContext(), UserActivity.class);
         intent.putExtra("userInfo", userid);
+        startActivity(intent);
+    }
+    public void español(View view){
+        changeLocal(new Locale("es"));
+    }
+    public void ingles(View view){
+        changeLocal(new Locale("en"));
+    }
+    public void frances(View view){
+        changeLocal(new Locale("fr"));
+    }
+
+    private void changeLocal(Locale locale){
+        Locale.setDefault(locale);
+        Configuration config = new Configuration();
+        config.setLocale(locale);
+        this.getResources().updateConfiguration(config,this.getResources().getDisplayMetrics());
+        Intent intent = new Intent(SettingsActivity.this, SettingsActivity.class);
+        intent.putExtra("userInfo", userid);
+        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(intent);
     }
 }

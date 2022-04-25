@@ -142,26 +142,41 @@
 
         <RadioGroup
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <RadioButton
-                android:id="@+id/spanishLanguaje"
-                android:layout_width="157dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:checked="true"
-                android:drawableLeft="@drawable/ic_spanish"
-                android:minHeight="48dp"
-                android:text="@string/es" />
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
 
             <RadioButton
                 android:id="@+id/englishLanguaje"
-                android:layout_width="156dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
+                android:checked="false"
                 android:drawableLeft="@drawable/ic_english"
                 android:minHeight="48dp"
+                android:onClick="ingles"
                 android:text="@string/en" />
+
+            <RadioButton
+                android:id="@+id/spanishLanguaje"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:checked="false"
+                android:drawableLeft="@drawable/ic_spanish"
+                android:minHeight="48dp"
+                android:onClick="español"
+                android:text="@string/es" />
+
+            <RadioButton
+                android:id="@+id/spanishLanguaje2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:checked="false"
+                android:drawableLeft="@drawable/ic_spanish"
+                android:minHeight="48dp"
+                android:onClick="frances"
+                android:text="@string/fr" />
 
         </RadioGroup>
 

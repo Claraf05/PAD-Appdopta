@@ -154,6 +154,7 @@
             android:id="@+id/listaMascotas"
             android:layout_width="300dp"
             android:layout_height="350dp"
+            android:layout_above="@+id/layoutToolBar"
             android:layout_below="@+id/textoPrevLista"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="5dp"
