@@ -9,8 +9,8 @@
 
     <LinearLayout
         android:id="@+id/linearEdit"
-        android:layout_width="214dp"
-        android:layout_height="193dp"
+        android:layout_width="193dp"
+        android:layout_height="191dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="@+id/linear"
         app:layout_constraintEnd_toEndOf="parent"
