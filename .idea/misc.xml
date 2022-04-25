@@ -3,16 +3,25 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/ProgramasPad/PAD-Appdopta/app/src/main/res/drawable/ic_english.xml" value="0.3635" />
+        <entry key="..\:/ProgramasPad/PAD-Appdopta/app/src/main/res/drawable/ic_spanish.xml" value="0.3635" />
         <entry key="..\:/ProgramasPad/PAD-Appdopta/app/src/main/res/layout-land/activity_change_password.xml" value="0.21510416666666668" />
         <entry key="..\:/ProgramasPad/PAD-Appdopta/app/src/main/res/layout-land/activity_change_user.xml" value="0.4973958333333333" />
         <entry key="..\:/ProgramasPad/PAD-Appdopta/app/src/main/res/layout-land/activity_ficha.xml" value="0.47249190938511326" />
+        <entry key="..\:/ProgramasPad/PAD-Appdopta/app/src/main/res/layout-land/activity_login.xml" value="0.2546875" />
+        <entry key="..\:/ProgramasPad/PAD-Appdopta/app/src/main/res/layout-land/activity_principal_view.xml" value="0.27239583333333334" />
+        <entry key="..\:/ProgramasPad/PAD-Appdopta/app/src/main/res/layout-land/activity_user.xml" value="0.4979166666666667" />
+        <entry key="..\:/ProgramasPad/PAD-Appdopta/app/src/main/res/layout-land/filter_view.xml" value="0.27239583333333334" />
+        <entry key="..\:/ProgramasPad/PAD-Appdopta/app/src/main/res/layout-land/settings_activity.xml" value="0.4979166666666667" />
         <entry key="..\:/ProgramasPad/PAD-Appdopta/app/src/main/res/layout/activity_aniadirficha.xml" value="0.33" />
         <entry key="..\:/ProgramasPad/PAD-Appdopta/app/src/main/res/layout/activity_change_password.xml" value="0.33" />
         <entry key="..\:/ProgramasPad/PAD-Appdopta/app/src/main/res/layout/activity_change_user.xml" value="0.36666666666666664" />
         <entry key="..\:/ProgramasPad/PAD-Appdopta/app/src/main/res/layout/activity_ficha.xml" value="0.36666666666666664" />
-        <entry key="..\:/ProgramasPad/PAD-Appdopta/app/src/main/res/layout/activity_login.xml" value="0.16302083333333334" />
+        <entry key="..\:/ProgramasPad/PAD-Appdopta/app/src/main/res/layout/activity_login.xml" value="0.36614583333333334" />
         <entry key="..\:/ProgramasPad/PAD-Appdopta/app/src/main/res/layout/activity_principal_view.xml" value="0.5" />
+        <entry key="..\:/ProgramasPad/PAD-Appdopta/app/src/main/res/layout/activity_register.xml" value="0.36614583333333334" />
         <entry key="..\:/ProgramasPad/PAD-Appdopta/app/src/main/res/layout/activity_user.xml" value="0.36666666666666664" />
+        <entry key="..\:/ProgramasPad/PAD-Appdopta/app/src/main/res/layout/filter_view.xml" value="0.3605128205128205" />
         <entry key="..\:/ProgramasPad/PAD-Appdopta/app/src/main/res/layout/item_list.xml" value="0.36666666666666664" />
         <entry key="..\:/ProgramasPad/PAD-Appdopta/app/src/main/res/layout/settings_activity.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/Belen/Documents/PAD-Appdopta/app/src/main/res/layout-land/activity_login.xml" value="0.2109375" />

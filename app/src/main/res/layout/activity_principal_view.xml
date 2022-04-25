@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#C7F0BE"
+    android:background="#C9E3AF"
 
     tools:context=".features.login.LoginActivity">
 
@@ -83,7 +83,7 @@
                 android:gravity="center"
                 android:text="@string/catchphrase"
                 android:textColor="#1F3A20"
-                android:textSize="24sp" />
+                android:textSize="20sp" />
         </LinearLayout>
 
         <LinearLayout

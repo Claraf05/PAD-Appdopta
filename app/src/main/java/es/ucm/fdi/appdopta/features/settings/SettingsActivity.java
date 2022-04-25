@@ -13,7 +13,6 @@ import androidx.preference.PreferenceFragmentCompat;
 
 import java.util.Locale;
 
-import es.ucm.fdi.appdopta.LocaleHelper;
 import es.ucm.fdi.appdopta.PrincipalView;
 import es.ucm.fdi.appdopta.R;
 import es.ucm.fdi.appdopta.features.login.LoginActivity;

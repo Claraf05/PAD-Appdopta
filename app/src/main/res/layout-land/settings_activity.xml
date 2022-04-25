@@ -186,6 +186,17 @@
                 android:minHeight="48dp"
                 android:text="@string/en" />
 
+            <RadioButton
+                android:id="@+id/spanishLanguaje3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:checked="false"
+                android:drawableLeft="@drawable/ic_spanish"
+                android:minHeight="48dp"
+                android:onClick="frances"
+                android:text="@string/fr" />
+
             <TextView
                 android:id="@+id/changePw3"
                 android:layout_width="match_parent"

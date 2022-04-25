@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#C7F0BE"
+    android:background="#C9E3AF"
 
     tools:context=".features.login.LoginActivity">
 
@@ -212,4 +212,4 @@
         app:layout_constraintVertical_bias="0.736"
         app:srcCompat="@drawable/ic_settings"
         tools:ignore="VectorDrawableCompat,SpeakableTextPresentCheck" />
- </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
