@@ -120,11 +120,10 @@ public class AppdoptaDBHelper extends SQLiteOpenHelper {
         }
     }
 
-    public boolean insertPetOwnerData(String id_user, String local_c) {
+    public boolean insertPetOwnerData(String id_user) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
         contentValues.put(PetOwnerTable.ID_C, id_user);
-        //contentValues.put(PetOwnerTable.LOCAL_C, local_c);
 
         long result = db.insert(PetTable.TABLE_NAME, null, contentValues);
         if(result == -1) {
