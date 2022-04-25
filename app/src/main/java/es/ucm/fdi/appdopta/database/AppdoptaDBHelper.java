@@ -59,8 +59,8 @@ public class AppdoptaDBHelper extends SQLiteOpenHelper {
                     PetTable.RACE_C + " TEXT NOT NULL," +
                     PetTable.BDAY_C + " TEXT NOT NULL," +
                     PetTable.DESCRIPTION_C + " TEXT NOT NULL," +
-                    PetTable.LOCAL_C + "TEXT NOT NULL, " +
-                    PetTable.IMAGE_C + "BLOB," +
+                    PetTable.LOCAL_C + " TEXT NOT NULL, " +
+                    PetTable.IMAGE_C + " BLOB," +
 
                     //TODAS LAS VACUNAS SON INTEGER QUE PUEDEN SER 1 O 0
                     PetTable.VACC_RABIA_C + " INTEGER NOT NULL," +
@@ -200,9 +200,9 @@ public class AppdoptaDBHelper extends SQLiteOpenHelper {
         if (petsCursor.moveToFirst()) {
             do {
                 petsList.add(new Animal(petsCursor.getString(1),  // Columna nombre
-                petsCursor.getString(2),  // Columna id
-                petsCursor.getString(8),  // Columna especie
-                petsCursor.getString(16))); // Columna ubicación
+                petsCursor.getString(0),  // Columna id
+                petsCursor.getString(4),  // Columna especie
+                petsCursor.getString(8))); // Columna ubicación
 
             } while (petsCursor.moveToNext());
         }
@@ -220,9 +220,9 @@ public class AppdoptaDBHelper extends SQLiteOpenHelper {
         if (petsCursor.moveToFirst()) {
             do {
                 petsList.add(new Animal(petsCursor.getString(1),  // Columna nombre
-                        petsCursor.getString(2),  // Columna id
-                        petsCursor.getString(8),  // Columna especie
-                        petsCursor.getString(16))); // Columna ubicación
+                        petsCursor.getString(0),  // Columna id
+                        petsCursor.getString(4),  // Columna especie
+                        petsCursor.getString(8))); // Columna ubicación
 
             } while (petsCursor.moveToNext());
         }
