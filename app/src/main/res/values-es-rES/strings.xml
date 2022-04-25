@@ -79,4 +79,5 @@
     <string name="leisma">Leishmaniasis</string>
     <string name="confirm">Confirmar</string>
     <string name="fr">Francés</string>
+    <string name="tooBig">La imagen es demasiado grande, max 2000x2000 pixeles</string>
 </resources>

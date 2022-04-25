@@ -77,7 +77,7 @@ public class fichaActivity extends AppCompatActivity implements OnMapReadyCallba
         imagen = findViewById(R.id.imagen);
 
         //cuando tengamos aqui el id de la mascota,descomentar
-        //imagen.setImageBitmap(dbHelper.buscarImagen(idMasc));
+        imagen.setImageBitmap(dbHelper.buscarImagen(idAn));
 
         Geocoder geo = new Geocoder(this);
         String loc = "San Blas"; //Viene de la BBDD

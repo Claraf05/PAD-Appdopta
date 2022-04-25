@@ -151,6 +151,9 @@ public class aniadirFichaActivity extends AppCompatActivity {
         if(especie.isEmpty() || raza.isEmpty() || nombreMasc.isEmpty() || sexoMasc.isEmpty() || bday.isEmpty() /*|| nChip == 0*/){
             Toast.makeText(aniadirFichaActivity.this, R.string.fieldsNotCompleted, Toast.LENGTH_SHORT).show();
         }
+        else if(bitmap.getWidth() > 2000 || bitmap.getHeight() > 2000){
+            Toast.makeText(aniadirFichaActivity.this, R.string.tooBig, Toast.LENGTH_SHORT).show();
+        }
         else{
             //assign an id to a pet
             boolean idcount;
@@ -160,7 +163,6 @@ public class aniadirFichaActivity extends AppCompatActivity {
                 idcount = dbHelper.checkPetId(String.valueOf(id));
             }
             while(idcount);
-
             //String idDue = dbHelper.getuserId(usern);
             dbHelper.insertPetData(String.valueOf(id), idDue, nombreMasc, sexoMasc, raza, desc,especie, bday, rabiaV,hepatitisV,leishmaniasisV, nChip, fechChip,locChip, localizacion, bitmap);
             Intent intent = new Intent(getApplicationContext(), PrincipalView.class);
