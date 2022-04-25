@@ -12,7 +12,7 @@ public class AppdoptaDatabase {
 
     //tabla users
     public static class StandardUserTable implements BaseColumns {
-        public static final String TABLE_NAME = "stardard_users";
+        public static final String TABLE_NAME = "standard_users";
         //el id del user no se usa para buscar al usuario, para eso se una el USERNAME. +
         //El id sirve solo para localizar a las mascotas del user
         public static final String ID_C = "id";
