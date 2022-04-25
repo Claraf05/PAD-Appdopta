@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import es.ucm.fdi.appdopta.PrincipalView;
 import es.ucm.fdi.appdopta.R;
 import es.ucm.fdi.appdopta.database.AppdoptaDBHelper;
 import es.ucm.fdi.appdopta.features.login.LoginActivity;
@@ -90,7 +91,8 @@ public class UserActivity extends AppCompatActivity {
     }
 
     public void goToMain_U(View view){
-        //Intent intent = new Intent(getApplicationContext(), RegisterActivity.class);
-        //startActivity(intent);
+        Intent intent = new Intent(getApplicationContext(), PrincipalView.class);
+        intent.putExtra("userInfo", userid);
+        startActivity(intent);
     }
 }

@@ -8,6 +8,8 @@ import android.view.View;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.preference.PreferenceFragmentCompat;
+
+import es.ucm.fdi.appdopta.PrincipalView;
 import es.ucm.fdi.appdopta.R;
 import es.ucm.fdi.appdopta.features.login.LoginActivity;
 import es.ucm.fdi.appdopta.features.register.RegisterActivity;
@@ -60,8 +62,9 @@ public class SettingsActivity extends AppCompatActivity {
     }
 
     public void goToMain(View view){
-        //Intent intent = new Intent(getApplicationContext(), RegisterActivity.class);
-        //startActivity(intent);
+        Intent intent = new Intent(getApplicationContext(), PrincipalView.class);
+        intent.putExtra("userInfo", userid);
+        startActivity(intent);
     }
 
     public void userInfoActivity(View view){

@@ -12,9 +12,11 @@ import java.util.ArrayList;
 
 import es.ucm.fdi.appdopta.AdapterItemList;
 import es.ucm.fdi.appdopta.Animal;
+import es.ucm.fdi.appdopta.PrincipalView;
 import es.ucm.fdi.appdopta.R;
 import es.ucm.fdi.appdopta.database.AppdoptaDBHelper;
 import es.ucm.fdi.appdopta.features.Fichas.aniadirFichaActivity;
+import es.ucm.fdi.appdopta.features.settings.SettingsActivity;
 
 public class UserPetsActivity extends AppCompatActivity {
 
@@ -59,5 +61,28 @@ public class UserPetsActivity extends AppCompatActivity {
         intent.putExtra("userInfo", userid);
         startActivity(intent);
 
+    }
+
+    public void verMascota(View view){
+        Intent intent = new Intent(getApplicationContext(), aniadirFichaActivity.class);
+        intent.putExtra("userInfo", userid);
+        startActivity(intent);
+    }
+
+    public void goToMain(View view){
+        Intent intent = new Intent(getApplicationContext(), PrincipalView.class);
+        intent.putExtra("userInfo", userid);
+        startActivity(intent);
+    }
+
+    public void userInfoActivity(View view){
+        Intent intent = new Intent(getApplicationContext(), UserActivity.class);
+        intent.putExtra("userInfo", userid);
+        startActivity(intent);
+    }
+    public void goToSettings(View view){
+        Intent intent = new Intent(getApplicationContext(), SettingsActivity.class);
+        intent.putExtra("userInfo", userid);
+        startActivity(intent);
     }
 }

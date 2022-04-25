@@ -13,18 +13,24 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 
 import es.ucm.fdi.appdopta.database.AppdoptaDBHelper;
+import es.ucm.fdi.appdopta.features.settings.SettingsActivity;
+import es.ucm.fdi.appdopta.features.user.UserActivity;
 
 public class PrincipalView extends AppCompatActivity {
     private ArrayList<Animal> petsList;
     private AppdoptaDBHelper dbHelper;
     private AdapterItemList adapter;
     private RecyclerView mRecyclerView;
-
+    private Bundle user;
+    private String userid;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_principal_view);
-        Intent intent = getIntent();
+        //Intent intent = getIntent();
+        user = getIntent().getExtras();
+        userid = user.getString("userInfo");
+
 
         petsList = new ArrayList<>();
         dbHelper = new AppdoptaDBHelper(this);
@@ -75,6 +81,17 @@ public class PrincipalView extends AppCompatActivity {
 
     public void filtrar(View view){
         Intent intent = new Intent(this, FiltroView.class);
+        startActivity(intent);
+    }
+
+    public void userInfoActivity(View view){
+        Intent intent = new Intent(getApplicationContext(), UserActivity.class);
+        intent.putExtra("userInfo", userid);
+        startActivity(intent);
+    }
+    public void goToSettings(View view){
+        Intent intent = new Intent(getApplicationContext(), SettingsActivity.class);
+        intent.putExtra("userInfo", userid);
         startActivity(intent);
     }
 }

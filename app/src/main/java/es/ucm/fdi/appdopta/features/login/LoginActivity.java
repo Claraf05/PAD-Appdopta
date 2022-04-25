@@ -10,6 +10,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import es.ucm.fdi.appdopta.PrincipalView;
 import es.ucm.fdi.appdopta.R;
 import es.ucm.fdi.appdopta.database.AppdoptaDBHelper;
 import es.ucm.fdi.appdopta.features.register.RegisterActivity;
@@ -51,7 +52,7 @@ public class LoginActivity extends AppCompatActivity {
                 String idf = dbHelper.getUserIdByName(user);
                 dbHelper.buscarUsuario(uInfo, idf);
 
-                Intent intent = new Intent(getApplicationContext(), SettingsActivity.class);
+                Intent intent = new Intent(getApplicationContext(), PrincipalView.class);
 
                 //TODO pasarle el usuario al intent para llevarlo a la actividad de info de usuario
                 //intent.putExtra("userInfo", (Parcelable) uInfo);

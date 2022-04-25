@@ -44,12 +44,12 @@ public class AdapterItemList extends RecyclerView.Adapter<AdapterItemList.ViewHo
         //ArrayList<Animal> petList = dbHelper.readListPetData();
         Animal mCurrent = listaDatos.get(position); // Crear clase animla: String->Animal
         TextView t = holder.petName;
+
         t.setText(mCurrent.getName());
         t = holder.petSpecies;
         t.setText(mCurrent.getSpecies());
         t = holder.petLocation;
         t.setText(mCurrent.getLocation());
-
         //t.setOnClickListener(new View.OnClickListener(){
             /*@Override
             public void onClick(View view) {
