@@ -27,7 +27,8 @@
             android:layout_height="607dp"
             android:layout_below="@+id/textoPrevLista"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="5dp">
+            android:layout_marginTop="5dp"
+            tools:layout_centerHorizontal="true">
 
         </androidx.recyclerview.widget.RecyclerView>
 

@@ -41,7 +41,7 @@ public class PrincipalView extends AppCompatActivity {
 
         if (petsList.size() > 0) {
             mRecyclerView.setVisibility(View.VISIBLE);
-            adapter = new AdapterItemList(this, petsList);
+            adapter = new AdapterItemList(this, petsList,dbHelper);
 
             mRecyclerView.setAdapter(adapter);
         }

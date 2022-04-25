@@ -2,10 +2,12 @@ package es.ucm.fdi.appdopta;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -21,10 +23,11 @@ public class AdapterItemList extends RecyclerView.Adapter<AdapterItemList.ViewHo
     private ArrayList<Animal> listaDatos;
     private LayoutInflater layoutInflater;
     private Context context;
-    AppdoptaDBHelper dbHelper;
+    AppdoptaDBHelper dbHelper ;
 
-    public AdapterItemList(Context c, ArrayList<Animal> listDatos) {
+    public AdapterItemList(Context c, ArrayList<Animal> listDatos, AppdoptaDBHelper db) {
         this.context = c;
+        this.dbHelper = db;
         this.layoutInflater = LayoutInflater.from(c);
         this.listaDatos = listDatos;
     }
@@ -43,13 +46,18 @@ public class AdapterItemList extends RecyclerView.Adapter<AdapterItemList.ViewHo
         // AIUDA
         //ArrayList<Animal> petList = dbHelper.readListPetData();
         Animal mCurrent = listaDatos.get(position); // Crear clase animla: String->Animal
-        TextView t = holder.petName;
 
+        TextView t = holder.petName;
         t.setText(mCurrent.getName());
         t = holder.petSpecies;
         t.setText(mCurrent.getSpecies());
         t = holder.petLocation;
         t.setText(mCurrent.getLocation());
+        ImageView img = holder.petImage;
+        Bitmap a = dbHelper.buscarImagen(mCurrent.getId());
+        img.setImageBitmap(a);
+
+
         //t.setOnClickListener(new View.OnClickListener(){
             /*@Override
             public void onClick(View view) {
@@ -68,12 +76,14 @@ public class AdapterItemList extends RecyclerView.Adapter<AdapterItemList.ViewHo
         TextView petName;
         TextView petSpecies;
         TextView petLocation;
-
+        ImageView petImage;
         public ViewHolderDatos(View itemView){
             super(itemView);
             petName = itemView.findViewById(R.id.nombreMascota);
             petSpecies = itemView.findViewById(R.id.especieMascota);
             petLocation = itemView.findViewById(R.id.ubicacionMascota);
+            petImage = itemView.findViewById(R.id.imgMascota);
+
 
         }
     }
