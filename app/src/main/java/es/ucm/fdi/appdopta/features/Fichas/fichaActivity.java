@@ -43,7 +43,7 @@ public class fichaActivity extends AppCompatActivity implements OnMapReadyCallba
     LinearLayout dataChip,botonesZoom;
     View fMap;
     CardView card;
-    String localidad, idDue;
+    String localidad, idAn;
     ImageView imagen;
     UserInfo usuario;
     double Lat, Lng;
@@ -57,10 +57,14 @@ public class fichaActivity extends AppCompatActivity implements OnMapReadyCallba
 
         setContentView(R.layout.activity_ficha);
         //Intent intent = getIntent();
-        user = getIntent().getExtras();
-        idDue = user.getString("userInfo");
+        Intent intent = getIntent();
 
-        dbHelper.buscarUsuario(usuario, idDue);
+        user = getIntent().getExtras();
+
+        idAn = user.getString("id");
+
+        Log.d("PRUEBA", idAn);
+        //dbHelper.buscarUsuario(usuario, idAn);
 
         infoButton = findViewById(R.id.infoDue);
         dataDue = findViewById(R.id.layoutDue);

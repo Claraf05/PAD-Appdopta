@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.net.Uri;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,13 +18,16 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 
 import es.ucm.fdi.appdopta.database.AppdoptaDBHelper;
+import es.ucm.fdi.appdopta.features.Fichas.fichaActivity;
 
 public class AdapterItemList extends RecyclerView.Adapter<AdapterItemList.ViewHolderDatos> {
+
 
     private ArrayList<Animal> listaDatos;
     private LayoutInflater layoutInflater;
     private Context context;
     AppdoptaDBHelper dbHelper ;
+    private String id;
 
     public AdapterItemList(Context c, ArrayList<Animal> listDatos, AppdoptaDBHelper db) {
         this.context = c;
@@ -46,7 +50,6 @@ public class AdapterItemList extends RecyclerView.Adapter<AdapterItemList.ViewHo
         // AIUDA
         //ArrayList<Animal> petList = dbHelper.readListPetData();
         Animal mCurrent = listaDatos.get(position); // Crear clase animla: String->Animal
-
         TextView t = holder.petName;
         t.setText(mCurrent.getName());
         t = holder.petSpecies;
@@ -56,6 +59,7 @@ public class AdapterItemList extends RecyclerView.Adapter<AdapterItemList.ViewHo
         ImageView img = holder.petImage;
         Bitmap a = dbHelper.buscarImagen(mCurrent.getId());
         img.setImageBitmap(a);
+
 
 
         //t.setOnClickListener(new View.OnClickListener(){
@@ -87,4 +91,5 @@ public class AdapterItemList extends RecyclerView.Adapter<AdapterItemList.ViewHo
 
         }
     }
+
 }

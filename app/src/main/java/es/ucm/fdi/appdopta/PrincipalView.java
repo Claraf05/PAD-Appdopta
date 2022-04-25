@@ -2,6 +2,7 @@ package es.ucm.fdi.appdopta;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.Toast;
@@ -13,6 +14,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 
 import es.ucm.fdi.appdopta.database.AppdoptaDBHelper;
+import es.ucm.fdi.appdopta.features.Fichas.fichaActivity;
 import es.ucm.fdi.appdopta.features.settings.SettingsActivity;
 import es.ucm.fdi.appdopta.features.user.UserActivity;
 
@@ -50,6 +52,20 @@ public class PrincipalView extends AppCompatActivity {
             //Toast.makeText(this, "Todavia no hay animales en nuestras bases de datos", Toast.LENGTH_LONG).show();
             //SI SE DESCOMENTA AÑADIR AL STRING.XML PARA EL IDIOMA//
         }
+        mRecyclerView.addOnItemTouchListener(new RecyclerItemClickListener(this, mRecyclerView, new RecyclerItemClickListener.OnItemClickListener() {
+            @Override
+            public void onItemClick(View view, int position) {
+                String id = petsList.get(position).getId();
+                Intent intent = new Intent(PrincipalView.this, fichaActivity.class);
+                intent.putExtra("id", id);
+                startActivity(intent);
+            }
+
+            @Override
+            public void onLongItemClick(View view, int position) {
+
+            }
+        }));
         dbHelper.close();
     }
 

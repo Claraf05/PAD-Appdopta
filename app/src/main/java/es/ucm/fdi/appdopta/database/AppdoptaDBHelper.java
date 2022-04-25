@@ -199,7 +199,7 @@ public class AppdoptaDBHelper extends SQLiteOpenHelper {
 
         if (petsCursor.moveToFirst()) {
             do {
-                petsList.add(new Animal(petsCursor.getString(1),  // Columna nombre
+                petsList.add(new Animal(petsCursor.getString(2),  // Columna nombre
                 petsCursor.getString(0),  // Columna id
                 petsCursor.getString(4),  // Columna especie
                 petsCursor.getString(8))); // Columna ubicación
@@ -219,7 +219,7 @@ public class AppdoptaDBHelper extends SQLiteOpenHelper {
 
         if (petsCursor.moveToFirst()) {
             do {
-                petsList.add(new Animal(petsCursor.getString(1),  // Columna nombre
+                petsList.add(new Animal(petsCursor.getString(2),  // Columna nombre
                         petsCursor.getString(0),  // Columna id
                         petsCursor.getString(4),  // Columna especie
                         petsCursor.getString(8))); // Columna ubicación
@@ -290,7 +290,7 @@ public class AppdoptaDBHelper extends SQLiteOpenHelper {
 
         Cursor c = db.query(StandardUserTable.TABLE_NAME, campos, StandardUserTable.ID_C+"=?", parametros, null, null, null);
         c.moveToFirst();
-
+        //NO SE PORQUE FUNCIONA PERO FUNCIONA, NO TOCAR
         name = c.getString(0);
         passw = c.getString(1);
         phone = c.getInt(2);
