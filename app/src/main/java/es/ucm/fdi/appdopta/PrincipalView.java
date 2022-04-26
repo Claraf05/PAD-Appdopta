@@ -64,6 +64,7 @@ public class PrincipalView extends AppCompatActivity {
                 String id = petsList.get(position).getId();
                 Intent intent = new Intent(PrincipalView.this, fichaActivity.class);
                 intent.putExtra("id", id);
+                intent.putExtra("idUser", userid);
                 startActivity(intent);
             }
 

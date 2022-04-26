@@ -48,13 +48,13 @@
                     android:textStyle="bold" />
 
                 <TextView
-                    android:id="@+id/razaAnimal"
+                    android:id="@+id/especieAnimal"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="@string/species" />
 
                 <TextView
-                    android:id="@+id/edadAnimal"
+                    android:id="@+id/razaAnimal"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="@string/breed" />
@@ -160,7 +160,7 @@
                             app:layout_constraintTop_toTopOf="parent">
 
                             <TextView
-                                android:id="@+id/editTextTextMultiLine"
+                                android:id="@+id/desc"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_marginRight="10dp"

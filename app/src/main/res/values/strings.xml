@@ -75,7 +75,7 @@
     </string-array>
 
     <string name="slcBreed">Select breed...</string>
-    <string name="Labrador" translatable="false">Labrador Retriever</string>
+    <string name="Labrador" translatable="false">Labrador</string>
     <string name="DomesticShorthair" translatable="false">Domestic Shorthair</string>
     <string name="Beagle" translatable="false">Beagle</string>
     <string name="MiniLop" translatable="false">Mini Lop</string>

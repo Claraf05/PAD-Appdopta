@@ -17,6 +17,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RadioGroup;
 import android.widget.ScrollView;
+import android.widget.TextView;
 import android.widget.ToggleButton;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -29,12 +30,16 @@ import com.google.android.gms.maps.model.MarkerOptions;
 import java.io.IOException;
 import java.util.List;
 
+import es.ucm.fdi.appdopta.Animal;
+import es.ucm.fdi.appdopta.PrincipalView;
 import es.ucm.fdi.appdopta.R;
 import es.ucm.fdi.appdopta.database.AppdoptaDBHelper;
+import es.ucm.fdi.appdopta.features.settings.SettingsActivity;
+import es.ucm.fdi.appdopta.features.user.UserActivity;
 import es.ucm.fdi.appdopta.features.user.UserInfo;
 
 public class fichaActivity extends AppCompatActivity implements OnMapReadyCallback {
-
+    TextView nombre, especie, raza, sexo, fechaNacimiento, nombreDue, correoDue, teleDue, descripcion, chipDate, chipNum, chipLoc;
     Bundle user;
     ToggleButton infoButton;
     LinearLayout dataDue;
@@ -46,6 +51,7 @@ public class fichaActivity extends AppCompatActivity implements OnMapReadyCallba
     String localidad, idAn;
     ImageView imagen;
     UserInfo usuario;
+    String userid;
     double Lat, Lng;
     GoogleMap g;
     int zoom[] = {1,5,10,15,20};
@@ -54,17 +60,25 @@ public class fichaActivity extends AppCompatActivity implements OnMapReadyCallba
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         setContentView(R.layout.activity_ficha);
-        //Intent intent = getIntent();
         Intent intent = getIntent();
-
         user = getIntent().getExtras();
-
         idAn = user.getString("id");
+        userid = user.getString("idUser");
 
         Log.d("PRUEBA", idAn);
-        //dbHelper.buscarUsuario(usuario, idAn);
+        nombre = findViewById(R.id.nombreAnimal);
+        especie = findViewById(R.id.especieAnimal);
+        raza = findViewById(R.id.razaAnimal);
+        sexo = findViewById(R.id.sexoAnimal);
+        fechaNacimiento = findViewById(R.id.fechaAnimal);
+        nombreDue = findViewById(R.id.nombreDue);
+        correoDue = findViewById(R.id.correoDue);
+        teleDue = findViewById(R.id.telefonoDue);
+        descripcion = findViewById(R.id.desc);
+        chipDate = findViewById(R.id.fechaChip);
+        chipNum = findViewById(R.id.numChip);
+        chipLoc = findViewById(R.id.localizacionChip);
 
         infoButton = findViewById(R.id.infoDue);
         dataDue = findViewById(R.id.layoutDue);
@@ -78,9 +92,26 @@ public class fichaActivity extends AppCompatActivity implements OnMapReadyCallba
 
         //cuando tengamos aqui el id de la mascota,descomentar
         imagen.setImageBitmap(dbHelper.buscarImagen(idAn));
+        Animal a = dbHelper.buscarPet(idAn);
+
+        nombre.setText(a.getNombre());
+        especie.setText(a.getEspecie());
+        raza.setText(a.getRace());
+        sexo.setText(a.getGender());
+        fechaNacimiento.setText(a.getBday());
+        descripcion.setText(a.getDesc());
+        chipDate.setText(a.getChipDate());
+        chipNum.setText(a.getChipNum());
+        chipLoc.setText(a.getChipLoc());
+        String loc = a.getLocation();
+        UserInfo u = new UserInfo();
+        dbHelper.buscarUsuario(u, a.getIdOwner());
+        nombreDue.setText(u.getUsername());
+        correoDue.setText(u.getEmail());
+        teleDue.setText(u.getPhone() + "");
+
 
         Geocoder geo = new Geocoder(this);
-        String loc = "San Blas"; //Viene de la BBDD
         try{
             List<Address> ads = geo.getFromLocationName(loc + "Spain",1);
             if(ads!=null && !ads.isEmpty()){
@@ -151,4 +182,21 @@ public class fichaActivity extends AppCompatActivity implements OnMapReadyCallba
         }
 
     }
+    public void goToMain(View view){
+        Intent intent = new Intent(getApplicationContext(), PrincipalView.class);
+        intent.putExtra("userInfo", userid);
+        startActivity(intent);
+    }
+
+    public void userInfoActivity(View view){
+        Intent intent = new Intent(getApplicationContext(), UserActivity.class);
+        intent.putExtra("userInfo", userid);
+        startActivity(intent);
+    }
+    public void goToSettings(View view){
+        Intent intent = new Intent(getApplicationContext(), SettingsActivity.class);
+        intent.putExtra("userInfo", userid);
+        startActivity(intent);
+    }
+
 }

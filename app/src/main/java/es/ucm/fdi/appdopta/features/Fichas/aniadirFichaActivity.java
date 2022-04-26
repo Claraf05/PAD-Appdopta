@@ -31,6 +31,7 @@ import es.ucm.fdi.appdopta.PrincipalView;
 import es.ucm.fdi.appdopta.R;
 import es.ucm.fdi.appdopta.database.AppdoptaDBHelper;
 import es.ucm.fdi.appdopta.features.register.RegisterActivity;
+import es.ucm.fdi.appdopta.features.settings.SettingsActivity;
 import es.ucm.fdi.appdopta.features.user.UserActivity;
 import es.ucm.fdi.appdopta.features.user.UserInfo;
 import es.ucm.fdi.appdopta.features.user.UserPetsActivity;
@@ -175,7 +176,24 @@ public class aniadirFichaActivity extends AppCompatActivity {
     }
 
     public void goBack(View view){
+        Intent intent = new Intent(getApplicationContext(), UserPetsActivity.class);
+        intent.putExtra("userInfo", idDue);
+        startActivity(intent);
+    }
+
+    public void goToMain(View view){
+        Intent intent = new Intent(getApplicationContext(), PrincipalView.class);
+        intent.putExtra("userInfo", idDue);
+        startActivity(intent);
+    }
+
+    public void userInfoActivity(View view){
         Intent intent = new Intent(getApplicationContext(), UserActivity.class);
+        intent.putExtra("userInfo", idDue);
+        startActivity(intent);
+    }
+    public void goToSettings(View view){
+        Intent intent = new Intent(getApplicationContext(), SettingsActivity.class);
         intent.putExtra("userInfo", idDue);
         startActivity(intent);
     }

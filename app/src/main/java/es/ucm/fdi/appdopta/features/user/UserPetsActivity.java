@@ -14,8 +14,10 @@ import es.ucm.fdi.appdopta.AdapterItemList;
 import es.ucm.fdi.appdopta.Animal;
 import es.ucm.fdi.appdopta.PrincipalView;
 import es.ucm.fdi.appdopta.R;
+import es.ucm.fdi.appdopta.RecyclerItemClickListener;
 import es.ucm.fdi.appdopta.database.AppdoptaDBHelper;
 import es.ucm.fdi.appdopta.features.Fichas.aniadirFichaActivity;
+import es.ucm.fdi.appdopta.features.Fichas.fichaActivity;
 import es.ucm.fdi.appdopta.features.settings.SettingsActivity;
 
 public class UserPetsActivity extends AppCompatActivity {
@@ -52,6 +54,21 @@ public class UserPetsActivity extends AppCompatActivity {
             //Toast.makeText(this, "Todavia no hay animales en nuestras bases de datos", Toast.LENGTH_LONG).show();
             //SI SE DESCOMENTA AÑADIR AL STRING.XML PARA EL IDIOMA//
         }
+        mRecyclerView.addOnItemTouchListener(new RecyclerItemClickListener(this, mRecyclerView, new RecyclerItemClickListener.OnItemClickListener() {
+            @Override
+            public void onItemClick(View view, int position) {
+                String id = petsList.get(position).getId();
+                Intent intent = new Intent(UserPetsActivity.this, fichaActivity.class);
+                intent.putExtra("id", id);
+                intent.putExtra("idUser", userid);
+                startActivity(intent);
+            }
+
+            @Override
+            public void onLongItemClick(View view, int position) {
+
+            }
+        }));
         dbHelper.close();
 
     }
@@ -61,12 +78,6 @@ public class UserPetsActivity extends AppCompatActivity {
         intent.putExtra("userInfo", userid);
         startActivity(intent);
 
-    }
-
-    public void verMascota(View view){
-        Intent intent = new Intent(getApplicationContext(), aniadirFichaActivity.class);
-        intent.putExtra("userInfo", userid);
-        startActivity(intent);
     }
 
     public void goToMain(View view){

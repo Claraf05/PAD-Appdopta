@@ -198,10 +198,23 @@ public class AppdoptaDBHelper extends SQLiteOpenHelper {
 
         if (petsCursor.moveToFirst()) {
             do {
-                petsList.add(new Animal(petsCursor.getString(2),  // Columna nombre
-                petsCursor.getString(0),  // Columna id
-                petsCursor.getString(4),  // Columna especie
-                petsCursor.getString(8))); // Columna ubicación
+                petsList.add(new Animal(
+                        petsCursor.getString(0),    // Columna id
+                        petsCursor.getString(1),    // Columna idOwner
+                        petsCursor.getString(2),    // Columna nombre
+                        petsCursor.getString(3),    // Columna genero
+                        petsCursor.getString(4),    // Columna especie
+                        petsCursor.getString(5),    // Columna raza
+                        petsCursor.getString(6),    // Columna bday
+                        petsCursor.getString(7),    // Columna desc
+                        petsCursor.getString(8),    // Columna localizacion
+                        petsCursor.getString(10),   // Columna rabia
+                        petsCursor.getString(11),   // Columna hepatitis
+                        petsCursor.getString(12),   // Columna leishmaniosis
+                        petsCursor.getString(13),   // Columna chipNum
+                        petsCursor.getString(14),   // Columna chipDate
+                        petsCursor.getString(15))); // Columna chipLoc
+
 
             } while (petsCursor.moveToNext());
         }
@@ -222,10 +235,22 @@ public class AppdoptaDBHelper extends SQLiteOpenHelper {
 
         if (petsCursor.moveToFirst()) {
             do {
-                petsList.add(new Animal(petsCursor.getString(2),  // Columna nombre
-                        petsCursor.getString(0),  // Columna id
-                        petsCursor.getString(4),  // Columna especie
-                        petsCursor.getString(8))); // Columna ubicación
+                petsList.add(new Animal(
+                        petsCursor.getString(0),    // Columna id
+                        petsCursor.getString(1),    // Columna idOwner
+                        petsCursor.getString(2),    // Columna nombre
+                        petsCursor.getString(3),    // Columna genero
+                        petsCursor.getString(4),    // Columna especie
+                        petsCursor.getString(5),    // Columna raza
+                        petsCursor.getString(6),    // Columna bday
+                        petsCursor.getString(7),    // Columna desc
+                        petsCursor.getString(8),    // Columna localizacion
+                        petsCursor.getString(10),   // Columna rabia
+                        petsCursor.getString(11),   // Columna hepatitis
+                        petsCursor.getString(12),   // Columna leishmaniosis
+                        petsCursor.getString(13),   // Columna chipNum
+                        petsCursor.getString(14),   // Columna chipDate
+                        petsCursor.getString(15))); // Columna chipLoc
 
             } while (petsCursor.moveToNext());
         }
@@ -242,10 +267,22 @@ public class AppdoptaDBHelper extends SQLiteOpenHelper {
 
         if (petsCursor.moveToFirst()) {
             do {
-                petsList.add(new Animal(petsCursor.getString(2),  // Columna nombre
-                        petsCursor.getString(0),  // Columna id
-                        petsCursor.getString(4),  // Columna especie
-                        petsCursor.getString(8))); // Columna ubicación
+                petsList.add(new Animal(
+                        petsCursor.getString(0),    // Columna id
+                        petsCursor.getString(1),    // Columna idOwner
+                        petsCursor.getString(2),    // Columna nombre
+                        petsCursor.getString(3),    // Columna genero
+                        petsCursor.getString(4),    // Columna especie
+                        petsCursor.getString(5),    // Columna raza
+                        petsCursor.getString(6),    // Columna bday
+                        petsCursor.getString(7),    // Columna desc
+                        petsCursor.getString(8),    // Columna localizacion
+                        petsCursor.getString(10),   // Columna rabia
+                        petsCursor.getString(11),   // Columna hepatitis
+                        petsCursor.getString(12),   // Columna leishmaniosis
+                        petsCursor.getString(13),   // Columna chipNum
+                        petsCursor.getString(14),   // Columna chipDate
+                        petsCursor.getString(15))); // Columna chipLoc
 
             } while (petsCursor.moveToNext());
         }
@@ -298,6 +335,35 @@ public class AppdoptaDBHelper extends SQLiteOpenHelper {
         else{
             return false;
         }
+    }
+    public Animal buscarPet(String petId){
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor c = db.rawQuery("Select * from "+PetTable.TABLE_NAME+" where "+PetTable.ID_PET_C+" = ?", new String[] {petId});
+        c.moveToFirst();
+        if(c.getCount() > 0){
+            Animal a = new Animal(
+                    c.getString(0),    // Columna id
+                    c.getString(1),    // Columna idOwner
+                    c.getString(2),    // Columna nombre
+                    c.getString(3),    // Columna genero
+                    c.getString(4),    // Columna especie
+                    c.getString(5),    // Columna raza
+                    c.getString(6),    // Columna bday
+                    c.getString(7),    // Columna desc
+                    c.getString(8),    // Columna localizacion
+                    c.getString(10),   // Columna rabia
+                    c.getString(11),   // Columna hepatitis
+                    c.getString(12),   // Columna leishmaniosis
+                    c.getString(13),   // Columna chipNum
+                    c.getString(14),   // Columna chipDate
+                    c.getString(15));  // Columna chipLoc
+            return a;
+        }
+        else {
+            Log.d("Error", "Id no encontrada");
+            return null;
+        }
+
     }
 
     public void buscarUsuario(UserInfo usuario, String userId){

@@ -38,13 +38,13 @@
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/razaAnimal"
+            android:id="@+id/especieAnimal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/species" />
 
         <TextView
-            android:id="@+id/edadAnimal"
+            android:id="@+id/razaAnimal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/breed" />
@@ -158,7 +158,7 @@
                     app:layout_constraintTop_toTopOf="parent">
 
                     <TextView
-                        android:id="@+id/editTextTextMultiLine"
+                        android:id="@+id/desc"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginRight="10dp"
@@ -167,7 +167,7 @@
                         android:gravity="start|top"
                         android:inputType="none"
                         android:minHeight="48dp"
-                        android:text="aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                        android:text="@string/desc"
                         tools:ignore="SpeakableTextPresentCheck" />
                 </ScrollView>
             </androidx.constraintlayout.widget.ConstraintLayout>
@@ -294,5 +294,85 @@
             app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="#1F3A20"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <ImageButton
+        android:id="@+id/settingsButton2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="1dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="1dp"
+        android:background="#00FFFFFF"
+        android:onClick="goToSettings"
+        android:scaleType="centerInside"
+        android:scaleX="1.5"
+        android:scaleY="1.5"
+        android:tint="#A7DD9A"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.696"
+        app:layout_constraintStart_toEndOf="@id/userInfoButton2"
+        app:layout_constraintTop_toTopOf="@+id/toolbar2"
+        app:layout_constraintVertical_bias="0.736"
+        app:srcCompat="@drawable/ic_settings"
+        tools:ignore="VectorDrawableCompat,SpeakableTextPresentCheck" />
+
+    <ImageButton
+        android:id="@+id/userInfoButton2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="1dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="1dp"
+        android:background="#00FFFFFF"
+        android:onClick="userInfoActivity"
+        android:scaleType="centerInside"
+        android:scaleX="1.5"
+        android:scaleY="1.5"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/settingsButton2"
+        app:layout_constraintStart_toEndOf="@+id/mainActButton2"
+        app:layout_constraintTop_toTopOf="@+id/toolbar2"
+        app:layout_constraintVertical_bias="0.736"
+        app:srcCompat="@drawable/ic_user"
+        app:tint="#A7DD9A"
+        tools:ignore="VectorDrawableCompat,SpeakableTextPresentCheck" />
+
+    <ImageButton
+        android:id="@+id/mainActButton2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="1dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="1dp"
+        android:background="#00FFFFFF"
+        android:onClick="goToMain"
+        android:scaleType="centerInside"
+        android:scaleX="1.75"
+        android:scaleY="1.75"
+        android:tint="#A7DD9A"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/userInfoButton2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/toolbar2"
+        app:layout_constraintVertical_bias="0.684"
+        app:srcCompat="@drawable/ic_paw"
+        tools:ignore="VectorDrawableCompat,SpeakableTextPresentCheck" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
