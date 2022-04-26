@@ -28,8 +28,8 @@
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/listaMascotasUser"
             android:layout_width="match_parent"
-            android:layout_height="607dp"
-            android:layout_below="@+id/textoPrevLista"
+            android:layout_height="655dp"
+            android:layout_below="@id/aniadirMascButton"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="5dp"
             tools:layout_centerHorizontal="true">
