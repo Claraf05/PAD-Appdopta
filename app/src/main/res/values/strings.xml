@@ -73,8 +73,30 @@
         <item>@string/rabbit</item>
         <item>@string/parrot</item>
     </string-array>
+
     <string name="slcBreed">Select breed...</string>
+    <string name="Labrador" translatable="false">Labrador Retriever</string>
+    <string name="DomesticShorthair" translatable="false">Domestic Shorthair</string>
+    <string name="Beagle" translatable="false">Beagle</string>
+    <string name="MiniLop" translatable="false">Mini Lop</string>
+    <string-array name="breed">
+        <item>@string/Labrador</item>
+        <item>@string/DomesticShorthair</item>
+        <item>@string/Beagle</item>
+        <item>@string/MiniLop</item>
+    </string-array>
+
     <string name="slcLoc">Select location...</string>
+    <string name="Madrid" translatable="false">Madrid</string>
+    <string name="Barcelona" translatable="false">Barcelona</string>
+    <string name="Valencia" translatable="false">Valencia</string>
+    <string name="Santander" translatable="false">Santander</string>
+    <string-array name="location">
+        <item>@string/Madrid</item>
+        <item>@string/Barcelona</item>
+        <item>@string/Valencia</item>
+        <item>@string/Santander</item>
+    </string-array>
 
     <!-- Error msg -->
     <string name="userNotFound">The user doesn\'t exists</string>

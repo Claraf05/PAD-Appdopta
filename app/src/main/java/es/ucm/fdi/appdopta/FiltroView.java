@@ -109,12 +109,6 @@ public class FiltroView extends AppCompatActivity implements AdapterView.OnItemS
 
         String[] animales = getResources().getStringArray(R.array.animal);
         petsType.addAll(Arrays.asList(animales));
-        //PREGUNTAD A MIGUEL uwu
-
-        //petsType.add("Perro");
-        //petsType.add("Gato");
-        //petsType.add("Conejo");
-        //petsType.add("Loro");
 
         animalSpinner.setOnItemSelectedListener(this);
         ArrayAdapter<String> adapterPet = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, petsType);
@@ -124,11 +118,9 @@ public class FiltroView extends AppCompatActivity implements AdapterView.OnItemS
         //  Lista de elementos del spinner 2 --> razas de animal
         ArrayList<String> petsRace = new ArrayList<String>();
         petsRace.add(getText(R.string.slcBreed).toString());
-        //Aqui se puede hacer lo mismo que con las especies ya me preguntais
-        //(Miguel)
-        petsRace.add("Labrador");
-        petsRace.add("Golden Retriever");
-        petsRace.add("Boyero de Berna");
+
+        String[] razas = getResources().getStringArray(R.array.breed);
+        petsRace.addAll(Arrays.asList(razas));
 
         raceSpinner.setOnItemSelectedListener(this);
         ArrayAdapter<String> adapterRace = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, petsRace);
@@ -138,11 +130,9 @@ public class FiltroView extends AppCompatActivity implements AdapterView.OnItemS
         //  Lista de elementos del spinner 3 --> ubicación del animal
         ArrayList<String> petsLocation = new ArrayList<String>();
         petsLocation.add(getText(R.string.slcLoc).toString());
-        //Aqui se puede hacer lo mismo que con las especies ya me preguntais
-        //(Miguel)
-        petsLocation.add("Madrid");
-        petsLocation.add("Barcelona");
-        petsLocation.add("Valencia");
+
+        String[] ubi = getResources().getStringArray(R.array.location);
+        petsLocation.addAll(Arrays.asList(ubi));
 
         locationSpinner.setOnItemSelectedListener(this);
         ArrayAdapter<String> adapterLocation = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, petsLocation);
