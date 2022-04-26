@@ -1,5 +1,6 @@
 package es.ucm.fdi.appdopta;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -42,7 +43,6 @@ public class FiltroView extends AppCompatActivity implements AdapterView.OnItemS
             @Override
             public void onClick(View view){
                 //TODAVIA NO FUNCIONA
-                //Cuando funcione pasaremos un arraylist con los datos filtrados de la BD
 
                 String animalSelected = animalSpinner.getSelectedItem().toString();
                 String raceSelected = raceSpinner.getSelectedItem().toString();
@@ -51,8 +51,9 @@ public class FiltroView extends AppCompatActivity implements AdapterView.OnItemS
                 intent.putExtra("animalSelected", animalSelected);
                 intent.putExtra("raceSelected", raceSelected);
                 intent.putExtra("locationSelected", locationSelected);
-                setResult(0, intent);
-                FiltroView.super.onBackPressed();
+                setResult(Activity.RESULT_OK, intent);
+                finish();
+                //FiltroView.super.onBackPressed();
 
 
             }

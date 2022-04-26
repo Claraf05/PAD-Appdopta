@@ -225,11 +225,29 @@ public class AppdoptaDBHelper extends SQLiteOpenHelper {
     public ArrayList<Animal> filterQuery(String especie, String raza, String ubicacion) {
         SQLiteDatabase db = this.getReadableDatabase();
 
-        /* CONTROLAR LA QUERY CUANDO HAY CAMPOS NULOS*/
-        Cursor petsCursor = db.rawQuery("SELECT * FROM " + PetTable.TABLE_NAME+ " WHERE "
-                + PetTable.SPECIES_C+ " = ? and "
-                + PetTable.RACE_C+ " = ? and "
-                + PetTable.LOCAL_C+ " = ?", new String[] {especie, raza, ubicacion});
+        ArrayList<String> params = new ArrayList<String>();
+
+        String where="";
+
+        if(especie!=null){
+            where +=" and " + PetTable.SPECIES_C + " = ?";
+            params.add(especie);
+        }
+        if(raza!=null){
+            where +=" and " + PetTable.RACE_C+ " = ?";
+            params.add(raza);
+        }
+        if(ubicacion!=null){
+            where +=" and " + PetTable.LOCAL_C+ " = ?";
+            params.add(ubicacion);
+        }
+        String query = "SELECT * FROM " + PetTable.TABLE_NAME;
+        if(where.length() > 0)
+            query += " WHERE " + where.substring(5);
+
+        String[] parameters = params.toArray(new String[0]);
+
+        Cursor petsCursor = db.rawQuery(query, new String[] {especie, raza, ubicacion});
 
         ArrayList<Animal> petsList = new ArrayList<>();
 
