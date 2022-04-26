@@ -43,7 +43,7 @@ public class FiltroView extends AppCompatActivity implements AdapterView.OnItemS
             public void onClick(View view){
                 //TODAVIA NO FUNCIONA
                 //Cuando funcione pasaremos un arraylist con los datos filtrados de la BD
-                /*
+
                 String animalSelected = animalSpinner.getSelectedItem().toString();
                 String raceSelected = raceSpinner.getSelectedItem().toString();
                 String locationSelected = locationSpinner.getSelectedItem().toString();
@@ -54,7 +54,7 @@ public class FiltroView extends AppCompatActivity implements AdapterView.OnItemS
                 setResult(0, intent);
                 FiltroView.super.onBackPressed();
 
-                 */
+
             }
         });
         eraseSelection.setOnClickListener(new View.OnClickListener(){

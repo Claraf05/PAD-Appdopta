@@ -31,30 +31,6 @@ public class PrincipalView extends AppCompatActivity {
     private Bundle user;
     private String userid;
 
-
-    // TODAVIA NO FUNCIONA
-
-    /*ActivityResultLauncher<Intent> activityResultLauncher = registerForActivityResult(
-              new ActivityResultContracts.StartActivityForResult(),
-              new ActivityResultCallback<ActivityResult>() {
-                  @Override
-                  public void onActivityResult(ActivityResult result) {
-                      int resultCode = result.getResultCode();
-                      //Intent data = result.getData();
-
-                      if (resultCode == 0) {
-                            Intent data = result.getData();
-                            if(data!=null) {
-                                // get data
-
-                            }
-
-                      }
-                  }
-              }
-
-        );*/
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -97,6 +73,36 @@ public class PrincipalView extends AppCompatActivity {
             }
         }));
         dbHelper.close();
+    }
+
+    ActivityResultLauncher<Intent> activityResultLauncher = registerForActivityResult(
+            new ActivityResultContracts.StartActivityForResult(),
+            new ActivityResultCallback<ActivityResult>() {
+                @Override
+                public void onActivityResult(ActivityResult result) {
+                    int resultCode = result.getResultCode();
+                    if (resultCode == 0) {
+                        Intent data = result.getData();
+                        if(data!=null) {
+                            String a = data.getStringExtra("animalSelected");
+                            String b = data.getStringExtra("raceSelected");
+                            String l = data.getStringExtra("locationSelected");
+                            showPetsList(a,b,l);
+                        }
+
+                    }
+                }
+            }
+
+    );
+
+    public void showPetsList(String especie, String raza, String ubicacion){
+        //petsList = new ArrayList<>();
+        if(getResources().getString(R.string.slcAnimal) == especie) especie = null;
+        if(getResources().getString(R.string.slcBreed) == raza) raza = null;
+        if(getResources().getString(R.string.slcLoc) == ubicacion) ubicacion = null;
+        //dbHelper = new AppdoptaDBHelper(this);
+        //petsList = dbHelper.filterQuery(especie, raza, ubicacion);
     }
 
     public void initValues(){

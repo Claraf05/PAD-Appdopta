@@ -209,6 +209,30 @@ public class AppdoptaDBHelper extends SQLiteOpenHelper {
         return petsList;
     }
 
+    public ArrayList<Animal> filterQuery(String especie, String raza, String ubicacion) {
+        SQLiteDatabase db = this.getReadableDatabase();
+
+        /* CONTROLAR LA QUERY CUANDO HAY CAMPOS NULOS*/
+        Cursor petsCursor = db.rawQuery("SELECT * FROM " + PetTable.TABLE_NAME+ " WHERE "
+                + PetTable.SPECIES_C+ " = ? and "
+                + PetTable.RACE_C+ " = ? and "
+                + PetTable.LOCAL_C+ " = ?", new String[] {especie, raza, ubicacion});
+
+        ArrayList<Animal> petsList = new ArrayList<>();
+
+        if (petsCursor.moveToFirst()) {
+            do {
+                petsList.add(new Animal(petsCursor.getString(2),  // Columna nombre
+                        petsCursor.getString(0),  // Columna id
+                        petsCursor.getString(4),  // Columna especie
+                        petsCursor.getString(8))); // Columna ubicación
+
+            } while (petsCursor.moveToNext());
+        }
+        petsCursor.close();
+        return petsList;
+    }
+
     public ArrayList<Animal> readListPetDataByUserId(String id) {
         SQLiteDatabase db = this.getReadableDatabase();
 
