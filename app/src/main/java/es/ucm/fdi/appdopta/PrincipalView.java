@@ -7,6 +7,10 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import androidx.activity.result.ActivityResult;
+import androidx.activity.result.ActivityResultCallback;
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -19,12 +23,38 @@ import es.ucm.fdi.appdopta.features.settings.SettingsActivity;
 import es.ucm.fdi.appdopta.features.user.UserActivity;
 
 public class PrincipalView extends AppCompatActivity {
+
     private ArrayList<Animal> petsList;
     private AppdoptaDBHelper dbHelper;
     private AdapterItemList adapter;
     private RecyclerView mRecyclerView;
     private Bundle user;
     private String userid;
+
+
+    // TODAVIA NO FUNCIONA
+
+    /*ActivityResultLauncher<Intent> activityResultLauncher = registerForActivityResult(
+              new ActivityResultContracts.StartActivityForResult(),
+              new ActivityResultCallback<ActivityResult>() {
+                  @Override
+                  public void onActivityResult(ActivityResult result) {
+                      int resultCode = result.getResultCode();
+                      //Intent data = result.getData();
+
+                      if (resultCode == 0) {
+                            Intent data = result.getData();
+                            if(data!=null) {
+                                // get data
+
+                            }
+
+                      }
+                  }
+              }
+
+        );*/
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -97,6 +127,7 @@ public class PrincipalView extends AppCompatActivity {
 
     public void filtrar(View view){
         Intent intent = new Intent(this, FiltroView.class);
+        //activityResultLauncher.launch(intent);
         startActivity(intent);
     }
 

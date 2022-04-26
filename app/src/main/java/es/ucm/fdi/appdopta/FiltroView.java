@@ -35,32 +35,60 @@ public class FiltroView extends AppCompatActivity implements AdapterView.OnItemS
         animalSpinner = findViewById(R.id.spinnerAnimal);
         raceSpinner = findViewById(R.id.spinnerRace);
         locationSpinner = findViewById(R.id.spinnerLocation);
+        applySelection = findViewById(R.id.applySelectionButton);
+        eraseSelection = findViewById(R.id.eraseSelectionButton);
         initSpinnerValues();
-        //applySelection = findViewById(R.)
+        applySelection.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                //TODAVIA NO FUNCIONA
+                //Cuando funcione pasaremos un arraylist con los datos filtrados de la BD
+                /*
+                String animalSelected = animalSpinner.getSelectedItem().toString();
+                String raceSelected = raceSpinner.getSelectedItem().toString();
+                String locationSelected = locationSpinner.getSelectedItem().toString();
+                Intent intent = new Intent();
+                intent.putExtra("animalSelected", animalSelected);
+                intent.putExtra("raceSelected", raceSelected);
+                intent.putExtra("locationSelected", locationSelected);
+                setResult(0, intent);
+                FiltroView.super.onBackPressed();
+
+                 */
+            }
+        });
+        eraseSelection.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                animalSpinner.setSelection(0);
+                raceSpinner.setSelection(0);
+                locationSpinner.setSelection(0);
+            }
+        });
 
 
     }
 
     @Override
-    public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+    public void onItemSelected(AdapterView<?> adapterView, View view, int position, long l) {
         adapterView.getSelectedItem();
-        if(i != 0) {
+        if(position != 0) {
             switch (adapterView.getId()) {
 
                 case R.id.spinnerAnimal:
                     //Hacer algo aquí
 
-                    Toast.makeText(this, getText(R.string.selected) + " " + adapterView.getSelectedItem().toString(), Toast.LENGTH_LONG).show();
+                    //Toast.makeText(this, getText(R.string.selected) + " " + adapterView.getSelectedItem().toString(), Toast.LENGTH_LONG).show();
 
                     break;
                 case R.id.spinnerRace:
                     //Hacer algo aquí
-                    Toast.makeText(this, getText(R.string.selected) + " " + adapterView.getSelectedItem().toString(), Toast.LENGTH_LONG).show();
+                    //Toast.makeText(this, getText(R.string.selected) + " " + adapterView.getSelectedItem().toString(), Toast.LENGTH_LONG).show();
 
                     break;
                 case R.id.spinnerLocation:
                     //Hacer algo aquí
-                    Toast.makeText(this, getText(R.string.selected) + " " + adapterView.getSelectedItem().toString(), Toast.LENGTH_LONG).show();
+                    //Toast.makeText(this, getText(R.string.selected) + " " + adapterView.getSelectedItem().toString(), Toast.LENGTH_LONG).show();
 
                     break;
                 default:
