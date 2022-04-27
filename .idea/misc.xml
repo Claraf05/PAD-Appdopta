@@ -70,9 +70,9 @@
         <entry key="..\:/Users/lenovo/OneDrive/Documentos/PAD-Appdopta/app/src/main/res/layout-land/activity_change_password.xml" value="0.23697916666666666" />
         <entry key="..\:/Users/lenovo/OneDrive/Documentos/PAD-Appdopta/app/src/main/res/layout-land/activity_change_user.xml" value="0.23697916666666666" />
         <entry key="..\:/Users/lenovo/OneDrive/Documentos/PAD-Appdopta/app/src/main/res/layout-land/activity_ficha.xml" value="0.23697916666666666" />
-        <entry key="..\:/Users/lenovo/OneDrive/Documentos/PAD-Appdopta/app/src/main/res/layout-land/activity_login.xml" value="0.23697916666666666" />
+        <entry key="..\:/Users/lenovo/OneDrive/Documentos/PAD-Appdopta/app/src/main/res/layout-land/activity_login.xml" value="0.25" />
         <entry key="..\:/Users/lenovo/OneDrive/Documentos/PAD-Appdopta/app/src/main/res/layout-land/activity_principal_view.xml" value="0.33" />
-        <entry key="..\:/Users/lenovo/OneDrive/Documentos/PAD-Appdopta/app/src/main/res/layout-land/activity_register.xml" value="0.23697916666666666" />
+        <entry key="..\:/Users/lenovo/OneDrive/Documentos/PAD-Appdopta/app/src/main/res/layout-land/activity_register.xml" value="0.25" />
         <entry key="..\:/Users/lenovo/OneDrive/Documentos/PAD-Appdopta/app/src/main/res/layout-land/activity_user.xml" value="0.11979166666666667" />
         <entry key="..\:/Users/lenovo/OneDrive/Documentos/PAD-Appdopta/app/src/main/res/layout-land/activity_user_pets.xml" value="0.22" />
         <entry key="..\:/Users/lenovo/OneDrive/Documentos/PAD-Appdopta/app/src/main/res/layout-land/filter_view.xml" value="0.11979166666666667" />
@@ -87,6 +87,7 @@
         <entry key="..\:/Users/lenovo/OneDrive/Documentos/PAD-Appdopta/app/src/main/res/layout/activity_register.xml" value="0.22447916666666667" />
         <entry key="..\:/Users/lenovo/OneDrive/Documentos/PAD-Appdopta/app/src/main/res/layout/activity_user.xml" value="0.1" />
         <entry key="..\:/Users/lenovo/OneDrive/Documentos/PAD-Appdopta/app/src/main/res/layout/activity_user_pets.xml" value="0.33" />
+        <entry key="..\:/Users/lenovo/OneDrive/Documentos/PAD-Appdopta/app/src/main/res/layout/filter_view.xml" value="0.22447916666666667" />
         <entry key="..\:/Users/lenovo/OneDrive/Documentos/PAD-Appdopta/app/src/main/res/layout/item_list.xml" value="0.33" />
         <entry key="..\:/Users/lenovo/OneDrive/Documentos/PAD-Appdopta/app/src/main/res/layout/settings_activity.xml" value="0.19166666666666668" />
         <entry key="..\:/Users/lenovo/OneDrive/Documentos/PAD-Appdopta/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1095" />
