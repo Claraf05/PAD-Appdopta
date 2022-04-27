@@ -141,16 +141,16 @@
             android:textSize="16sp" />
 
         <RadioGroup
-            android:layout_width="386dp"
+            android:layout_width="160dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:orientation="horizontal">
+            android:orientation="vertical">
 
             <RadioButton
                 android:id="@+id/englishLanguaje"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
+                android:layout_gravity="center|left"
                 android:checked="false"
                 android:drawableLeft="@drawable/ic_english"
                 android:minHeight="48dp"
@@ -161,7 +161,7 @@
                 android:id="@+id/spanishLanguaje"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
+                android:layout_gravity="center|left"
                 android:checked="false"
                 android:drawableLeft="@drawable/ic_spanish"
                 android:minHeight="48dp"
@@ -172,7 +172,7 @@
                 android:id="@+id/spanishLanguaje2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
+                android:layout_gravity="center|left"
                 android:checked="false"
                 android:drawableLeft="@drawable/ic_french"
                 android:minHeight="48dp"
