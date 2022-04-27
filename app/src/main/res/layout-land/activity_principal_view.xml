@@ -9,132 +9,187 @@
     tools:context=".features.login.LoginActivity">
 
     <!--Modificar tamaños y ajustar a la version en horizontal-->
+
+
+
     <LinearLayout
-        android:id="@+id/layoutEncabezado"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintBottom_toTopOf="@+id/div_line"
+        android:id="@+id/layoutScroll"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/toolbar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <ImageView
-            android:id="@+id/imageView"
-            android:layout_width="90dp"
-            android:layout_height="79dp"
-            android:layout_marginStart="0dp"
-            android:layout_marginLeft="0dp"
-            android:layout_marginTop="0dp"
-            android:layout_marginEnd="35dp"
-            android:layout_marginRight="35dp"
-            android:baselineAlignBottom="true"
-            app:layout_constraintBottom_toBottomOf="@id/tituloEncabezado"
-            app:layout_constraintStart_toStartOf="@id/tituloEncabezado"
-            app:layout_constraintTop_toTopOf="@id/tituloEncabezado"
-            app:srcCompat="@drawable/logo" />
-
-        <TextView
-            android:id="@+id/tituloEncabezado"
+        <ScrollView
+            android:id="@+id/scrollGeneral"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:layout_marginEnd="30dp"
-            android:layout_marginRight="30dp"
-            android:gravity="center_horizontal"
-            android:text="@string/app_group"
-            android:textColor="#1F3A20"
-            android:textSize="35sp"
-            android:textStyle="bold" />
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:id="@+id/layoutInternoScroll"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="0dp"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <LinearLayout
+                    android:id="@+id/layoutEncabezado"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    app:layout_constraintBottom_toTopOf="@+id/div_line"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <LinearLayout
+                        android:id="@+id/layoutImg"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:gravity="center_horizontal"
+                        android:orientation="horizontal"
+                        app:layout_constraintBottom_toTopOf="@+id/div_line"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <ImageView
+                            android:id="@+id/imageView"
+                            android:layout_width="90dp"
+                            android:layout_height="79dp"
+                            android:layout_gravity="center"
+                            android:layout_marginStart="0dp"
+                            android:layout_marginTop="0dp"
+                            android:baselineAlignBottom="true"
+                            android:gravity="center_horizontal"
+                            app:layout_constraintBottom_toBottomOf="@id/tituloEncabezado"
+                            app:layout_constraintStart_toStartOf="@id/tituloEncabezado"
+                            app:layout_constraintTop_toTopOf="@id/tituloEncabezado"
+                            app:srcCompat="@drawable/logo" />
+
+                        <TextView
+                            android:id="@+id/tituloEncabezado"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:gravity="center_vertical"
+                            android:text="@string/app_group"
+                            android:textColor="#1F3A20"
+                            android:textSize="35sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/div_line"
+                    android:layout_width="fill_parent"
+                    android:layout_height="2dp"
+                    android:background="@color/black"
+                    android:orientation="horizontal"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/layoutEncabezado">
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/textoEslogan"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="2dp"
+                    android:gravity="center"
+                    android:text="@string/catchphrase"
+                    android:textColor="#1F3A20"
+                    android:textSize="24sp"
+                    app:layout_constraintBottom_toTopOf="@+id/linearLayout5"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/div_line" />
+
+                <LinearLayout
+                    android:id="@+id/linearLayout5"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginStart="75dp"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginEnd="75dp"
+                    android:orientation="horizontal"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textoEslogan">
+
+                    <SearchView
+                        android:id="@+id/cuadroBusqueda"
+                        android:layout_width="400dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="65dp"
+                        android:baselineAligned="false"
+                        android:iconifiedByDefault="false"
+                        android:queryHint="@string/search">
+
+                    </SearchView>
+
+                    <ImageView
+                        android:id="@+id/filtro"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_marginLeft="0dp"
+                        app:srcCompat="@drawable/filtro" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/textoPrevLista"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginTop="2dp"
+                    android:gravity="left"
+                    android:text="@string/adoptionPets"
+                    android:textColor="#1F3A20"
+                    android:textSize="16sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/linearLayout5" />
+
+                <LinearLayout
+                    android:id="@+id/layoutRecyclerLand"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center|center_horizontal"
+                    android:foregroundGravity="center|center_horizontal"
+                    android:gravity="center|center_horizontal"
+                    android:orientation="vertical"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textoPrevLista">
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/listaMascotas"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center|center_horizontal"
+                        android:layout_marginTop="5dp"
+                        android:foregroundGravity="center|center_horizontal"
+                        app:layout_constraintTop_toBottomOf="parent">
+
+                    </androidx.recyclerview.widget.RecyclerView>
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+        </ScrollView>
 
     </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/div_line"
-        android:layout_width="fill_parent"
-        android:layout_height="2dp"
-        android:background="@color/black"
-        android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/layoutEncabezado">
-
-    </LinearLayout>
-
-    <TextView
-        android:id="@+id/textoEslogan"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="2dp"
-        android:gravity="center"
-        android:text="@string/catchphrase"
-        android:textColor="#1F3A20"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout5"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/div_line" />
-
-    <LinearLayout
-        android:id="@+id/linearLayout5"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_marginStart="75dp"
-        android:layout_marginTop="2dp"
-        android:layout_marginEnd="75dp"
-        android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textoEslogan">
-
-        <SearchView
-            android:id="@+id/cuadroBusqueda"
-            android:layout_width="400dp"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="65dp"
-            android:baselineAligned="false"
-            android:iconifiedByDefault="false"
-            android:queryHint="@string/search">
-
-        </SearchView>
-
-        <ImageView
-            android:id="@+id/filtro"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_marginLeft="0dp"
-            app:srcCompat="@drawable/filtro" />
-    </LinearLayout>
-
-    <TextView
-        android:id="@+id/textoPrevLista"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="30dp"
-        android:layout_marginTop="2dp"
-        android:gravity="left"
-        android:text="@string/adoptionPets"
-        android:textColor="#1F3A20"
-        android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout5" />
-
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/listaMascotas"
-        android:layout_width="0dp"
-        android:layout_height="150dp"
-        android:layout_gravity="center"
-        android:layout_marginStart="50dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="50dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textoPrevLista">
-
-    </androidx.recyclerview.widget.RecyclerView>
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
@@ -212,4 +267,5 @@
         app:layout_constraintVertical_bias="0.736"
         app:srcCompat="@drawable/ic_settings"
         tools:ignore="VectorDrawableCompat,SpeakableTextPresentCheck" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
