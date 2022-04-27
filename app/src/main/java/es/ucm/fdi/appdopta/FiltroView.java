@@ -26,8 +26,6 @@ public class FiltroView extends AppCompatActivity implements AdapterView.OnItemS
     private Spinner animalSpinner;
     private Spinner raceSpinner;
     private Spinner locationSpinner;
-    private Button applySelection;
-    private Button eraseSelection;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,34 +34,26 @@ public class FiltroView extends AppCompatActivity implements AdapterView.OnItemS
         animalSpinner = findViewById(R.id.spinnerAnimal);
         raceSpinner = findViewById(R.id.spinnerRace);
         locationSpinner = findViewById(R.id.spinnerLocation);
-        applySelection = findViewById(R.id.applySelectionButton);
-        eraseSelection = findViewById(R.id.eraseSelectionButton);
         initSpinnerValues();
-        applySelection.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View view){
-                String animalSelected = animalSpinner.getSelectedItem().toString();
-                String raceSelected = raceSpinner.getSelectedItem().toString();
-                String locationSelected = locationSpinner.getSelectedItem().toString();
-                Intent intent = new Intent();
-                intent.putExtra("animalSelected", animalSelected);
-                intent.putExtra("raceSelected", raceSelected);
-                intent.putExtra("locationSelected", locationSelected);
-                setResult(Activity.RESULT_OK, intent);
-                finish();
-                //FiltroView.super.onBackPressed();
-            }
-        });
-        eraseSelection.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View view){
-                animalSpinner.setSelection(0);
-                raceSpinner.setSelection(0);
-                locationSpinner.setSelection(0);
-            }
-        });
 
 
+    }
+    public void borrar(View view){
+        animalSpinner.setSelection(0);
+        raceSpinner.setSelection(0);
+        locationSpinner.setSelection(0);
+    }
+    public void aplicar(View view){
+        String animalSelected = animalSpinner.getSelectedItem().toString();
+        String raceSelected = raceSpinner.getSelectedItem().toString();
+        String locationSelected = locationSpinner.getSelectedItem().toString();
+        Intent intent = new Intent();
+        intent.putExtra("animalSelected", animalSelected);
+        intent.putExtra("raceSelected", raceSelected);
+        intent.putExtra("locationSelected", locationSelected);
+        setResult(Activity.RESULT_OK, intent);
+        finish();
+        //FiltroView.super.onBackPressed();
     }
 
     @Override

@@ -144,6 +144,7 @@
                         android:layout_height="50dp"
                         android:layout_marginLeft="0dp"
                         android:clickable="true"
+                        android:onClick="filter"
                         app:srcCompat="@drawable/filtro" />
                 </LinearLayout>
 

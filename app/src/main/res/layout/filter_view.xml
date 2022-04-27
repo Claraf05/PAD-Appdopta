@@ -88,10 +88,11 @@
             android:layout_marginLeft="20dp"
             android:layout_marginRight="16dp"
             android:layout_weight="1"
+            android:backgroundTint="#1F3A20"
+            android:onClick="borrar"
             android:text="@string/clnFilter"
-            android:textSize="14sp"
             android:textColor="#C9E3AF"
-            android:backgroundTint="#1F3A20"/>
+            android:textSize="14sp" />
 
         <Button
             android:id="@+id/applySelectionButton"
@@ -100,12 +101,13 @@
             android:layout_marginLeft="15dp"
             android:layout_marginRight="20dp"
             android:layout_weight="1"
+            android:backgroundTint="#1F3A20"
+            android:onClick="aplicar"
             android:paddingLeft="25dp"
             android:paddingRight="16dp"
             android:text="@string/applyFilter"
-            android:textSize="14sp"
             android:textColor="#C9E3AF"
-            android:backgroundTint="#1F3A20"/>
+            android:textSize="14sp" />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

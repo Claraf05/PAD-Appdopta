@@ -114,6 +114,7 @@
                 android:id="@+id/petsButton"
                 android:layout_width="wrap_content"
                 android:layout_height="56dp"
+                android:onClick="goToPets"
                 android:text="@string/viewPets"
                 android:textColor="#C9E3AF"
                 app:backgroundTint="#1F3A20" />
