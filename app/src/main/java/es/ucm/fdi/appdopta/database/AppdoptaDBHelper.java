@@ -276,6 +276,39 @@ public class AppdoptaDBHelper extends SQLiteOpenHelper {
         return petsList;
     }
 
+    public ArrayList<Animal> searchPetByName(String petName) {
+        SQLiteDatabase db = this.getReadableDatabase();
+
+        Cursor petsCursor = db.rawQuery("SELECT * FROM " + PetTable.TABLE_NAME + " WHERE "+ PetTable.PETNAME_C+ " = ?", new String[]{petName});
+
+        ArrayList<Animal> petsList = new ArrayList<>();
+
+        if (petsCursor.moveToFirst()) {
+            do {
+                petsList.add(new Animal(
+                        petsCursor.getString(0),    // Columna id
+                        petsCursor.getString(1),    // Columna idOwner
+                        petsCursor.getString(2),    // Columna nombre
+                        petsCursor.getString(3),    // Columna genero
+                        petsCursor.getString(4),    // Columna especie
+                        petsCursor.getString(5),    // Columna raza
+                        petsCursor.getString(6),    // Columna bday
+                        petsCursor.getString(7),    // Columna desc
+                        petsCursor.getString(8),    // Columna localizacion
+                        petsCursor.getString(10),   // Columna rabia
+                        petsCursor.getString(11),   // Columna hepatitis
+                        petsCursor.getString(12),   // Columna leishmaniosis
+                        petsCursor.getString(13),   // Columna chipNum
+                        petsCursor.getString(14),   // Columna chipDate
+                        petsCursor.getString(15))); // Columna chipLoc
+
+
+            } while (petsCursor.moveToNext());
+        }
+        petsCursor.close();
+        return petsList;
+    }
+
     public ArrayList<Animal> readListPetDataByUserId(String id) {
         SQLiteDatabase db = this.getReadableDatabase();
 

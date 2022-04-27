@@ -5,7 +5,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.ImageView;
+import android.widget.SearchView;
 import android.widget.Toast;
 
 import androidx.activity.result.ActivityResult;
@@ -29,6 +31,7 @@ public class PrincipalView extends AppCompatActivity {
     private AppdoptaDBHelper dbHelper;
     private AdapterItemList adapter;
     private RecyclerView mRecyclerView;
+    private SearchView searchView;
     private Bundle user;
     private String userid;
 
@@ -60,6 +63,27 @@ public class PrincipalView extends AppCompatActivity {
         //Intent intent = getIntent();
         user = getIntent().getExtras();
         userid = user.getString("userInfo");
+
+
+        searchView = findViewById(R.id.cuadroBusqueda);
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String s) {
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String s) {
+                if(!s.equals(""))
+                    searchName(s);
+                else {
+                    petsList = dbHelper.readListPetData();
+                    updatePetList();
+                }
+                return false;
+            }
+        });
+
 
         petsList = new ArrayList<>();
         dbHelper = new AppdoptaDBHelper(this);
@@ -94,6 +118,12 @@ public class PrincipalView extends AppCompatActivity {
         dbHelper.close();
     }
 
+    public void searchName(String name){
+        dbHelper = new AppdoptaDBHelper(this);
+        petsList = dbHelper.searchPetByName(name);
+        updatePetList();
+        dbHelper.close();
+    }
 
     public void applyFilter(String especie, String raza, String ubicacion){
         if(getResources().getString(R.string.slcAnimal).equals(especie)) especie = null;

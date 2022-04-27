@@ -22,7 +22,7 @@ import java.util.Arrays;
 
 import es.ucm.fdi.appdopta.database.AppdoptaDBHelper;
 
-public class FiltroView extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
+public class FiltroView extends AppCompatActivity implements AdapterView.OnItemSelectedListener{
     private Spinner animalSpinner;
     private Spinner raceSpinner;
     private Spinner locationSpinner;
@@ -35,17 +35,17 @@ public class FiltroView extends AppCompatActivity implements AdapterView.OnItemS
         raceSpinner = findViewById(R.id.spinnerRace);
         locationSpinner = findViewById(R.id.spinnerLocation);
         initSpinnerValues();
-
-
     }
     public void borrar(View view){
         animalSpinner.setSelection(0);
         raceSpinner.setSelection(0);
         locationSpinner.setSelection(0);
+        aplicar(view);
+
     }
     public void aplicar(View view){
         String animalSelected = animalSpinner.getSelectedItem().toString();
-        if(animalSelected.equalsIgnoreCase("dog") || animalSelected.equalsIgnoreCase("chien") || animalSelected.equalsIgnoreCase("perro")) animalSelected = "perro";
+        if(animalSelected.equalsIgnoreCase("dog") || animalSelected.equalsIgnoreCase("chien") || animalSelected.equalsIgnoreCase("perro")) animalSelected = "dog";
         //COMPLETAR
 
 
@@ -58,12 +58,11 @@ public class FiltroView extends AppCompatActivity implements AdapterView.OnItemS
         intent.putExtra("locationSelected", locationSelected);
         setResult(Activity.RESULT_OK, intent);
         finish();
-        //FiltroView.super.onBackPressed();
     }
 
     @Override
     public void onItemSelected(AdapterView<?> adapterView, View view, int position, long l) {
-        adapterView.getSelectedItem();
+       /* adapterView.getSelectedItem();
         if(position != 0) {
             switch (adapterView.getId()) {
 
@@ -86,13 +85,11 @@ public class FiltroView extends AppCompatActivity implements AdapterView.OnItemS
                 default:
                     break;
             }
-        }
+        }*/
     }
 
     @Override
-    public void onNothingSelected(AdapterView<?> adapterView) {
-
-    }
+    public void onNothingSelected(AdapterView<?> adapterView) {}
 
     public void initSpinnerValues(){
         //  Lista de elementos del spinner 1 --> tipos de animal
@@ -132,26 +129,3 @@ public class FiltroView extends AppCompatActivity implements AdapterView.OnItemS
         locationSpinner.setAdapter(adapterLocation);
     }
 }
-/*
-* TO DO:
-* Si todos return false --> boton aplicar = boton atras
-* {
-            @Override
-            public boolean isEnabled(int position){
-                if(position == 0)
-                {
-                    // Disable the first item from Spinner
-                    // First item will be use for hint
-                    return false;
-                }
-                else
-                {
-                    return true;
-                }
-            }
-
-
-        };
-*
-* */
-
