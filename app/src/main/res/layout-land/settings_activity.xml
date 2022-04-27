@@ -136,34 +136,43 @@
                 android:textColor="#000000"
                 android:textSize="16sp" />
 
-            <RadioButton
-                android:id="@+id/spanishLanguaje"
-                android:layout_width="157dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:drawableLeft="@drawable/ic_spanish"
-                android:minHeight="48dp"
-                android:text="@string/es" />
+            <RadioGroup
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" >
 
-            <RadioButton
-                android:id="@+id/englishLanguaje"
-                android:layout_width="156dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:drawableLeft="@drawable/ic_english"
-                android:minHeight="48dp"
-                android:text="@string/en" />
+                <RadioButton
+                    android:id="@+id/englishLanguaje"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:checked="false"
+                    android:drawableLeft="@drawable/ic_english"
+                    android:minHeight="48dp"
+                    android:onClick="ingles"
+                    android:text="@string/en" />
 
-            <RadioButton
-                android:id="@+id/spanishLanguaje3"
-                android:layout_width="156dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:checked="false"
-                android:drawableLeft="@drawable/ic_french"
-                android:minHeight="48dp"
-                android:onClick="frances"
-                android:text="@string/fr" />
+                <RadioButton
+                    android:id="@+id/spanishLanguaje"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:checked="false"
+                    android:drawableLeft="@drawable/ic_spanish"
+                    android:minHeight="48dp"
+                    android:onClick="español"
+                    android:text="@string/es" />
+
+                <RadioButton
+                    android:id="@+id/spanishLanguaje2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:checked="false"
+                    android:drawableLeft="@drawable/ic_french"
+                    android:minHeight="48dp"
+                    android:onClick="frances"
+                    android:text="@string/fr" />
+            </RadioGroup>
 
             <TextView
                 android:id="@+id/changePw3"
