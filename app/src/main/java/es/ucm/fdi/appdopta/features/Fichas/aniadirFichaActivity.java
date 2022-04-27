@@ -165,6 +165,9 @@ public class aniadirFichaActivity extends AppCompatActivity {
                 idcount = dbHelper.checkPetId(String.valueOf(id));
             }
             while(idcount);
+            especie = especie.toLowerCase();
+            raza = raza.toLowerCase();
+            localizacion = localizacion.toLowerCase();
             //String idDue = dbHelper.getuserId(usern);
             dbHelper.insertPetData(String.valueOf(id), idDue, nombreMasc, sexoMasc, raza, desc,especie, bday, rabiaV,hepatitisV,leishmaniasisV, nChip, fechChip,locChip, localizacion, bitmap);
             Intent intent = new Intent(getApplicationContext(), PrincipalView.class);
