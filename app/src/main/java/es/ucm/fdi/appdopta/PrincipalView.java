@@ -1,5 +1,6 @@
 package es.ucm.fdi.appdopta;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -31,6 +32,27 @@ public class PrincipalView extends AppCompatActivity {
     private Bundle user;
     private String userid;
 
+    ActivityResultLauncher<Intent> activityResultLauncher = registerForActivityResult(
+            new ActivityResultContracts.StartActivityForResult(),
+            new ActivityResultCallback<ActivityResult>() {
+                @Override
+                public void onActivityResult(ActivityResult result) {
+                    int resultCode = result.getResultCode();
+                    if (resultCode == Activity.RESULT_OK) {
+                        Intent data = result.getData();
+                        if(data!=null) {
+                            String animalSelected = data.getStringExtra("animalSelected");
+                            String raceSelected = data.getStringExtra("raceSelected");
+                            String locationSelected = data.getStringExtra("locationSelected");
+                            applyFilter(animalSelected,raceSelected,locationSelected);
+                        }
+
+                    }
+                }
+            }
+
+    );
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,19 +61,15 @@ public class PrincipalView extends AppCompatActivity {
         user = getIntent().getExtras();
         userid = user.getString("userInfo");
 
-
         petsList = new ArrayList<>();
         dbHelper = new AppdoptaDBHelper(this);
-        initValues();
         petsList = dbHelper.readListPetData();
         mRecyclerView = findViewById(R.id.listaMascotas);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this, RecyclerView.VERTICAL, false));
 
         if (petsList.size() > 0) {
             mRecyclerView.setVisibility(View.VISIBLE);
-            adapter = new AdapterItemList(this, petsList,dbHelper);
-
-            mRecyclerView.setAdapter(adapter);
+            updatePetList();
         }
         else {
             mRecyclerView.setVisibility(View.GONE);
@@ -76,66 +94,26 @@ public class PrincipalView extends AppCompatActivity {
         dbHelper.close();
     }
 
-    ActivityResultLauncher<Intent> activityResultLauncher = registerForActivityResult(
-            new ActivityResultContracts.StartActivityForResult(),
-            new ActivityResultCallback<ActivityResult>() {
-                @Override
-                public void onActivityResult(ActivityResult result) {
-                    int resultCode = result.getResultCode();
-                    if (resultCode == 0) {
-                        Intent data = result.getData();
-                        if(data!=null) {
-                            String a = data.getStringExtra("animalSelected");
-                            String b = data.getStringExtra("raceSelected");
-                            String l = data.getStringExtra("locationSelected");
-                            showPetsList(a,b,l);
-                        }
 
-                    }
-                }
-            }
-
-    );
-
-    public void showPetsList(String especie, String raza, String ubicacion){
-        //petsList = new ArrayList<>();
-        if(getResources().getString(R.string.slcAnimal) == especie) especie = null;
-        if(getResources().getString(R.string.slcBreed) == raza) raza = null;
-        if(getResources().getString(R.string.slcLoc) == ubicacion) ubicacion = null;
-        //dbHelper = new AppdoptaDBHelper(this);
-        //petsList = dbHelper.filterQuery(especie, raza, ubicacion);
+    public void applyFilter(String especie, String raza, String ubicacion){
+        if(getResources().getString(R.string.slcAnimal).equals(especie)) especie = null;
+        if(getResources().getString(R.string.slcBreed).equals(raza)) raza = null;
+        if(getResources().getString(R.string.slcLoc).equals(ubicacion)) ubicacion = null;
+        dbHelper = new AppdoptaDBHelper(this);
+        petsList = dbHelper.filterQuery(especie, raza, ubicacion);
+        updatePetList();
+        dbHelper.close();
     }
 
-    public void initValues(){
-//(String id, String id_owner, String petname, String gender, String race, String desc, String specie, String bday,
-// //int vacc_rabia, int vacc_parvovirus, int vacc_moquillo, int vacc_polivalente, int chip_num, String chip_date, String chip_loc) {
 
-        /*dbHelper.insertPetData("1", "1", "1", "1", "chiguagua", "1", "Perro",
-                    "1", 1, 2, 3, 1, 2, "1", "Madrid");
-        dbHelper.insertPetData("1", "", "", "", ":)", "", "Gato",
-                "", 1, 2, 3, 1, 2, "", "Madrid");
-        dbHelper.insertPetData("1", "", "", "", "Labrador", "", "Perro",
-                "", 1, 2, 3, 1, 2, "", "Valencia");*/
+    public void updatePetList(){
+        adapter = new AdapterItemList(this, petsList,dbHelper);
+        mRecyclerView.setAdapter(adapter);
     }
-    /*public void OnclickButtonListener() {
 
-        ImageView filtro = findViewById(R.id.filtro);
-
-        filtro.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                //Intent intent=new Intent(this,MapsActivity.class);
-                //startActivity(intent);
-                //Toast.makeText(this, "Has pulsado el filtro", Toast.LENGTH_LONG).show();
-                //SI SE DESCOMENTA AÑADIR AL STRING.XML PARA EL IDIOMA//
-            }
-        });
-    }*/
-
-    public void filtrar(View view){
-        Intent intent = new Intent(this, FiltroView.class);
-        //activityResultLauncher.launch(intent);
-        startActivity(intent);
+    public void filter(View view){
+        Intent intent = new Intent(PrincipalView.this, FiltroView.class);
+        activityResultLauncher.launch(intent);
     }
 
     public void userInfoActivity(View view){

@@ -247,7 +247,7 @@ public class AppdoptaDBHelper extends SQLiteOpenHelper {
 
         String[] parameters = params.toArray(new String[0]);
 
-        Cursor petsCursor = db.rawQuery(query, new String[] {especie, raza, ubicacion});
+        Cursor petsCursor = db.rawQuery(query, parameters);
 
         ArrayList<Animal> petsList = new ArrayList<>();
 
