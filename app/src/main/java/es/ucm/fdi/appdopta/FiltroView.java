@@ -42,8 +42,6 @@ public class FiltroView extends AppCompatActivity implements AdapterView.OnItemS
         applySelection.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
-                //TODAVIA NO FUNCIONA
-
                 String animalSelected = animalSpinner.getSelectedItem().toString();
                 String raceSelected = raceSpinner.getSelectedItem().toString();
                 String locationSelected = locationSpinner.getSelectedItem().toString();
@@ -54,8 +52,6 @@ public class FiltroView extends AppCompatActivity implements AdapterView.OnItemS
                 setResult(Activity.RESULT_OK, intent);
                 finish();
                 //FiltroView.super.onBackPressed();
-
-
             }
         });
         eraseSelection.setOnClickListener(new View.OnClickListener(){
