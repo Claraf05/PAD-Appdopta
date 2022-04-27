@@ -10,7 +10,10 @@
     <string name="login">Login</string>
     <string name="logout">Logout</string>
     <string name="register">Register</string>
+    <string name="adoptarAnimal">Adopt</string>
     <string name="welcome">Welcome</string>
+    <string name="editarAnimal">Edit Pet</string>
+    <string name="borrarAnimal">Delete Pet</string>
     <string name="phone">Phone</string>
     <string name="email">Email</string>
     <string name="alrAcc">Already have an account?</string>
@@ -55,9 +58,9 @@
     <string name="image">Image</string>
     <string name="chipLoc">Microchip Location</string>
     <string name="chipDate">Implantation date</string>
-    <string name="chipNum">Microchip number</string>
+    <string name="questionDesc">Do you want to add a description?</string>
     <string name="rabies">Rabies</string>
-    <string name="hepa" translatable="false">Hepatitis</string>
+    <string name="hepa">Hepatitis</string>
     <string name="leisma">Leishmaniases</string>
     <string name="confirm">Confirm</string>
 
@@ -124,6 +127,7 @@
     </string>
     <string name="attachment_summary_off">Only download attachments when manually requested</string>
     <string name="fr">French</string>
+    <string name="chipNum">Chip Number</string>
 
 
 </resources>

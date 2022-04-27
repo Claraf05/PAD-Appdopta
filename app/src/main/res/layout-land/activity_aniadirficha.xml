@@ -128,7 +128,8 @@
                     android:id="@+id/sexoMasc"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/sex" />
+                    android:text="@string/sex"
+                    android:textSize="18dp" />
 
                 <RadioButton
                     android:id="@+id/masculinoMasc"

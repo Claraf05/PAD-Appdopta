@@ -43,7 +43,8 @@
                 android:id="@+id/userName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/user" />
+                android:text="@string/user"
+                android:textSize="18sp" />
 
             <EditText
                 android:id="@+id/correoDueno"
@@ -124,7 +125,8 @@
                     android:id="@+id/sexoMasc"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/sex" />
+                    android:text="@string/sex"
+                    android:textSize="18sp" />
 
                 <RadioButton
                     android:id="@+id/masculinoMasc"
@@ -212,7 +214,7 @@
                 android:background="@android:color/transparent"
                 android:ems="10"
                 android:gravity="start|top"
-                android:hint="¿Quieres añadir una descripción?"
+                android:hint="@string/questionDesc"
                 android:inputType="none"
                 android:minHeight="48dp"
                 tools:ignore="SpeakableTextPresentCheck" />

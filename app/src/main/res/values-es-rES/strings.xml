@@ -80,4 +80,9 @@
     <string name="confirm">Confirmar</string>
     <string name="fr">Francés</string>
     <string name="tooBig">La imagen es demasiado grande, max 2000x2000 pixeles</string>
+    <string name="questionDesc">¿Quieres añadir una descripción?</string>
+    <string name="hepa">Hepatitis</string>
+    <string name="adoptarAnimal">Adoptar</string>
+    <string name="editarAnimal">Editar mascota</string>
+    <string name="borrarAnimal">Eliminar mascota</string>
 </resources>
