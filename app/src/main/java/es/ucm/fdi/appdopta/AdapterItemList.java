@@ -40,7 +40,7 @@ public class AdapterItemList extends RecyclerView.Adapter<AdapterItemList.ViewHo
     @Override
     // Enlaza AdapterItemList con item_list
     public ViewHolderDatos onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_list, null, false);
+        View itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_list, parent, false);
         return new ViewHolderDatos(itemView);
     }
 
