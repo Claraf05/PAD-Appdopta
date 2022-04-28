@@ -270,14 +270,14 @@
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_height="wrap_content"
                     android:orientation="horizontal">
 
                     <fragment
                         android:id="@+id/map2"
                         android:name="com.google.android.gms.maps.SupportMapFragment"
                         android:layout_width="500dp"
-                        android:layout_height="75dp"
+                        android:layout_height="200dp"
 
                         android:layout_marginStart="100dp"
                         android:layout_marginTop="0dp"
@@ -318,6 +318,22 @@
 
                 </LinearLayout>
 
+                <Button
+                    android:id="@+id/BotonAdoptar"
+                    android:layout_width="120dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="bottom|center"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginTop="0dp"
+                    android:layout_marginEnd="30dp"
+                    android:baselineAligned="false"
+                    android:clickable="true"
+                    android:onClick=""
+                    android:text="@string/adoptarAnimal"
+                    android:textColor="#C9E3AF"
+                    app:backgroundTint="#1F3A20"
+                    app:iconPadding="5dp"
+                    app:iconTint="#C9E3AF" />
             </LinearLayout>
 
         </RelativeLayout>
