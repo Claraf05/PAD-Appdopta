@@ -127,8 +127,12 @@ public class PrincipalView extends AppCompatActivity {
 
     public void applyFilter(String especie, String raza, String ubicacion){
         if(getResources().getString(R.string.slcAnimal).equals(especie)) especie = null;
+        else especie = especie.toLowerCase();
         if(getResources().getString(R.string.slcBreed).equals(raza)) raza = null;
+        else raza = raza.toLowerCase();
         if(getResources().getString(R.string.slcLoc).equals(ubicacion)) ubicacion = null;
+        else ubicacion = ubicacion.toLowerCase();
+
         dbHelper = new AppdoptaDBHelper(this);
         petsList = dbHelper.filterQuery(especie, raza, ubicacion);
         updatePetList();

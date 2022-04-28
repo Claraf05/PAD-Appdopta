@@ -45,7 +45,17 @@ public class FiltroView extends AppCompatActivity implements AdapterView.OnItemS
     }
     public void aplicar(View view){
         String animalSelected = animalSpinner.getSelectedItem().toString();
-        if(animalSelected.equalsIgnoreCase("dog") || animalSelected.equalsIgnoreCase("chien") || animalSelected.equalsIgnoreCase("perro")) animalSelected = "dog";
+        if(animalSelected.equalsIgnoreCase("dog") ||
+                animalSelected.equalsIgnoreCase("chien") ||
+                animalSelected.equalsIgnoreCase("perro")) animalSelected = "dog";
+
+        if(animalSelected.equalsIgnoreCase("cat") ||
+                animalSelected.equalsIgnoreCase("chat") ||
+                animalSelected.equalsIgnoreCase("gato")) animalSelected = "cat";
+
+        if(animalSelected.equalsIgnoreCase("rabbit") ||
+                animalSelected.equalsIgnoreCase("lapin") ||
+                animalSelected.equalsIgnoreCase("rabbit")) animalSelected = "rabbit";
         //COMPLETAR
 
 
