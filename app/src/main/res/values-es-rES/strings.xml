@@ -85,4 +85,5 @@
     <string name="adoptarAnimal">Adoptar</string>
     <string name="editarAnimal">Editar mascota</string>
     <string name="borrarAnimal">Eliminar mascota</string>
+    <string name="chipExist">El chip ya se encuentra en la base de datos</string>
 </resources>

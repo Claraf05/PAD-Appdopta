@@ -136,9 +136,9 @@ public class aniadirFichaActivity extends AppCompatActivity {
         String desc = descripcion.getText().toString();
         String locChip = chiplocal.getText().toString();
         String fechChip = fechaChip.getText().toString();
-        int nChip = 0;
+        long nChip = 0;
         if(!numChip.getText().toString().isEmpty()){
-            nChip = Integer.parseInt(numChip.getText().toString());
+            nChip = Long.parseLong(numChip.getText().toString());
         }
 
 
@@ -150,12 +150,21 @@ public class aniadirFichaActivity extends AppCompatActivity {
         if(leishmaniasis.isChecked()) leishmaniasisV = 1;
         else leishmaniasisV = 0;
 
-        if(especie.isEmpty() || raza.isEmpty() || nombreMasc.isEmpty() || sexoMasc.isEmpty() || bday.isEmpty() /*|| nChip == 0*/){
+    //COMPROBAR FALLO CON IMAGENES MUY GRANDES
+        int tam = bitmap.getAllocationByteCount();
+        if(especie.isEmpty() || raza.isEmpty() || nombreMasc.isEmpty() || sexoMasc.isEmpty() || bday.isEmpty() || bitmap == null /*|| nChip == 0*/){
             Toast.makeText(aniadirFichaActivity.this, R.string.fieldsNotCompleted, Toast.LENGTH_SHORT).show();
         }
-        else if(bitmap.getWidth() > 2000 || bitmap.getHeight() > 2000){
+
+        else if(bitmap.getWidth() > 1500 || bitmap.getHeight() > 1500 || bitmap.getAllocationByteCount() > 102400){
             Toast.makeText(aniadirFichaActivity.this, R.string.tooBig, Toast.LENGTH_SHORT).show();
         }
+        else if(dbHelper.checkChip(nChip+"")){
+            Toast.makeText(aniadirFichaActivity.this, R.string.chipExist, Toast.LENGTH_SHORT).show();
+        }
+        //else if(nChip > 999999999){
+        //    Log.d("PRUEBA", "ERROOOOOR");
+        //}
         else{
             //assign an id to a pet
             boolean idcount;

@@ -85,4 +85,5 @@
     <string name="adoptarAnimal">Adopter</string>
     <string name="editarAnimal">Modifier un animal</string>
     <string name="borrarAnimal">Éliminer animal</string>
+    <string name="chipExist">La puce est déjà dans la base de données</string>
 </resources>

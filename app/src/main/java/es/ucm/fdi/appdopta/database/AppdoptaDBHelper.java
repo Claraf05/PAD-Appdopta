@@ -134,7 +134,7 @@ public class AppdoptaDBHelper extends SQLiteOpenHelper {
         }
     }
 
-    public boolean insertPetData(String id, String id_owner, String petname, String gender, String race, String desc, String specie, String bday, int vacc_rabia, int vacc_hepatitis, int vacc_leishmaniasis, int chip_num, String chip_date, String chip_loc, String localizacion, Bitmap bitmap) {
+    public boolean insertPetData(String id, String id_owner, String petname, String gender, String race, String desc, String specie, String bday, int vacc_rabia, int vacc_hepatitis, int vacc_leishmaniasis, long chip_num, String chip_date, String chip_loc, String localizacion, Bitmap bitmap) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
 
@@ -351,7 +351,16 @@ public class AppdoptaDBHelper extends SQLiteOpenHelper {
             return false;
         }
     }
-
+    public boolean checkChip(String chip){
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor cursor = db.rawQuery("Select * from "+PetTable.TABLE_NAME+" where "+PetTable.CHIP_NUM_C+" = ?", new String[] {chip});
+        if(cursor.getCount() > 0){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
     public boolean checkUserPassword(String user, String passw){
         SQLiteDatabase db = this.getWritableDatabase();
         Cursor cursor = db.rawQuery("Select * from "+StandardUserTable.TABLE_NAME+" where "+StandardUserTable.USERNAME_C+" = ? and "+StandardUserTable.PASSWORD_C+" = ?", new String[] {user,passw});
