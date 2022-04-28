@@ -151,7 +151,6 @@ public class aniadirFichaActivity extends AppCompatActivity {
         else leishmaniasisV = 0;
 
     //COMPROBAR FALLO CON IMAGENES MUY GRANDES
-        int tam = bitmap.getAllocationByteCount();
         if(especie.isEmpty() || raza.isEmpty() || nombreMasc.isEmpty() || sexoMasc.isEmpty() || bday.isEmpty() || bitmap == null /*|| nChip == 0*/){
             Toast.makeText(aniadirFichaActivity.this, R.string.fieldsNotCompleted, Toast.LENGTH_SHORT).show();
         }
