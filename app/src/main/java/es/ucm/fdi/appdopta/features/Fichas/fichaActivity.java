@@ -120,6 +120,8 @@ public class fichaActivity extends AppCompatActivity implements OnMapReadyCallba
             @Override
             public void onClick(View view) {
                 Toast.makeText(getApplicationContext(), "¡Gracias por adoptar!💖", Toast.LENGTH_SHORT).show();
+                dbHelper.adoptPet(idAn);
+                goToMain(view);
             }
         });
 

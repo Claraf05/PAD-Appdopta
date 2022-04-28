@@ -509,4 +509,9 @@ public class AppdoptaDBHelper extends SQLiteOpenHelper {
         contentValues.put(StandardUserTable.EMAIL_C, email);
         db.update(StandardUserTable.TABLE_NAME, contentValues, StandardUserTable.ID_C+"=?", parametros);
     }
+
+    public void adoptPet(String idPet){
+        SQLiteDatabase db = this.getReadableDatabase();
+        db.delete(PetTable.TABLE_NAME,PetTable.ID_PET_C +"=?",new String[]{idPet});
+    }
 }
