@@ -7,311 +7,322 @@
     android:background="#C9E3AF"
     tools:context=".features.Fichas.fichaActivity">
 
-    <ImageView
-        android:id="@+id/imagen"
-        android:layout_width="125dp"
-        android:layout_height="125dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="20dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:srcCompat="@tools:sample/avatars" />
 
-    <LinearLayout
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="25dp"
-        android:layout_marginEnd="20dp"
-        android:orientation="vertical"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/imagen"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <TextView
-            android:id="@+id/nombreAnimal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="@string/name"
-            android:textSize="24sp"
-            android:textStyle="bold" />
-
-        <TextView
-            android:id="@+id/especieAnimal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="@string/species" />
-
-        <TextView
-            android:id="@+id/razaAnimal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="@string/breed" />
-
-        <TextView
-            android:id="@+id/sexoAnimal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="@string/sex" />
-
-        <TextView
-            android:id="@+id/fechaAnimal"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@android:color/transparent"
-            android:ems="10"
-            android:hint="@string/birth"
-            android:inputType="date"
-            tools:ignore="TouchTargetSizeCheck" />
-
-    </LinearLayout>
-
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/constraintLayout"
+    <ScrollView
+        android:id="@+id/scrollView2"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="5dp"
-        android:layout_marginEnd="20dp"
-        android:layout_marginBottom="125dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imagen">
-
-        <androidx.cardview.widget.CardView
-            android:id="@+id/cardView"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_marginStart="32dp"
-            android:layout_marginTop="30dp"
-            android:layout_marginEnd="32dp"
-            android:layout_marginBottom="32dp"
-            android:visibility="visible"
-            app:cardBackgroundColor="#B7FFFFFF"
-            app:cardCornerRadius="25dp"
-            app:cardElevation="0dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.509"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/radioGroup">
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-                <LinearLayout
-                    android:id="@+id/dataChip"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginStart="10dp"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginEnd="10dp"
-                    android:layout_marginBottom="10dp"
-                    android:orientation="vertical"
-                    android:visibility="invisible"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent">
-
-                    <TextView
-                        android:id="@+id/fechaChip"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:background="@android:color/transparent"
-                        android:ems="10"
-                        android:hint="Fecha Implantación"
-                        android:inputType="none" />
-
-                    <TextView
-                        android:id="@+id/numChip"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:background="@android:color/transparent"
-                        android:ems="10"
-                        android:hint="Número Microchip"
-                        android:inputType="none" />
-
-                    <TextView
-                        android:id="@+id/localizacionChip"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:hint="Localización del Chip" />
-                </LinearLayout>
-
-                <ScrollView
-                    android:id="@+id/scrollViewDesc"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginStart="10dp"
-                    android:layout_marginTop="20dp"
-                    android:layout_marginEnd="10dp"
-                    android:layout_marginBottom="20dp"
-                    android:visibility="visible"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent">
-
-                    <TextView
-                        android:id="@+id/desc"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginRight="10dp"
-                        android:background="@android:color/transparent"
-                        android:ems="10"
-                        android:gravity="start|top"
-                        android:inputType="none"
-                        android:minHeight="48dp"
-                        android:text="@string/desc"
-                        tools:ignore="SpeakableTextPresentCheck" />
-                </ScrollView>
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-        </androidx.cardview.widget.CardView>
-
-        <RadioGroup
-            android:id="@+id/radioGroup"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            app:layout_constraintEnd_toStartOf="@+id/infoDue"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
-
-            <RadioButton
-                android:id="@+id/descripcion"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:checked="true"
-                android:onClick="desc"
-                android:text="@string/desc" />
-
-            <RadioButton
-                android:id="@+id/microchip"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:onClick="micro"
-                android:text="@string/chip" />
-
-            <RadioButton
-                android:id="@+id/mapa"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:onClick="showMap"
-                android:text="@string/map" />
-
-        </RadioGroup>
-
-        <LinearLayout
-            android:id="@+id/layoutDue"
-            android:layout_width="180dp"
-            android:layout_height="0dp"
-            android:orientation="vertical"
-            android:paddingLeft="10dp"
-            android:visibility="invisible"
-            app:layout_constraintBottom_toTopOf="@+id/cardView"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/infoDue">
-
-            <TextView
-                android:id="@+id/nombreDue"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="@string/name" />
-
-            <TextView
-                android:id="@+id/correoDue"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="@string/email" />
-
-            <TextView
-                android:id="@+id/telefonoDue"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="@string/phone" />
-
-        </LinearLayout>
-
-        <ToggleButton
-            android:id="@+id/infoDue"
-            android:layout_width="180dp"
-            android:layout_height="wrap_content"
-            android:background="#1F3A20"
-            android:drawableLeft="@android:drawable/arrow_down_float"
-            android:onClick="mostrar"
-            android:textColor="#FFFFFF"
-            android:textOff="@string/ownInfo"
-            android:textOn="@string/ownInfo"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <LinearLayout
-            android:id="@+id/botonesZoom"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="20dp"
-            android:orientation="vertical"
-            android:visibility="invisible"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/radioGroup">
-
-            <ImageButton
-                android:id="@+id/zoomIn"
-                android:layout_width="23dp"
-                android:layout_height="wrap_content"
-                android:onClick="zoomI"
-                app:srcCompat="@android:drawable/arrow_up_float"
-                tools:ignore="SpeakableTextPresentCheck" />
-
-            <ImageButton
-                android:id="@+id/zoomOut"
-                android:layout_width="23dp"
-                android:layout_height="wrap_content"
-                android:onClick="zoomO"
-                app:srcCompat="@android:drawable/arrow_down_float"
-                tools:ignore="SpeakableTextPresentCheck" />
-        </LinearLayout>
-
-        <fragment
-            android:id="@+id/map"
-            android:name="com.google.android.gms.maps.SupportMapFragment"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_marginStart="32dp"
-            android:layout_marginTop="32dp"
-            android:layout_marginBottom="32dp"
-
-            android:visibility="invisible"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/botonesZoom"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-    <Button
-        android:id="@+id/BotonAdoptar"
-        android:layout_width="120dp"
-        android:layout_height="50dp"
-        android:layout_gravity="bottom|center"
-        android:layout_marginStart="30dp"
-        android:layout_marginEnd="30dp"
-        android:baselineAligned="false"
-        android:clickable="true"
-        android:onClick=""
-        android:text="@string/adoptarAnimal"
-        android:textColor="#C9E3AF"
-        app:backgroundTint="#1F3A20"
-        app:iconPadding="5dp"
-        app:iconTint="#C9E3AF"
         app:layout_constraintBottom_toTopOf="@+id/toolbar2"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/constraintLayout" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:id="@+id/layoutImgDes"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="0dp"
+                android:layout_marginTop="0dp"
+                android:layout_marginEnd="0dp"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/imageView6"
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="15dp"
+                    tools:srcCompat="@tools:sample/avatars" />
+
+                <LinearLayout
+                    android:id="@+id/DescriptionAn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginEnd="200dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/nombreAnimal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/name"
+                        android:textSize="24sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/especieAnimal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/species" />
+
+                    <TextView
+                        android:id="@+id/razaAnimal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/breed" />
+
+                    <TextView
+                        android:id="@+id/sexoAnimal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/sex" />
+
+                    <TextView
+                        android:id="@+id/fechaAnimal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@android:color/transparent"
+                        android:ems="10"
+                        android:hint="@string/birth"
+                        android:inputType="date"
+                        tools:ignore="TouchTargetSizeCheck" />
+                </LinearLayout>
+
+                <RadioGroup
+                    android:id="@+id/radioGroup"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="-175dp"
+                    android:layout_marginTop="20dp">
+
+                    <RadioButton
+                        android:id="@+id/descripcion"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="true"
+                        android:onClick="desc"
+                        android:text="@string/desc" />
+
+                    <RadioButton
+                        android:id="@+id/microchip"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:onClick="micro"
+                        android:text="@string/chip" />
+
+                    <RadioButton
+                        android:id="@+id/mapa"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:onClick="showMap"
+                        android:text="@string/map" />
+
+                </RadioGroup>
+
+                <LinearLayout
+                    android:id="@+id/layoutAux"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="65dp"
+                    android:layout_marginTop="15dp"
+                    android:orientation="vertical">
+
+                    <ToggleButton
+                        android:id="@+id/infoDue3"
+                        android:layout_width="180dp"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="false"
+                        android:layout_alignParentEnd="false"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginTop="10dp"
+                        android:background="#1F3A20"
+                        android:drawableLeft="@android:drawable/arrow_down_float"
+                        android:onClick="mostrar"
+                        android:textColor="#FFFFFF"
+                        android:textOff="@string/ownInfo"
+                        android:textOn="@string/ownInfo"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <LinearLayout
+                        android:id="@+id/layoutDue"
+                        android:layout_width="180dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginTop="0dp"
+                        android:orientation="vertical"
+                        android:paddingLeft="10dp"
+                        android:visibility="invisible"
+                        app:layout_constraintBottom_toTopOf="@+id/cardView"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/infoDue">
+
+                        <TextView
+                            android:id="@+id/nombreDue"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/name" />
+
+                        <TextView
+                            android:id="@+id/correoDue"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/email" />
+
+                        <TextView
+                            android:id="@+id/telefonoDue"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/phone" />
+
+                    </LinearLayout>
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layoutGordo"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginTop="135dp"
+                android:orientation="vertical">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginBottom="10dp">
+
+                    <LinearLayout
+                        android:id="@+id/dataChip"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:orientation="vertical"
+                        android:visibility="invisible"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <TextView
+                            android:id="@+id/fechaChip"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@android:color/transparent"
+                            android:ems="10"
+                            android:hint="Fecha Implantación"
+                            android:inputType="none" />
+
+                        <TextView
+                            android:id="@+id/numChip"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@android:color/transparent"
+                            android:ems="10"
+                            android:hint="Número Microchip"
+                            android:inputType="none" />
+
+                        <TextView
+                            android:id="@+id/localizacionChip"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="Localización del Chip" />
+                    </LinearLayout>
+
+                    <ScrollView
+                        android:id="@+id/scrollViewDesc"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginBottom="20dp"
+                        android:visibility="visible"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <TextView
+                            android:id="@+id/desc"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="10dp"
+                            android:background="@android:color/transparent"
+                            android:ems="10"
+                            android:gravity="start|top"
+                            android:inputType="none"
+                            android:minHeight="48dp"
+                            android:text="@string/desc"
+                            tools:ignore="SpeakableTextPresentCheck" />
+                    </ScrollView>
+
+                </androidx.cardview.widget.CardView>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <fragment
+                        android:id="@+id/map2"
+                        android:name="com.google.android.gms.maps.SupportMapFragment"
+                        android:layout_width="500dp"
+                        android:layout_height="75dp"
+
+                        android:layout_marginStart="100dp"
+                        android:layout_marginTop="0dp"
+                        android:layout_marginBottom="32dp"
+                        android:visibility="visible"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/botonesZoom"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="parent" />
+
+                    <LinearLayout
+                        android:id="@+id/botonesZoom"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="20dp"
+                        android:orientation="vertical"
+                        android:visibility="visible"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/radioGroup">
+
+                        <ImageButton
+                            android:id="@+id/zoomIn"
+                            android:layout_width="23dp"
+                            android:layout_height="wrap_content"
+                            android:onClick="zoomI"
+                            app:srcCompat="@android:drawable/arrow_up_float"
+                            tools:ignore="SpeakableTextPresentCheck" />
+
+                        <ImageButton
+                            android:id="@+id/zoomOut"
+                            android:layout_width="23dp"
+                            android:layout_height="wrap_content"
+                            android:onClick="zoomO"
+                            app:srcCompat="@android:drawable/arrow_down_float"
+                            tools:ignore="SpeakableTextPresentCheck" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </RelativeLayout>
+    </ScrollView>
+
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar2"
@@ -323,8 +334,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintTop_toBottomOf="@+id/scrollView2" />
 
     <ImageButton
         android:id="@+id/settingsButton2"
