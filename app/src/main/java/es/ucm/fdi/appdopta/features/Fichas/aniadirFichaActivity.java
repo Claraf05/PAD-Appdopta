@@ -2,6 +2,7 @@ package es.ucm.fdi.appdopta.features.Fichas;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.database.sqlite.SQLiteBlobTooBigException;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
@@ -48,6 +49,7 @@ public class aniadirFichaActivity extends AppCompatActivity {
     ImageView previewImage;
     Bitmap bitmap;
     UserInfo usuario = new UserInfo();
+    int id;
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
@@ -93,11 +95,21 @@ public class aniadirFichaActivity extends AppCompatActivity {
 
         previewImage = (ImageView) findViewById(R.id.imagePreview);
 
+        //assign an id to a pet
+        boolean idcount;
+        id = new Random().nextInt(3000);
+        do{
+            id = new Random().nextInt(3000);
+            idcount = dbHelper.checkPetId(String.valueOf(id));
+        }
+        while(idcount);
+
     }
 
     private final ActivityResultLauncher<Intent> launcher = registerForActivityResult(
             new ActivityResultContracts.StartActivityForResult(),
             result -> {
+                bitmap = null;
                 if (result.getResultCode() == Activity.RESULT_OK
                         && result.getData() != null) {
                     Uri photoUri = result.getData().getData();
@@ -108,7 +120,7 @@ public class aniadirFichaActivity extends AppCompatActivity {
                         InputStream imageStream = getContentResolver().openInputStream(photoUri);
                         bitmap = BitmapFactory.decodeStream(imageStream);
 
-                    } catch (IOException e) {
+                    } catch (Exception e) {
                         // TODO Auto-generated catch block
                         e.printStackTrace();
                     }
@@ -122,65 +134,71 @@ public class aniadirFichaActivity extends AppCompatActivity {
     }
 
     public void ConfirmarFicha(View view){
-        String usern = username.getText().toString();
-       // String correo = correoD.getText().toString();
-       // String telefono = telefonoD.getText().toString();
-        String localizacion = localizacionD.getText().toString();
 
-        String especie = especieM.getText().toString();
-        String raza = razaM.getText().toString();
-        String nombreMasc = nombreM.getText().toString();
-
-        String sexoMasc = selectedSex.getText().toString();
-        String bday = nacimientoM.getText().toString();
-        String desc = descripcion.getText().toString();
-        String locChip = chiplocal.getText().toString();
-        String fechChip = fechaChip.getText().toString();
-        long nChip = 0;
-        if(!numChip.getText().toString().isEmpty()){
-            nChip = Long.parseLong(numChip.getText().toString());
-        }
+        try{
+            //dbHelper.buscarImagen(String.valueOf(id));
 
 
-        int rabiaV, hepatitisV,leishmaniasisV;
-        if(rabia.isChecked()) rabiaV = 1;
-        else rabiaV = 0;
-        if(hepatitis.isChecked()) hepatitisV = 1;
-        else hepatitisV = 0;
-        if(leishmaniasis.isChecked()) leishmaniasisV = 1;
-        else leishmaniasisV = 0;
 
-    //COMPROBAR FALLO CON IMAGENES MUY GRANDES
-        if(especie.isEmpty() || raza.isEmpty() || nombreMasc.isEmpty() || sexoMasc.isEmpty() || bday.isEmpty() || bitmap == null /*|| nChip == 0*/){
-            Toast.makeText(aniadirFichaActivity.this, R.string.fieldsNotCompleted, Toast.LENGTH_SHORT).show();
-        }
+            String usern = username.getText().toString();
+            // String correo = correoD.getText().toString();
+            // String telefono = telefonoD.getText().toString();
+            String localizacion = localizacionD.getText().toString();
 
-        else if(bitmap.getWidth() > 1500 || bitmap.getHeight() > 1500 || bitmap.getAllocationByteCount() > 102400){
-            Toast.makeText(aniadirFichaActivity.this, R.string.tooBig, Toast.LENGTH_SHORT).show();
-        }
-        else if(dbHelper.checkChip(nChip+"")){
-            Toast.makeText(aniadirFichaActivity.this, R.string.chipExist, Toast.LENGTH_SHORT).show();
-        }
-        //else if(nChip > 999999999){
-        //    Log.d("PRUEBA", "ERROOOOOR");
-        //}
-        else{
-            //assign an id to a pet
-            boolean idcount;
-            int id = new Random().nextInt(3000);
-            do{
-                id = new Random().nextInt(3000);
-                idcount = dbHelper.checkPetId(String.valueOf(id));
+            String especie = especieM.getText().toString();
+            String raza = razaM.getText().toString();
+            String nombreMasc = nombreM.getText().toString();
+
+            String sexoMasc = selectedSex.getText().toString();
+            String bday = nacimientoM.getText().toString();
+            String desc = descripcion.getText().toString();
+            String locChip = chiplocal.getText().toString();
+            String fechChip = fechaChip.getText().toString();
+            long nChip = 0;
+            if(!numChip.getText().toString().isEmpty()){
+                nChip = Long.parseLong(numChip.getText().toString());
             }
-            while(idcount);
-            especie = especie.toLowerCase();
-            raza = raza.toLowerCase();
-            localizacion = localizacion.toLowerCase();
-            //String idDue = dbHelper.getuserId(usern);
-            dbHelper.insertPetData(String.valueOf(id), idDue, nombreMasc, sexoMasc, raza, desc,especie, bday, rabiaV,hepatitisV,leishmaniasisV, nChip, fechChip,locChip, localizacion, bitmap);
-            Intent intent = new Intent(getApplicationContext(), PrincipalView.class);
-            intent.putExtra("userInfo", idDue);
-            startActivity(intent);
+
+
+            int rabiaV, hepatitisV,leishmaniasisV;
+            if(rabia.isChecked()) rabiaV = 1;
+            else rabiaV = 0;
+            if(hepatitis.isChecked()) hepatitisV = 1;
+            else hepatitisV = 0;
+            if(leishmaniasis.isChecked()) leishmaniasisV = 1;
+            else leishmaniasisV = 0;
+
+            //COMPROBAR FALLO CON IMAGENES MUY GRANDES
+
+            if(especie.isEmpty() || raza.isEmpty() || nombreMasc.isEmpty() || sexoMasc.isEmpty() || bday.isEmpty() || bitmap == null /*|| nChip == 0*/){
+                Toast.makeText(aniadirFichaActivity.this, R.string.fieldsNotCompleted, Toast.LENGTH_SHORT).show();
+            }
+
+        /*else if(bitmap.getWidth() > 1500 || bitmap.getHeight() > 1500 || bitmap.getAllocationByteCount() > 102400){
+            Toast.makeText(aniadirFichaActivity.this, R.string.tooBig, Toast.LENGTH_SHORT).show();
+        }*/
+            else if(dbHelper.checkChip(nChip+"")){
+                Toast.makeText(aniadirFichaActivity.this, R.string.chipExist, Toast.LENGTH_SHORT).show();
+            }
+            //else if(nChip > 999999999){
+            //    Log.d("PRUEBA", "ERROOOOOR");
+            //}
+            else{
+
+                especie = especie.toLowerCase();
+                raza = raza.toLowerCase();
+                localizacion = localizacion.toLowerCase();
+                //String idDue = dbHelper.getuserId(usern);
+                dbHelper.insertPetData(String.valueOf(id), idDue, nombreMasc, sexoMasc, raza, desc,especie, bday, rabiaV,hepatitisV,leishmaniasisV, nChip, fechChip,locChip, localizacion, bitmap);
+                dbHelper.readListPetData();
+                Intent intent = new Intent(getApplicationContext(), PrincipalView.class);
+                intent.putExtra("userInfo", idDue);
+                startActivity(intent);
+            }
+        }
+        catch (SQLiteBlobTooBigException e){
+            Toast.makeText(aniadirFichaActivity.this, R.string.tooBig, Toast.LENGTH_SHORT).show();
+            dbHelper.deletePet(String.valueOf(id));
         }
 
 

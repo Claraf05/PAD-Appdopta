@@ -79,7 +79,7 @@
     <string name="leisma">Leishmaniasis</string>
     <string name="confirm">Confirmer</string>
     <string name="fr">Français</string>
-    <string name="tooBig">Le image est très grande, max 2000x2000 pixels</string>
+    <string name="tooBig">Le image est très grande</string>
     <string name="questionDesc">Vous voulez ajouter une description?</string>
     <string name="hepa">Hépatite</string>
     <string name="adoptarAnimal">Adopter</string>

@@ -109,7 +109,7 @@
     <string name="wrongCurrUser">Wrong current username</string>
     <string name="diffPass">The passwords doesn\'t match</string>
     <string name="wrongCurrPass">Wrong current password</string>
-    <string name="tooBig">The imagen is too big, max 2000x2000 pixels</string>
+    <string name="tooBig">The imagen is too big</string>
     <string name="chipExist">The chip is already in the data base</string>
 
 

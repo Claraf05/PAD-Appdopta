@@ -134,6 +134,11 @@ public class AppdoptaDBHelper extends SQLiteOpenHelper {
         }
     }
 
+    public void deletePet(String idAnim){
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.rawQuery("DELETE from "+PetTable.TABLE_NAME + " where "+ PetTable.ID_PET_C + " = ? ", new String[] {idAnim});
+    }
+
     public boolean insertPetData(String id, String id_owner, String petname, String gender, String race, String desc, String specie, String bday, int vacc_rabia, int vacc_hepatitis, int vacc_leishmaniasis, long chip_num, String chip_date, String chip_loc, String localizacion, Bitmap bitmap) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
