@@ -514,4 +514,16 @@ public class AppdoptaDBHelper extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getReadableDatabase();
         db.delete(PetTable.TABLE_NAME,PetTable.ID_PET_C +"=?",new String[]{idPet});
     }
+
+    public boolean canAdoptPet(String idUser, String idPet){
+        boolean r;
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor cursor = db.rawQuery("Select * from "+PetTable.TABLE_NAME+" where "+PetTable.ID_OWNER_C+" = ? and " + PetTable.ID_PET_C +" = ?", new String[] {idUser, idPet});
+
+        if(cursor.getCount() > 0) r = false;
+        else r= true;
+
+        cursor.close();
+        return r;
+    }
 }

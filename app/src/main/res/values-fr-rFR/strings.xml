@@ -86,4 +86,6 @@
     <string name="editarAnimal">Modifier un animal</string>
     <string name="borrarAnimal">Éliminer animal</string>
     <string name="chipExist">La puce est déjà dans la base de données</string>
+    <string name="cantAdopt">Vous ne pouvez pas adopter votre propre animal de compagnie</string>
+    <string name="adopt">" Merci d'avoir adopté!"</string>
 </resources>
