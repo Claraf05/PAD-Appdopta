@@ -13,11 +13,13 @@ import android.media.Image;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RadioGroup;
 import android.widget.ScrollView;
 import android.widget.TextView;
+import android.widget.Toast;
 import android.widget.ToggleButton;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -56,6 +58,8 @@ public class fichaActivity extends AppCompatActivity implements OnMapReadyCallba
     GoogleMap g;
     int zoom[] = {1,5,10,15,20};
     int zoomP;
+    Button adoptButton;
+
     AppdoptaDBHelper dbHelper = new AppdoptaDBHelper(this);
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -110,6 +114,14 @@ public class fichaActivity extends AppCompatActivity implements OnMapReadyCallba
         correoDue.setText(u.getEmail());
         teleDue.setText(u.getPhone() + "");
 
+        adoptButton = (Button)findViewById(R.id.BotonAdoptar);
+        adoptButton.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(getApplicationContext(), "¡Gracias por adoptar!💖", Toast.LENGTH_SHORT).show();
+            }
+        });
 
         Geocoder geo = new Geocoder(this);
         try{
