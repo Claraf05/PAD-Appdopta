@@ -86,4 +86,6 @@
     <string name="editarAnimal">Editar mascota</string>
     <string name="borrarAnimal">Eliminar mascota</string>
     <string name="chipExist">El chip ya se encuentra en la base de datos</string>
+    <string name="cantAdopt">No puedes adoptar tu propia mascota</string>
+    <string name="adopt">¡Gracias por adoptar!</string>
 </resources>

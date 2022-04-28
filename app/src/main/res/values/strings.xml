@@ -63,6 +63,8 @@
     <string name="hepa">Hepatitis</string>
     <string name="leisma">Leishmaniases</string>
     <string name="confirm">Confirm</string>
+    <string name="adopt">Thanks for adopting!</string>
+
 
 
     <string name="slcAnimal">Select animal...</string>
@@ -111,6 +113,7 @@
     <string name="wrongCurrPass">Wrong current password</string>
     <string name="tooBig">The imagen is too big</string>
     <string name="chipExist">The chip is already in the data base</string>
+    <string name="cantAdopt">You can\'t adopt your own pet</string>
 
 
     <!-- Preference Titles -->
